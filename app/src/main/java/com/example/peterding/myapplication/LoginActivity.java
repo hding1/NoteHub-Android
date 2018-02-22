@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         //如果已登入，直接跳转
         if (auth.getCurrentUser() != null) {
             //use MainActicity.class instead of SignupActicity
-            startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
 
@@ -129,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
                                     //登陆后跳转页面
                                     //记得写MainActivity.class
                                     //这里用SignupActivity.class代替
-                                    Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
