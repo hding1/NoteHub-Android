@@ -44,6 +44,11 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.peterding.myapplication.SignupActivity" />
+        <activity android:name="com.example.peterding.myapplication.ResetPasswordActivity" />
+        <activity
+            android:name="com.example.peterding.myapplication.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"
