@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
        // progressBar = (ProgressBar) findViewById(R.id.progressBar);
         btnSignup = (Button) findViewById(R.id.btn_signup);
         btnLogin = (Button) findViewById(R.id.btn_login);
-//       btnReset = (Button) findViewById(R.id.btn_reset_password);//重设密码
+       btnReset = (Button) findViewById(R.id.btn_reset_password);//重设密码
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -82,13 +82,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, SignupActivity.class));
             }
         });
-//重设密码，以后写
-//        btnReset.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
-//            }
-//        });
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+            }
+        });
 
         //登录
         btnLogin.setOnClickListener(new View.OnClickListener() {
