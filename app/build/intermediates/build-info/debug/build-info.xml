@@ -2,96 +2,79 @@
 <instant-run
     abi="x86"
     api-level="27"
-    build-mode="HOT_WARM"
+    build-mode="COLD"
     density="420dpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1519205280230"
-    token="1421791934675377518"
-    verifier="COMPATIBLE" >
+    timestamp="1519521431247"
+    token="6390730976785879421"
+    verifier="METHOD_DELETED" >
 
     <task
         name="javac"
-        duration="402" />
+        duration="761" />
     <task
         name="instant-run-dex"
-        duration="195" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="233" />
+        duration="53" />
     <task
         name="verifier"
-        duration="23" />
+        duration="3" />
 
     <artifact
-        location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1519204573776"
+        timestamp="1519520190453"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/outputs/apk/debug/app-debug.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/outputs/apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1519204794587"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1519521431247"
+        verifier="METHOD_DELETED" >
         <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/outputs/apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1519204817634"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1519205280230"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

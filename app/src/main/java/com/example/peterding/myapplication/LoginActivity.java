@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         //如果已登入，直接跳转
         if (auth.getCurrentUser() != null) {
             //use MainActicity.class instead of SignupActicity
-            startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
 
@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
        // progressBar = (ProgressBar) findViewById(R.id.progressBar);
         btnSignup = (Button) findViewById(R.id.btn_signup);
         btnLogin = (Button) findViewById(R.id.btn_login);
-//       btnReset = (Button) findViewById(R.id.btn_reset_password);//重设密码
+       btnReset = (Button) findViewById(R.id.btn_reset_password);//重设密码
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -82,13 +82,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, SignupActivity.class));
             }
         });
-//重设密码，以后写
-//        btnReset.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
-//            }
-//        });
+//重设密码
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+            }
+        });
 
         //登录
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +129,7 @@ public class LoginActivity extends AppCompatActivity {
                                     //登陆后跳转页面
                                     //记得写MainActivity.class
                                     //这里用SignupActivity.class代替
-                                    Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -138,7 +138,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-//失败的测试 T T
+//failed test
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
