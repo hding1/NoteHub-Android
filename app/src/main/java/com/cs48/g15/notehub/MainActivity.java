@@ -1,20 +1,39 @@
 package com.cs48.g15.notehub;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+
+import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,13 +43,90 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
-    private DatabaseReference database;
+    private DatabaseReference mDatabase;
+    private FirebaseStorage storage;
+    private DatabaseReference mUserReference;
+
+    public void update_file(final String uid, final String filename, final String tag){
+        String file_name = filename.replace('.', '_');
+        Map<String, Object> childUpdate = new HashMap<>();
+        childUpdate.put("/users/" + uid + "/pdfs/" + file_name, tag);
+        mDatabase.updateChildren(childUpdate);
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
+
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+                if (user.tags.get(tag)==null){
+                    Map<String, Object> updateTag = new HashMap<>();
+                    updateTag.put("/users/" + uid + "/tags/" + tag, tag);
+                    mDatabase.updateChildren(updateTag);
+                }
+
+                for (Map.Entry<String, Object> entry : user.followers.entrySet()){
+                    mDatabase.child("users").child(entry.getKey()).child("isNew").setValue(true);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference.addValueEventListener(postListener);
+    }
+
+    public void upload(String username, String file_dir, String tag){
+        Uri file = Uri.fromFile(new File(file_dir));
+        String filename = username + "_" + file.getLastPathSegment();
+        StorageReference storageRef = storage.getReference();
+        //StorageReference pdfRed = storageRef.child(filename);
+        StorageReference pdfRef = storageRef.child(tag + "/" + filename);
+        try {
+            InputStream stream = new FileInputStream(new File(file_dir));
+            UploadTask uploadTask = pdfRef.putStream(stream);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    // Handle unsuccessful uploads
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
+                    Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                }
+            });
+        }
+        catch (FileNotFoundException e){
+            //handle file not found.
+        }
+    }
+
+    public void add_follower(String uid, String uid2, final String username){
+        Map<String, Object> childUpdate = new HashMap<>();
+        childUpdate.put("/users/" + uid + "/followers/" + uid2, username);
+        mDatabase.updateChildren(childUpdate);
+    }
+
+    public void add_following(String uid, String uid2, final String username){
+        Map<String, Object> childUpdate = new HashMap<>();
+        childUpdate.put("/users/" + uid + "/following/" + uid2, username);
+        mDatabase.updateChildren(childUpdate);
+    }
+
+    public void set_isNew(String uid){
+        mDatabase.child("users").child(uid).child("isNew").setValue(false);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        database = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 //        Toolbar toolbar = (Toolbar) findViewById(id.toolbar);
 //        toolbar.setTitle(getString(R.string.app_name));
 //        setSupportActionBar(toolbar);
@@ -68,12 +164,13 @@ public class MainActivity extends AppCompatActivity {
 //            progressBar.setVisibility(View.GONE);
 //        }
 //孙德林写这里
-//        btnUploadFile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        btnUploadFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //update_file(uid, filename, tag);
+                //upload(username, pathname, tag);
+            }
+        });
 //
 //        btnViewFile.setOnClickListener(new View.OnClickListener() {
 //            @Override

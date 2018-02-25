@@ -24,7 +24,7 @@ public class SignupActivity extends AppCompatActivity {
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private DatabaseReference database;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class SignupActivity extends AppCompatActivity {
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         btnSignIn = (Button) findViewById(R.id.sign_in_button);
         btnSignUp = (Button) findViewById(R.id.sign_up_button);
         inputUsername = (EditText) findViewById(R.id.username);
@@ -95,7 +95,7 @@ public class SignupActivity extends AppCompatActivity {
                                             Toast.LENGTH_SHORT).show();
                                 } else {
                                     User user = new User(inputUsername.getText().toString(), inputEmail.getText().toString());
-                                    database.child(auth.getUid()).setValue(user);
+                                    mDatabase.child("users").child(auth.getUid()).setValue(user);
                                     //登录成功
                                     //记得用 MainActicity.class instead of SignupActivity
                                     startActivity(new Intent(SignupActivity.this, MainActivity.class));
