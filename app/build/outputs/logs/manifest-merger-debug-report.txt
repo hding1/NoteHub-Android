@@ -45,7 +45,7 @@ INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/
 INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-34:12
 INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-34:12
 	package
-		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:3:5-50
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -154,12 +154,12 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/peterding/.gradle/cach
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:11:9-35
 	android:theme
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:16:9-40
-activity#com.example.peterding.myapplication.LoginActivity
+activity#com.cs48.g15.notehub.LoginActivity
 ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:17:9-25:20
 	android:label
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:19:13-36
 	android:name
-		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:18:13-42
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:18:13-62
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
@@ -170,22 +170,22 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:23:17-77
 	android:name
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:23:27-74
-activity#com.example.peterding.myapplication.SignupActivity
-ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:26:9-52
+activity#com.cs48.g15.notehub.SignupActivity
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:26:9-72
 	android:name
-		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:26:19-49
-activity#com.example.peterding.myapplication.ResetPasswordActivity
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:26:19-69
+activity#com.cs48.g15.notehub.ResetPasswordActivity
 ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:27:9-30:47
 	android:label
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:29:13-66
 	android:theme
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:30:13-44
 	android:name
-		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:28:13-50
-activity#com.example.peterding.myapplication.MainActivity
-ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:31:9-59
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:28:13-70
+activity#com.cs48.g15.notehub.MainActivity
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:31:9-79
 	android:name
-		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:31:19-47
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml:31:19-67
 uses-sdk
 INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/src/main/AndroidManifest.xml
@@ -412,7 +412,7 @@ ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/ca
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:30:9-44
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:29:9-63
-permission#com.example.peterding.myapplication.permission.C2D_MESSAGE
+permission#com.cs48.g15.notehub.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:28:5-30:47
 	android:protectionLevel
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:30:9-44
@@ -422,7 +422,7 @@ uses-permission#${applicationId}.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:32:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:32:22-76
-uses-permission#com.example.peterding.myapplication.permission.C2D_MESSAGE
+uses-permission#com.cs48.g15.notehub.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:32:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:32:22-76
@@ -436,7 +436,7 @@ ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/ca
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:36:13-78
 intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:39:13-43:29
-intent-filter#com.example.peterding.myapplication+com.google.android.c2dm.intent.RECEIVE
+intent-filter#com.cs48.g15.notehub+com.google.android.c2dm.intent.RECEIVE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:39:13-43:29
 action#com.google.android.c2dm.intent.RECEIVE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:40:17-81
@@ -446,7 +446,7 @@ category#${applicationId}
 ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:42:17-61
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:42:27-58
-category#com.example.peterding.myapplication
+category#com.cs48.g15.notehub
 ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:42:17-61
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/4a9dd6a0e1b6f8e7537dbbca145afbe1/AndroidManifest.xml:42:27-58

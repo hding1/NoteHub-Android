@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.example.peterding.myapplication"
+        applicationId "com.cs48.g15.notehub"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
