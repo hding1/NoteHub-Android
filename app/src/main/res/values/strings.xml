@@ -18,7 +18,7 @@
     <string name="title_activity_edittest_bg">edittest_bg</string>
     <string name="title_activity_edittext_bg">edittext_bg</string>
     <string name="email">Email</string>
-    <string name="change_email">Change Email</string>
+    <string name="upload_file">Upload Files</string>
     <string name="change_password">Change Password</string>
     <string name="send_password_reset_email">Send Password reset email</string>
     <string name="remove_user">Remove user</string>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/ecca5889cfc01064a8775918722327f9/res/values-en-rGB/values.xml",

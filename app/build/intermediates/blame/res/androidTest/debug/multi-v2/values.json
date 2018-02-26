@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/c51c48977a7970b383a4d8156d06610f/res/values/values.xml",
