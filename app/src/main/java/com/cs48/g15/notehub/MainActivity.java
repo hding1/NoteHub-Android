@@ -3,6 +3,7 @@ package com.cs48.g15.notehub;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -29,7 +30,10 @@ import com.google.firebase.storage.UploadTask;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,18 +50,21 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseStorage storage;
     private DatabaseReference mUserReference;
+    private User user;
 
-    public void update_file(final String uid, final String filename, final String tag){
+    public void update_file(final String uid, final String filename, final String tag, String description){
         String file_name = filename.replace('.', '_');
+        Calendar c = Calendar.getInstance();
+        PDF pdf = new PDF(filename, tag, description, c.get(Calendar.YEAR), c.get(Calendar.MONTH));
         Map<String, Object> childUpdate = new HashMap<>();
-        childUpdate.put("/users/" + uid + "/pdfs/" + file_name, tag);
+        childUpdate.put("/users/" + uid + "/pdfs/" + file_name, pdf);
         mDatabase.updateChildren(childUpdate);
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
 
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
+                user = dataSnapshot.getValue(User.class);
                 if (user.tags.get(tag)==null){
                     Map<String, Object> updateTag = new HashMap<>();
                     updateTag.put("/users/" + uid + "/tags/" + tag, tag);
@@ -106,6 +113,96 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //TODO: how to store in memory.
+    public void download(String tag, String username, final String filename){
+        final String file_name = username + "_" + filename;
+        StorageReference storageRef = storage.getReference();
+        StorageReference fileRef = storageRef.child(tag + "/" + file_name);
+
+        final long ONE_MEGABYTE = 1024 * 1024;
+        fileRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                File dir = new File(Environment.getExternalStorageDirectory() + "/notehub-pdfs");
+                final File file = new File(dir, filename);
+                String path= file.getPath();
+                try {
+                    if (!dir.exists()) {
+                        dir.mkdir();
+                    }
+                    file.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    FileOutputStream fos=new FileOutputStream(path);
+                    fos.write(bytes);
+                    fos.close();
+                    Toast.makeText(MainActivity.this, "Success!!!", Toast.LENGTH_SHORT).show();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+                Toast.makeText(MainActivity.this, "failed!!!!!!!!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void delete_file(final String uid, String username, String filename, String tag){
+        // Create a storage reference from our app
+        StorageReference storageRef = storage.getReference();
+        final String file_name = filename.replace('.', '_');;
+
+        // Create a reference to the file to delete
+        StorageReference deleteRef = storageRef.child(tag + "/" + username + "_" + filename);
+
+        // Delete the file
+        /*deleteRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                // File deleted successfully
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Uh-oh, an error occurred!
+            }
+        });*/
+
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
+
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                user = dataSnapshot.getValue(User.class);
+                user.pdfs.remove(file_name);
+                Map<String, Object> delete_pdf = new HashMap<>();
+                for (Map.Entry<String, Object> entry : user.pdfs.entrySet()){
+                    if (entry.getKey()!=file_name){
+                        delete_pdf.put(entry.getKey(), entry.getValue());
+                    }
+                }
+                mDatabase.child("users").child(uid).child("pdfs").setValue(delete_pdf);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference.addValueEventListener(postListener);
+    }
+
     public void add_follower(String uid, String uid2, final String username){
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put("/users/" + uid + "/followers/" + uid2, username);
@@ -133,6 +230,9 @@ public class MainActivity extends AppCompatActivity {
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
+        storage = FirebaseStorage.getInstance();
+        delete_file("PrF8HN3WQWTLnP4f8kESHpqsgMr2","delin66", "test.pdf", "Bio");
+        //update_file("PrF8HN3WQWTLnP4f8kESHpqsgMr2", "test.pdf", "Bio", "this is just a test file");
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
