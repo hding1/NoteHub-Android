@@ -50,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private FirebaseStorage storage;
     private DatabaseReference mUserReference;
+    private DatabaseReference mUserReference2;
     private User user;
 
-    public void update_file(final String uid, final String filename, final String tag, String description){
+    public void update_file_helper(final String uid, final String filename, final String tag, String description){
         String file_name = filename.replace('.', '_');
         Calendar c = Calendar.getInstance();
         PDF pdf = new PDF(filename, tag, description, c.get(Calendar.YEAR), c.get(Calendar.MONTH));
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 // ...
             }
         };
-        mUserReference.addValueEventListener(postListener);
+        mUserReference.addListenerForSingleValueEvent(postListener);
     }
 
     public void upload(String username, String file_dir, String tag){
@@ -156,26 +157,35 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void delete_file(final String uid, String username, String filename, String tag){
+    public void delete_file(final String username, final String filename, final String tag){
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("username").child(username);
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                String uid = dataSnapshot.getValue(String.class);
+                delete_file_helper(uid, username, filename, tag);
+                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference.addListenerForSingleValueEvent(postListener);
+    }
+
+    public void delete_file_helper(final String uid, String username, String filename, String tag){
         // Create a storage reference from our app
         StorageReference storageRef = storage.getReference();
         final String file_name = filename.replace('.', '_');;
 
         // Create a reference to the file to delete
         StorageReference deleteRef = storageRef.child(tag + "/" + username + "_" + filename);
-
-        // Delete the file
-        /*deleteRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                // File deleted successfully
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Uh-oh, an error occurred!
-            }
-        });*/
 
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
 
@@ -200,19 +210,121 @@ public class MainActivity extends AppCompatActivity {
                 // ...
             }
         };
-        mUserReference.addValueEventListener(postListener);
+        mUserReference.addListenerForSingleValueEvent(postListener);
     }
 
-    public void add_follower(String uid, String uid2, final String username){
+    public void update_file(final String username, final String filename,final String tag, final String description){
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("username").child(username);
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                String uid = dataSnapshot.getValue(String.class);
+                update_file_helper(uid, filename, tag, description);
+                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference.addListenerForSingleValueEvent(postListener);
+    }
+
+    public void add_follower_helper(String uid, String uid2, final String username){
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put("/users/" + uid + "/followers/" + uid2, username);
         mDatabase.updateChildren(childUpdate);
     }
 
-    public void add_following(String uid, String uid2, final String username){
+    public void add_follower(String username1, final String username2){
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("username").child(username1);
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                final String uid = dataSnapshot.getValue(String.class);
+                mUserReference2 = FirebaseDatabase.getInstance().getReference().child("username").child(username2);
+                ValueEventListener postListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // Get Post object and use the values to update the UI
+                        String uid2 = dataSnapshot.getValue(String.class);
+                        add_follower_helper(uid, uid2, username2);
+                        //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                        // ...
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Getting Post failed, log a message
+                        Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                        // ...
+                    }
+                };
+                mUserReference2.addListenerForSingleValueEvent(postListener);
+                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference.addListenerForSingleValueEvent(postListener);
+    }
+
+    public void add_following_helper(String uid, String uid2, final String username){
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put("/users/" + uid + "/following/" + uid2, username);
         mDatabase.updateChildren(childUpdate);
+    }
+
+    public void add_following(String username1, final String username2){
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("username").child(username1);
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                final String uid = dataSnapshot.getValue(String.class);
+                mUserReference2 = FirebaseDatabase.getInstance().getReference().child("username").child(username2);
+                ValueEventListener postListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // Get Post object and use the values to update the UI
+                        String uid2 = dataSnapshot.getValue(String.class);
+                        add_following_helper(uid, uid2, username2);
+                        //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                        // ...
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Getting Post failed, log a message
+                        Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                        // ...
+                    }
+                };
+                mUserReference2.addListenerForSingleValueEvent(postListener);
+                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference.addListenerForSingleValueEvent(postListener);
     }
 
     public void set_isNew(String uid){
@@ -231,8 +343,12 @@ public class MainActivity extends AppCompatActivity {
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
-        delete_file("PrF8HN3WQWTLnP4f8kESHpqsgMr2","delin66", "test.pdf", "Bio");
-        //update_file("PrF8HN3WQWTLnP4f8kESHpqsgMr2", "test.pdf", "Bio", "this is just a test file");
+        //add_follower("Official_Account", "Official_Account");
+        //add_following("Official_Account", "Official_Account");
+        //get_uid_by_username("Official_Account");
+        //delete_file("PrF8HN3WQWTLnP4f8kESHpqsgMr2","delin66", "test.pdf", "Bio");
+        update_file("Official_Account", "test.pdf", "Bio", "this is just a test file");
+        //set_isNew("6o8Ql6AYBEfHfcoSiCH9YpoLSb62");
 
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
