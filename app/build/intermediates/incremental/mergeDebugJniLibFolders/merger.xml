@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/peterding/Documents/College/W18/CS48/Notehub-Android/app/src/debug/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\debug\jniLibs"/></dataSet></merger>

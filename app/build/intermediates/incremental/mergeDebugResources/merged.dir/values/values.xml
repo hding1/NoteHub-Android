@@ -827,7 +827,6 @@
     <string name="btn_reset_password">Reset Password</string>
     <string name="btn_send">Send</string>
     <string name="btn_sign_out">Sign Out</string>
-    <string name="change_email">Change Email</string>
     <string name="change_password">Change Password</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
@@ -890,6 +889,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_profile">Firebase</string>
     <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="upload_file">Upload Files</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

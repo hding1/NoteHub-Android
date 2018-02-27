@@ -1,6 +1,7 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "D:\\Project\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
             "map": [
                 {
@@ -22,23 +23,12 @@
                 },
                 {
                     "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\662dad52f54956edd9394f40dafed64a\\res\\values-pt-rPT\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "287",
-                        "endColumns": "203",
-                        "endOffsets": "490"
-                    },
-                    "to": {
-                        "startLines": "29",
-                        "startColumns": "4",
-                        "startOffsets": "3288",
-                        "endColumns": "203",
-                        "endOffsets": "3487"
-                    }
-                },
+=======
+            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-pt-rPT\\values-pt-rPT.xml",
+            "map": [
                 {
-                    "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\5580211da3a06fc135cce4e4f8549048\\res\\values-pt-rPT\\values.xml",
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\06ac287a2a9cc6c45d9f342c74846322\\res\\values-pt-rPT\\values.xml",
+>>>>>>> origin/test2
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +45,49 @@
                     }
                 },
                 {
+<<<<<<< HEAD
+                    "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\5580211da3a06fc135cce4e4f8549048\\res\\values-pt-rPT\\values.xml",
+=======
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0e41a797342002267d121a598ac56aec\\res\\values-pt-rPT\\values-pt-rPT.xml",
+>>>>>>> origin/test2
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "245",
+                        "endColumns": "102",
+                        "endOffsets": "347"
+                    },
+                    "to": {
+                        "startLines": "39",
+                        "startColumns": "4",
+                        "startOffsets": "4922",
+                        "endColumns": "106",
+                        "endOffsets": "5024"
+                    }
+                },
+                {
+<<<<<<< HEAD
                     "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\886d1219d1b16a91ef21ac3d6464ca72\\res\\values-pt-rPT\\values.xml",
+=======
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\2ccb0c5ba7f772d5a85fb0006e3a9e10\\res\\values-pt-rPT\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "287",
+                        "endColumns": "203",
+                        "endOffsets": "490"
+                    },
+                    "to": {
+                        "startLines": "29",
+                        "startColumns": "4",
+                        "startOffsets": "3288",
+                        "endColumns": "203",
+                        "endOffsets": "3487"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e720c7915dc37b52800edb49e50f7f43\\res\\values-pt-rPT\\values.xml",
+>>>>>>> origin/test2
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -70,6 +102,7 @@
                         "endColumns": "106,194,129,109,226,129,151,137,246,109,200,132,217,207,97,98,115",
                         "endOffsets": "2201,2396,2526,2636,2863,2993,3145,3283,3734,3844,4045,4178,4396,4604,4702,4801,4917"
                     }
+<<<<<<< HEAD
                 }
             ]
         },
@@ -143,6 +176,8 @@
                         "endColumns": "106,194,129,109,226,129,151,137,246,109,200,132,217,207,97,98,115",
                         "endOffsets": "2201,2396,2526,2636,2863,2993,3145,3283,3734,3844,4045,4178,4396,4604,4702,4801,4917"
                     }
+=======
+>>>>>>> origin/test2
                 }
             ]
         }

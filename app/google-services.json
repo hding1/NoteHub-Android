@@ -62,7 +62,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1094694673414:android:2b55ff5044b540a4",
         "android_client_info": {
-          "package_name": "com.example.peterding.myapplication"
+          "package_name": "com.cs48.g15.notehub"
         }
       },
       "oauth_client": [
@@ -78,7 +78,7 @@
           "client_id": "1094694673414-uf15pjnrdfcldc8f7p1frmm11iieg98k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.peterding.myapplication",
+            "package_name": "com.cs48.g15.notehub",
             "certificate_hash": "9c92d5cffc725c835978615994672318c626ba68"
           }
         },

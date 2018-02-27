@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "D:\\Project\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-ko\\values-ko.xml",
             "map": [
                 {
                     "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\662dad52f54956edd9394f40dafed64a\\res\\values-ko\\values.xml",
+=======
+            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-ko\\values-ko.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\2ccb0c5ba7f772d5a85fb0006e3a9e10\\res\\values-ko\\values.xml",
+>>>>>>> origin/test2
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,6 +28,7 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\5580211da3a06fc135cce4e4f8549048\\res\\values-ko\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -112,6 +120,9 @@
                 },
                 {
                     "source": "D:\\Users\\peterding\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\5d076336b6f8819e3a5163760804a971\\res\\values-ko\\values.xml",
+=======
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\06ac287a2a9cc6c45d9f342c74846322\\res\\values-ko\\values.xml",
+>>>>>>> origin/test2
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -128,7 +139,28 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "D:\\Users\\peterding\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\32d5453a5493bb52723f4cba120f410a\\res\\values-ko\\values.xml",
+=======
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0e41a797342002267d121a598ac56aec\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,150,258,381,475,577,659,757,863,942,1018,1098,1196,1291,1386,1486,1582,1681,1796,1890,1968",
+                        "endColumns": "94,107,122,93,101,81,97,105,78,75,79,97,94,94,99,95,98,114,93,77,100",
+                        "endOffsets": "145,253,376,470,572,654,752,858,937,1013,1093,1191,1286,1381,1481,1577,1676,1791,1885,1963,2064"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,40,41",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,200,308,431,525,627,709,807,913,992,1068,1148,1246,1341,1436,1536,1632,1731,1846,4477,4555",
+                        "endColumns": "94,107,122,93,101,81,97,105,78,75,79,97,94,94,99,95,98,114,93,77,100",
+                        "endOffsets": "195,303,426,520,622,704,802,908,987,1063,1143,1241,1336,1431,1531,1627,1726,1841,1935,4550,4651"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e720c7915dc37b52800edb49e50f7f43\\res\\values-ko\\values.xml",
+>>>>>>> origin/test2
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

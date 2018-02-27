@@ -1,10 +1,51 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "D:\\Project\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
             "map": [
                 {
                     "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\886d1219d1b16a91ef21ac3d6464ca72\\res\\values-es-rUS\\values.xml",
+=======
+            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rUS\\values-es-rUS.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\06ac287a2a9cc6c45d9f342c74846322\\res\\values-es-rUS\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "245",
+                        "endColumns": "100",
+                        "endOffsets": "345"
+                    },
+                    "to": {
+                        "startLines": "39",
+                        "startColumns": "4",
+                        "startOffsets": "4906",
+                        "endColumns": "104",
+                        "endOffsets": "5006"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0e41a797342002267d121a598ac56aec\\res\\values-es-rUS\\values-es-rUS.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,175,283,406,515,623,708,809,932,1017,1099,1181,1293,1393,1494,1602,1709,1816,1938,2038,2120",
+                        "endColumns": "119,107,122,108,107,84,100,122,84,81,81,111,99,100,107,106,106,121,99,81,100",
+                        "endOffsets": "170,278,401,510,618,703,804,927,1012,1094,1176,1288,1388,1489,1597,1704,1811,1933,2033,2115,2216"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,40,41",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,333,456,565,673,758,859,982,1067,1149,1231,1343,1443,1544,1652,1759,1866,1988,5011,5093",
+                        "endColumns": "119,107,122,108,107,84,100,122,84,81,81,111,99,100,107,106,106,121,99,81,100",
+                        "endOffsets": "220,328,451,560,668,753,854,977,1062,1144,1226,1338,1438,1539,1647,1754,1861,1983,2083,5088,5189"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e720c7915dc37b52800edb49e50f7f43\\res\\values-es-rUS\\values.xml",
+>>>>>>> origin/test2
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,6 +62,7 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\662dad52f54956edd9394f40dafed64a\\res\\values-es-rUS\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -39,16 +81,20 @@
                 },
                 {
                     "source": "C:\\Users\\dongz\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\5580211da3a06fc135cce4e4f8549048\\res\\values-es-rUS\\values.xml",
+=======
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\2ccb0c5ba7f772d5a85fb0006e3a9e10\\res\\values-es-rUS\\values.xml",
+>>>>>>> origin/test2
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
-                        "startOffsets": "245",
-                        "endColumns": "100",
-                        "endOffsets": "345"
+                        "startOffsets": "287",
+                        "endColumns": "204",
+                        "endOffsets": "491"
                     },
                     "to": {
-                        "startLines": "39",
+                        "startLines": "29",
                         "startColumns": "4",
+<<<<<<< HEAD
                         "startOffsets": "4906",
                         "endColumns": "104",
                         "endOffsets": "5006"
@@ -69,6 +115,11 @@
                         "startOffsets": "105,225,333,456,565,673,758,859,982,1067,1149,1231,1343,1443,1544,1652,1759,1866,1988,5011,5093",
                         "endColumns": "119,107,122,108,107,84,100,122,84,81,81,111,99,100,107,106,106,121,99,81,100",
                         "endOffsets": "220,328,451,560,668,753,854,977,1062,1144,1226,1338,1438,1539,1647,1754,1861,1983,2083,5088,5189"
+=======
+                        "startOffsets": "3281",
+                        "endColumns": "204",
+                        "endOffsets": "3481"
+>>>>>>> origin/test2
                     }
                 }
             ]
