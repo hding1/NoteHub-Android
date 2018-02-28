@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.peterding.myapplication.test" >
+    package="com.cs48.g15.notehub.test" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -10,8 +10,8 @@
         android:name="android.support.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.example.peterding.myapplication"
-        android:targetPackage="com.example.peterding.myapplication" />
+        android:label="Tests for com.cs48.g15.notehub"
+        android:targetPackage="com.cs48.g15.notehub" />
 
     <application android:debuggable="true" >
         <uses-library android:name="android.test.runner" />
