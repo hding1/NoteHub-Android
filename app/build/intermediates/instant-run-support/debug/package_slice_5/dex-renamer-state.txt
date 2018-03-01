@@ -1,4 +1,4 @@
-#Sun Feb 25 14:40:19 PST 2018
-base.0=C\:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+#Thu Mar 01 09:31:36 PST 2018
+base.0=/Users/Edwardong/Dropbox/Programs/Project/Notehub/NoteHub-Android/app/build/intermediates/transforms/dexMerger/debug/6
 path.0=classes.dex
 renamed.0=classes.dex

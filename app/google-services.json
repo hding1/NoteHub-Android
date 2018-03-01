@@ -67,14 +67,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "1094694673414-ohqgsuf9qhnlhu05v8ev2dp09vhit10t.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.peterding.myapplication",
-            "certificate_hash": "5e844c647f666d60072fa9fc7eb03741b6ce92de"
-          }
-        },
-        {
           "client_id": "1094694673414-uf15pjnrdfcldc8f7p1frmm11iieg98k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="document_types">
+        <item>アカデミア</item>
+        <item>会計</item>
+        <item>求職</item>
+        <item>名刺</item>
+        <item>ケース・ファイル</item>
+        <item>証明書</item>
+        <item>確認</item>
+        <item>問い合わせ</item>
+        <item>納品書</item>
+        <item>値引き</item>
+        <item>書式</item>
+        <item>健康</item>
+        <item>ホーム</item>
+        <item>製品情報</item>
+        <item>請求書</item>
+        <item>マニュアル</item>
+        <item>見積り</item>
+        <item>注文</item>
+        <item>支払督促</item>
+        <item>給与明細</item>
+        <item>保険証券</item>
+        <item>委任状</item>
+        <item>プレスリリース</item>
+        <item>受領書</item>
+        <item>報告書</item>
+        <item>取引明細書</item>
+        <item>研究</item>
+        <item>取引条件</item>
+        <item>税金書類</item>
+        <item>終了</item>
+        <item>チケット</item>
+        <item>不明の文書タイプ</item>
+        <item>意志</item>
+    </string-array>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"ホームへ移動"</string>
-    <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s、%2$s"</string>
-    <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s、%2$s、%3$s"</string>
     <string msgid="1594238315039666878" name="abc_action_bar_up_description">"上へ移動"</string>
     <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"その他のオプション"</string>
     <string msgid="4076576682505996667" name="abc_action_mode_done">"完了"</string>
@@ -17,7 +50,7 @@
     <string msgid="8928215447528550784" name="abc_searchview_description_submit">"検索キーワードを送信"</string>
     <string msgid="893419373245838918" name="abc_searchview_description_voice">"音声検索"</string>
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"共有"</string>
-    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"%sと共有"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g>と共有"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"折りたたむ"</string>
     <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"有効にする"</string>
     <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g>の実行には、Google Play開発者サービスの有効化が必要です。"</string>
