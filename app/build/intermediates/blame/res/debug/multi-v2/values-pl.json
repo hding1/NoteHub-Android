@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Edwardong/Dropbox/Programs/Project/Notehub/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
+            "outputFile": "/Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
             "map": [
                 {
                     "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/a9a1ab4e4ab01095260196639d2eacbc/res/values-pl/values.xml",

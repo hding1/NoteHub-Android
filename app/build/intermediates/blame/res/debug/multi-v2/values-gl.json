@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Edwardong/Dropbox/Programs/Project/Notehub/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gl/values-gl.xml",
+            "outputFile": "/Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-gl/values-gl.xml",
             "map": [
                 {
                     "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/6bdef740577c560eadbdaab96675fe42/res/values-gl/values.xml",

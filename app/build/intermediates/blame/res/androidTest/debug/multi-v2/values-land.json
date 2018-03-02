@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Edwardong/Dropbox/Programs/Project/Notehub/NoteHub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9794bab8ca10c5b24be9009b8d31296b/res/values-land/values-land.xml",

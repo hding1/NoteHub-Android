@@ -7,7 +7,7 @@ import net.doo.snap.ScanbotSDKInitializer;
  * Created by Edwardong on 2018/2/26.
  */
 
-public class ScanFile extends Application {
+public class Scanbotinitialize extends Application {
 
     @Override
     public void onCreate() {

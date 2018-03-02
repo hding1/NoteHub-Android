@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/Edwardong/Dropbox/Programs/Project/Notehub/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
+            "outputFile": "/Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
             "map": [
                 {
                     "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/2bf29379cc6c8a0ba525e4c433267b07/res/values-ka/values-ka.xml",
