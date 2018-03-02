@@ -8,8 +8,10 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".Scanbotinitialize"
         android:icon="@mipmap/ic_launcher"
         android:label="NoteHub"
         android:largeHeap="true"

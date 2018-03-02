@@ -54,12 +54,13 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
 
         setContentView(R.layout.activity_camera);
 
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         cameraView = (ScanbotCameraView) findViewById(R.id.camera);
         cameraView.setCameraOpenCallback(new CameraOpenCallback() {
             @Override
             public void onCameraOpened() {
+
                 cameraView.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -80,8 +81,8 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
         contourDetectorFrameHandler = ContourDetectorFrameHandler.attach(cameraView);
 
         // Please note: https://github.com/doo/Scanbot-SDK-Examples/wiki/Detecting-and-drawing-contours#contour-detection-parameters
-        contourDetectorFrameHandler.setAcceptedAngleScore(60);
-        contourDetectorFrameHandler.setAcceptedSizeScore(70);
+        contourDetectorFrameHandler.setAcceptedAngleScore(75);
+        contourDetectorFrameHandler.setAcceptedSizeScore(80);
 
         polygonView = (PolygonView) findViewById(R.id.polygonView);
         contourDetectorFrameHandler.addResultHandler(polygonView);
