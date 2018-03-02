@@ -15,8 +15,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -25,7 +30,17 @@ public class SignupActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
+    public void add_follower(String uid, String uid2, final String username){
+        Map<String, Object> childUpdate = new HashMap<>();
+        childUpdate.put("/users/" + uid + "/followers/" + uid2, username);
+        mDatabase.updateChildren(childUpdate);
+    }
 
+    public void add_following(String uid, String uid2, final String username){
+        Map<String, Object> childUpdate = new HashMap<>();
+        childUpdate.put("/users/" + uid + "/following/" + uid2, username);
+        mDatabase.updateChildren(childUpdate);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +78,7 @@ public class SignupActivity extends AppCompatActivity {
 
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
+                final String username = inputUsername.getText().toString().trim();
                 //注册条件
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -96,6 +112,14 @@ public class SignupActivity extends AppCompatActivity {
                                 } else {
                                     User user = new User(inputUsername.getText().toString(), inputEmail.getText().toString());
                                     mDatabase.child("users").child(auth.getUid()).setValue(user);
+                                    mDatabase.child("username").child(username).setValue(auth.getUid());
+//                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                                            .setDisplayName(inputUsername.getText().toString()).build();
+                                    add_follower(auth.getUid(), auth.getUid(), inputUsername.getText().toString());
+                                    add_following(auth.getUid(), auth.getUid(), inputUsername.getText().toString());
+//                                    FirebaseUser user1 = auth.getCurrentUser();
+////                                    user1.updateProfile(profileUpdates);
+//                                    mDatabase.child("users").child(auth.getUid()).setValue(user);
                                     //登录成功
                                     //记得用 MainActicity.class instead of SignupActivity
                                     startActivity(new Intent(SignupActivity.this, MainActivity.class));

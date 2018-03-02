@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mUserReference;
     private Uri myuri;
     private String myPath;
+    private User myUser;
     private static final int REQUEST_CODE = 6384;
 
     public void update_file(final String uid, final String filename, final String tag){
@@ -155,10 +156,6 @@ public class MainActivity extends AppCompatActivity {
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
-
-        //get current user
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -171,6 +168,28 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+        //get current user
+        FirebaseUser user = auth.getCurrentUser();
+        if(user!=null)
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(user.getUid());
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                myUser = dataSnapshot.getValue(User.class);
+                if(myUser!=null) {
+                    myUsername = myUser.username;
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                // ...
+            }
+        };
+        mUserReference.addListenerForSingleValueEvent(postListener);
+
+
 
         btnUploadFile = (Button) findViewById(R.id.upload_file_button);
         btnViewFile = (Button) findViewById(R.id.view_file_button);
@@ -211,24 +230,24 @@ public class MainActivity extends AppCompatActivity {
         btnRemoveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                if (user != null) {
-                    user.delete()
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(MainActivity.this, "Your profile is deleted:( Create a account now!", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(MainActivity.this, SignupActivity.class));
-                                        finish();
-                                        progressBar.setVisibility(View.GONE);
-                                    } else {
-                                        Toast.makeText(MainActivity.this, "Failed to delete your account!", Toast.LENGTH_SHORT).show();
-                                        progressBar.setVisibility(View.GONE);
-                                    }
-                                }
-                            });
-                }
+//                progressBar.setVisibility(View.VISIBLE);
+//                if (user != null) {
+//                    user.delete()
+//                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                @Override
+//                                public void onComplete(@NonNull Task<Void> task) {
+//                                    if (task.isSuccessful()) {
+//                                        Toast.makeText(MainActivity.this, "Your profile is deleted:( Create a account now!", Toast.LENGTH_SHORT).show();
+//                                        startActivity(new Intent(MainActivity.this, SignupActivity.class));
+//                                        finish();
+//                                        progressBar.setVisibility(View.GONE);
+//                                    } else {
+//                                        Toast.makeText(MainActivity.this, "Failed to delete your account!", Toast.LENGTH_SHORT).show();
+//                                        progressBar.setVisibility(View.GONE);
+//                                    }
+//                                }
+//                            });
+//                }
             }
         });
 
@@ -272,7 +291,10 @@ public class MainActivity extends AppCompatActivity {
                             final String path = FileUtils.getPath(this, uri);
                             myuri = uri;
                             myPath = path;
-                            upload(myUsername,path,"greenhat");
+                            Intent intent = new Intent(this, UploadActivity.class);
+                            intent.putExtra("path",path);
+                            intent.putExtra("username",myUsername);
+                            startActivity(intent);
                             Toast.makeText(MainActivity.this,
                                     "File Selected: " + path, Toast.LENGTH_LONG).show();
                         } catch (Exception e) {

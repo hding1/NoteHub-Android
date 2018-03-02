@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cs48.g15.notehub">
 
+    <uses-sdk android:maxSdkVersion="22" />
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-sdk android:maxSdkVersion="22"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.cs48.g15.notehub.LoginActivity"
+            android:name=".LoginActivity"
             android:label="NoteHub">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,18 +27,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cs48.g15.notehub.SignupActivity" />
+        <activity android:name=".SignupActivity" />
         <activity
-            android:name="com.cs48.g15.notehub.ResetPasswordActivity"
+            android:name=".ResetPasswordActivity"
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.cs48.g15.notehub.MainActivity" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
-            android:icon="@drawable/ic_chooser"
             android:enabled="@bool/use_activity"
             android:exported="true"
-            android:label="@string/choose_file" >
+            android:icon="@drawable/ic_chooser"
+            android:label="@string/choose_file">
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
 
@@ -47,6 +48,10 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".UploadActivity"
+            android:label="@string/title_activity_upload"
+            android:theme="@style/AppTheme"></activity>
     </application>
+
 </manifest>
