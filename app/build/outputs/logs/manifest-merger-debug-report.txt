@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
-INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
-INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
-INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
+ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/00044a37ee445f3cfe7e9ca7581a3400/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-database:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-11.8.0.aar/23d55b431dc2a7b73bcf74b175fba832/AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/a9a1ab4e4ab01095260196639d2eacbc/AndroidManifest.xml:17:1-37:12
@@ -52,20 +52,20 @@ MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/
 MERGED from [com.android.support:multidex:1.0.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/8faed122b8b1d10c0969ddd71da3645e/AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/e814e96b43262e54641926b4cdaa6ee5/AndroidManifest.xml:2:1-6:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/6687d6f7ed493dc458e5736268d4406f/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
-INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
-INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
+INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
 	package
 		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
+		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
 		INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-39:12
+		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-41:12
 		INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:2:11-69
@@ -94,7 +94,7 @@ ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/sr
 	android:name
 		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:11:22-62
 application
-ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:13:5-37:19
+ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:13:5-39:19
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/00044a37ee445f3cfe7e9ca7581a3400/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/00044a37ee445f3cfe7e9ca7581a3400/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/a9a1ab4e4ab01095260196639d2eacbc/AndroidManifest.xml:22:5-35:19
@@ -200,9 +200,17 @@ ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/sr
 	android:name
 		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:35:19-47
 activity#com.cs48.g15.notehub.CameraActivity
-ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:36:9-61
+ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:36:9-52
 	android:name
 		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:36:19-49
+activity#com.cs48.g15.notehub.EditPolygonImageActivity
+ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:37:9-62
+	android:name
+		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:37:19-59
+activity#com.cs48.g15.notehub.CameraFragmentActivity
+ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:38:9-69
+	android:name
+		ADDED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml:38:19-57
 uses-sdk
 INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/Edwardong/Dropbox/Programs/CS48-project/NoteHub-Android/app/src/main/AndroidManifest.xml

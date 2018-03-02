@@ -19,15 +19,6 @@
             app:polygonStrokeColor="@color/material_deep_teal_200"
             app:polygonFillColor="#55009688"/>
 
-        <net.doo.snap.ui.EditPolygonImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:edgeColor="#00cea6"
-            app:cornerImageSrc="@drawable/ui_crop_corner_handle"
-            app:edgeImageSrc="@drawable/ui_crop_side_handle"
-            app:editPolygonHandleSize="48dp"
-            app:magneticLineTreshold="10dp" />
-
     </net.doo.snap.camera.ScanbotCameraView>
 
     <ImageView
@@ -56,5 +47,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top|left"
         android:text="Automatic" />
+
+    <Button
+        android:id="@+id/viewImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:text="View" />
 
 </FrameLayout>

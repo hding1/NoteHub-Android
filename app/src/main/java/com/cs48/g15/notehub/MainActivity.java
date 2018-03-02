@@ -385,7 +385,7 @@ public class MainActivity extends AppCompatActivity {
         btnUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                Intent intent = new Intent(MainActivity.this, CameraFragmentActivity.class);
                 startActivity(intent);
                 finish();
                 //update_file(uid, filename, tag);

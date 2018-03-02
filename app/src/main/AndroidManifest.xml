@@ -33,7 +33,9 @@
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".CameraActivity" />
+        <activity android:name=".EditPolygonImageActivity" />
+        <activity android:name=".CameraFragmentActivity"></activity>
     </application>
 
 </manifest>

@@ -54,6 +54,8 @@
             android:theme="@style/AppTheme" />
         <activity android:name="com.cs48.g15.notehub.MainActivity" />
         <activity android:name="com.cs48.g15.notehub.CameraActivity" />
+        <activity android:name="com.cs48.g15.notehub.EditPolygonImageActivity" />
+        <activity android:name="com.cs48.g15.notehub.CameraFragmentActivity" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"

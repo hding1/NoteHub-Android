@@ -1,5 +1,9 @@
 package com.cs48.g15.notehub;
 
+import android.content.Intent;
+import android.graphics.PointF;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.graphics.Bitmap;
@@ -7,8 +11,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Build;
 import android.support.v4.view.WindowCompat;
+import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,11 +26,18 @@ import net.doo.snap.camera.ScanbotCameraView;
 import net.doo.snap.lib.detector.ContourDetector;
 import net.doo.snap.lib.detector.DetectionResult;
 import net.doo.snap.ui.PolygonView;
+import net.doo.snap.lib.detector.ContourDetector;
+import net.doo.snap.lib.detector.DetectionResult;
+import net.doo.snap.lib.detector.Line2D;
+import net.doo.snap.ui.EditPolygonImageView;
+import net.doo.snap.ui.MagnifierView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executors;
 
 public class CameraActivity extends AppCompatActivity implements PictureCallback,
-        ContourDetectorFrameHandler.ResultHandler{
-
-
+        ContourDetectorFrameHandler. ResultHandler{
 //    @Override
 //    public void onResume() {
 //        super.onResume();
@@ -46,6 +59,7 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
 
     private boolean flashEnabled = false;
     private boolean autoSnappingEnabled = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +129,18 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
             public void onClick(View v) {
                 autoSnappingEnabled = !autoSnappingEnabled;
                 setAutoSnapEnabled(autoSnappingEnabled);
+            }
+        });
+
+
+        findViewById(R.id.viewImage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CameraActivity.this, EditPolygonImageActivity.class);
+                startActivity(intent);
+                finish();
+                //update_file(uid, filename, tag);
+                //upload(username, pathname, tag);
             }
         });
 
