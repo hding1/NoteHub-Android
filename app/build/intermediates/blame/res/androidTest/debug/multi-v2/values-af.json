@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-af\\values-af.xml",
+            "outputFile": "/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-af/values-af.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\06ac287a2a9cc6c45d9f342c74846322\\res\\values-af\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "241",
-                        "endColumns": "101",
-                        "endOffsets": "342"
-                    },
-                    "to": {
-                        "startLines": "39",
-                        "startColumns": "4",
-                        "startOffsets": "4705",
-                        "endColumns": "105",
-                        "endOffsets": "4806"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\e720c7915dc37b52800edb49e50f7f43\\res\\values-af\\values.xml",
+                    "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/32d5453a5493bb52723f4cba120f410a/res/values-af/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0e41a797342002267d121a598ac56aec\\res\\values-af\\values-af.xml",
+                    "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/30b739b34f0894f23ced49ce29f2687c/res/values-af/values-af.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\2ccb0c5ba7f772d5a85fb0006e3a9e10\\res\\values-af\\values.xml",
+                    "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/5d076336b6f8819e3a5163760804a971/res/values-af/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "241",
+                        "endColumns": "101",
+                        "endOffsets": "342"
+                    },
+                    "to": {
+                        "startLines": "39",
+                        "startColumns": "4",
+                        "startOffsets": "4705",
+                        "endColumns": "105",
+                        "endOffsets": "4806"
+                    }
+                },
+                {
+                    "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/ecca5889cfc01064a8775918722327f9/res/values-af/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-sdk android:maxSdkVersion="22"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -28,7 +31,22 @@
             android:name="com.cs48.g15.notehub.ResetPasswordActivity"
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.cs48.g15.notehub.MainActivity"></activity>
-    </application>
+        <activity android:name="com.cs48.g15.notehub.MainActivity" />
+        <activity
+            android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+            android:icon="@drawable/ic_chooser"
+            android:enabled="@bool/use_activity"
+            android:exported="true"
+            android:label="@string/choose_file" >
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+
+    </application>
 </manifest>

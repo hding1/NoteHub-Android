@@ -1,9 +1,15 @@
 package com.cs48.g15.notehub;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +39,9 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.ipaulpro.afilechooser.utils.FileUtils;
+import com.cs48.g15.notehub.FIleChooser;
+
 import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,12 +49,16 @@ public class MainActivity extends AppCompatActivity {
     private Button btnUploadFile, btnViewFile, btnFollowers,  btnRemoveUser, remove, signOut;
 
 //    private EditText ;
+    private String myUsername;
     private ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
     private FirebaseStorage storage;
     private DatabaseReference mUserReference;
+    private Uri myuri;
+    private String myPath;
+    private static final int REQUEST_CODE = 6384;
 
     public void update_file(final String uid, final String filename, final String tag){
         String file_name = filename.replace('.', '_');
@@ -57,7 +70,9 @@ public class MainActivity extends AppCompatActivity {
         ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 User user = dataSnapshot.getValue(User.class);
+                myUsername = user.username;
                 if (user.tags.get(tag)==null){
                     Map<String, Object> updateTag = new HashMap<>();
                     updateTag.put("/users/" + uid + "/tags/" + tag, tag);
@@ -85,9 +100,13 @@ public class MainActivity extends AppCompatActivity {
         StorageReference storageRef = storage.getReference();
         //StorageReference pdfRed = storageRef.child(filename);
         StorageReference pdfRef = storageRef.child(tag + "/" + filename);
+
         try {
-            InputStream stream = new FileInputStream(new File(file_dir));
+            InputStream stream = new FileInputStream(FIleChooser.getPath(this,myuri));
+            //InputStream stream = new FileInputStream(new File(file_dir));
             UploadTask uploadTask = pdfRef.putStream(stream);
+            Toast.makeText(MainActivity.this, "test111",
+                    Toast.LENGTH_LONG).show();
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
@@ -102,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
             });
         }
         catch (FileNotFoundException e){
+            Toast.makeText(MainActivity.this, "test111111",
+                    Toast.LENGTH_LONG).show();
             //handle file not found.
         }
     }
@@ -127,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        storage = FirebaseStorage.getInstance();
 //        Toolbar toolbar = (Toolbar) findViewById(id.toolbar);
 //        toolbar.setTitle(getString(R.string.app_name));
 //        setSupportActionBar(toolbar);
@@ -167,8 +189,8 @@ public class MainActivity extends AppCompatActivity {
         btnUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //update_file(uid, filename, tag);
-                //upload(username, pathname, tag);
+                showChooser();
+
             }
         });
 //
@@ -218,12 +240,58 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+    private void showChooser() {
+        // Use the GET_CONTENT intent from the utility class
+        Intent target = FileUtils.createGetContentIntent();
+        // Create the chooser Intent
+        Intent intent = Intent.createChooser(
+                target, "Select a file");
+        try {
+            startActivityForResult(intent, REQUEST_CODE);
+        } catch (ActivityNotFoundException e) {
+            // The reason for the existence of aFileChooser
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case REQUEST_CODE:
+                // If the file selection was successful
+                if (resultCode == RESULT_OK) {
+                    if (data != null) {
+                        // Get the URI of the selected file
+                        final Uri uri = data.getData();
+                        Log.i(TAG, "Uri = " + uri.toString());
+//                        Toast.makeText(MainActivity.this, "test",
+//                                Toast.LENGTH_LONG).show();
+                        try {
+                            // Get the file path from the URI
+                            //你要的路径
+                            if(uri==null) {Toast.makeText(MainActivity.this, "test1",
+                                    Toast.LENGTH_LONG).show();}
+                            final String path = FileUtils.getPath(this, uri);
+                            myuri = uri;
+                            myPath = path;
+                            upload(myUsername,path,"greenhat");
+                            Toast.makeText(MainActivity.this,
+                                    "File Selected: " + path, Toast.LENGTH_LONG).show();
+                        } catch (Exception e) {
+                            Toast.makeText(MainActivity.this, "test2",
+                                    Toast.LENGTH_LONG).show();
+                            Log.e("FileSelectorActivity", "File select error", e);
+                        }
+                    }
+                }
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
     //sign out method
     public void signOut() {
         auth.signOut();
 
     }
+
 
 //    @Override
 //    protected void onResume() {

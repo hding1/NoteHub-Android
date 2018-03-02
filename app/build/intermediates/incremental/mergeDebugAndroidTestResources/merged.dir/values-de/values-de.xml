@@ -19,6 +19,7 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Freigeben für"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Freigeben für %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Minimieren"</string>
+    <string name="choose_file">Wähle eine Datei</string>
     <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"Aktivieren"</string>
     <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> funktioniert erst nach der Aktivierung der Google Play-Dienste."</string>
     <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Google Play-Dienste aktivieren"</string>
@@ -37,7 +38,10 @@
     <string msgid="5201977337835724196" name="common_open_on_phone">"Auf Smartphone öffnen"</string>
     <string msgid="3441753203274453993" name="common_signin_button_text">"Anmelden"</string>
     <string msgid="669893613918351210" name="common_signin_button_text_long">"Über Google anmelden"</string>
+    <string name="empty_directory">Leerer Ordner</string>
+    <string name="error_selecting_file">Fehler beim Öffnen der Datei</string>
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Sonstiges"</string>
     <string msgid="146198913615257606" name="search_menu_title">"Suchen"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="storage_removed">Speicher wurde entferntet.</string>
 </resources>

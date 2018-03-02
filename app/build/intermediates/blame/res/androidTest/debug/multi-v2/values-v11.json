@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0e41a797342002267d121a598ac56aec\\res\\values-v11\\values-v11.xml",
+                    "source": "/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/aFileChooser/build/intermediates/bundles/debug/res/values-v11/values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "53",
+                        "endOffsets": "104"
+                    }
+                },
+                {
+                    "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/30b739b34f0894f23ced49ce29f2687c/res/values-v11/values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -12,6 +22,14 @@
                         "endLines": "7,13,19,25,31,37,38,42,46,47,51,55,56,60,65,70,75,77,79,80,81,135,190,191",
                         "endColumns": "12,12,12,12,12,12,88,12,12,100,12,12,102,12,12,12,12,12,12,70,82,12,12,90",
                         "endOffsets": "469,894,1322,1748,2175,2600,2689,2935,3184,3285,3537,3792,3895,4148,4556,4976,5398,5505,5634,5705,5788,9813,13981,14072"
+                    },
+                    "to": {
+                        "startLines": "3,9,15,21,27,33,39,40,44,48,49,53,57,58,62,67,72,77,79,81,82,83,137,192",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "109,528,953,1381,1807,2234,2659,2748,2994,3243,3344,3596,3851,3954,4207,4615,5035,5457,5564,5693,5764,5847,9872,14040",
+                        "endLines": "8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191,192",
+                        "endColumns": "12,12,12,12,12,12,88,12,12,100,12,12,102,12,12,12,12,12,12,70,82,12,12,90",
+                        "endOffsets": "523,948,1376,1802,2229,2654,2743,2989,3238,3339,3591,3846,3949,4202,4610,5030,5452,5559,5688,5759,5842,9867,14035,14126"
                     }
                 }
             ]
