@@ -636,6 +636,10 @@
         "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/aa0ab0bd7c37a890f72cdd08a685ab9e/res/drawable-hdpi-v4/design_ic_visibility_off.png"
     },
     {
+        "merged": "/Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/build/intermediates/res/merged/debug/layout_activity_view.xml.flat",
+        "source": "/Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/res/layout/activity_view.xml"
+    },
+    {
         "merged": "/Users/peterding/Documents/College/W18/CS48/Notehub-Android-tests/NoteHub-Android/app/build/intermediates/res/merged/debug/drawable_abc_ic_clear_material.xml.flat",
         "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/30b739b34f0894f23ced49ce29f2687c/res/drawable/abc_ic_clear_material.xml"
     },

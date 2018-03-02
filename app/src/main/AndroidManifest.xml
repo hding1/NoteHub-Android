@@ -51,7 +51,8 @@
         <activity
             android:name=".UploadActivity"
             android:label="@string/title_activity_upload"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ViewActivity"></activity>
     </application>
 
 </manifest>

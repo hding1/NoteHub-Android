@@ -58,7 +58,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     private DatabaseReference mUserReference;
     private User myUser;
     private String userID;
-    private String myUsername;
+    private String myUsername, myPathName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -69,6 +69,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         auth = FirebaseAuth.getInstance();
         Intent intent2 = getIntent();
         final String path=intent2.getExtras().getString("path");
+        String myPath=intent2.getExtras().getString("path");
         final String username=intent2.getExtras().getString("username");
         myUsername = username;
         //get current user
@@ -80,6 +81,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         description = (EditText) findViewById(R.id.description);
         myDescription = description.getText().toString();
         userID = auth.getCurrentUser().getUid();
+        myPathName = myPath.substring(myPath.lastIndexOf('/') + 1);;
         // Spinner element
         Spinner spinner = findViewById(R.id.spinner);
 
@@ -112,7 +114,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
                 upload(myUsername,path,selected);
-                update_file_helper(userID,name,selected,myDescription);
+                update_file_helper(userID,myPathName,selected,myDescription);
                 Intent intent = new Intent(UploadActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

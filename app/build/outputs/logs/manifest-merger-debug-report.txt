@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/89275756c7580fc5a613c235174ca4ba/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-database:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-database-11.8.0.aar/d39fe95685e284ec2b0f1712b113d94d/AndroidManifest.xml:2:1-8:12
 MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/5d076336b6f8819e3a5163760804a971/AndroidManifest.xml:17:1-37:12
@@ -46,20 +46,20 @@ MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/pe
 MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/841eb1081878795dda1c43f9dfcdf57f/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/2e0bde6f91f620af79889de8a65db7bf/AndroidManifest.xml:2:1-6:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/f1f638e6b95c8480328417c647ad05b1/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
-INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:3:5-35
 		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
 		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-57:12
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-58:12
 		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:2:11-69
@@ -190,7 +190,7 @@ MERGED from [:aFileChooser] /Users/peterding/Documents/College/W18/CS48/Notehub/
 	android:name
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:12:22-78
 application
-ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:14:5-55:19
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:14:5-56:19
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/89275756c7580fc5a613c235174ca4ba/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/89275756c7580fc5a613c235174ca4ba/AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/5d076336b6f8819e3a5163760804a971/AndroidManifest.xml:22:5-35:19
@@ -340,13 +340,17 @@ ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/Not
 	android:mimeType
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:48:23-45
 activity#com.cs48.g15.notehub.UploadActivity
-ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:51:9-54:56
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:51:9-54:47
 	android:label
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:53:13-58
 	android:theme
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:54:13-44
 	android:name
 		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:52:13-43
+activity#com.cs48.g15.notehub.ViewActivity
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:55:9-59
+	android:name
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/src/main/AndroidManifest.xml:55:19-47
 service#com.google.firebase.messaging.FirebaseMessagingService
 ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/peterding/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/5d076336b6f8819e3a5163760804a971/AndroidManifest.xml:28:9-34:19
 	android:exported

@@ -71,6 +71,7 @@
             android:name="com.cs48.g15.notehub.UploadActivity"
             android:label="@string/title_activity_upload"
             android:theme="@style/AppTheme" />
+        <activity android:name="com.cs48.g15.notehub.ViewActivity" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"

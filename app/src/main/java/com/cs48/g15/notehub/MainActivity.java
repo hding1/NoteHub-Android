@@ -35,6 +35,8 @@ import com.google.firebase.storage.UploadTask;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -142,6 +144,116 @@ public class MainActivity extends AppCompatActivity {
 
     public void set_isNew(String uid){
         mDatabase.child("users").child(uid).child("isNew").setValue(false);
+    }
+
+    //TODO: how to store in memory.
+    public void download(String tag, String username, final String filename){
+        final String file_name = username + "_" + filename;
+        StorageReference storageRef = storage.getReference();
+        StorageReference fileRef = storageRef.child(tag + "/" + file_name);
+
+        final long ONE_MEGABYTE = 1024 * 1024;
+        fileRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+            @Override
+            public void onSuccess(byte[] bytes) {
+                File dir = new File("/sdcard/Download");
+                //Toast.makeText(MainActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
+                final File file = new File(dir, filename);
+                String path= file.getPath();
+
+                try {
+                    if (!dir.exists()) {
+                        boolean temp=dir.mkdirs();
+                        if (!temp){
+                            Toast.makeText(MainActivity.this, "failed wtfffffffff", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    boolean temp1 = file.createNewFile();
+                    Toast.makeText(MainActivity.this, file.getPath(), Toast.LENGTH_SHORT).show();
+                    if (!temp1){
+                        Toast.makeText(MainActivity.this, "11111failed wtfffffffff", Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    FileOutputStream fos=new FileOutputStream(path);
+                    fos.write(bytes);
+                    fos.close();
+                    Toast.makeText(MainActivity.this, "Success!!!", Toast.LENGTH_SHORT).show();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "rilegou", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+                Toast.makeText(MainActivity.this, "failed!!!!!!!!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void delete_file(final String username, final String filename, final String tag){
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("username").child(username);
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                String uid = dataSnapshot.getValue(String.class);
+                delete_file_helper(uid, username, filename, tag);
+                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+                // ...
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference.addListenerForSingleValueEvent(postListener);
+    }
+
+    public void delete_file_helper(final String uid, String username, String filename, String tag){
+        // Create a storage reference from our app
+        StorageReference storageRef = storage.getReference();
+        final String file_name = filename.replace('.', '_');;
+
+        // Create a reference to the file to delete
+        StorageReference deleteRef = storageRef.child(tag + "/" + username + "_" + filename);
+
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
+
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                myUser = dataSnapshot.getValue(User.class);
+                myUser.pdfs.remove(file_name);
+                Map<String, Object> delete_pdf = new HashMap<>();
+                for (Map.Entry<String, Object> entry : myUser.pdfs.entrySet()){
+                    if (entry.getKey()!=file_name){
+                        delete_pdf.put(entry.getKey(), entry.getValue());
+                    }
+                }
+                mDatabase.child("users").child(uid).child("pdfs").setValue(delete_pdf);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference.addListenerForSingleValueEvent(postListener);
     }
 
     @Override
@@ -290,7 +402,7 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.LENGTH_LONG).show();}
                             final String path = FileUtils.getPath(this, uri);
                             myuri = uri;
-                            myPath = path;
+
                             Intent intent = new Intent(this, UploadActivity.class);
                             intent.putExtra("path",path);
                             intent.putExtra("username",myUsername);
