@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (FileNotFoundException e){
             //handle file not found.
+            Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -124,14 +125,24 @@ public class MainActivity extends AppCompatActivity {
         fileRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
-                File dir = new File(Environment.getExternalStorageDirectory() + "/notehub-pdfs");
+                File dir = new File("/sdcard/Download");
+                //Toast.makeText(MainActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
                 final File file = new File(dir, filename);
                 String path= file.getPath();
+
                 try {
                     if (!dir.exists()) {
-                        dir.mkdir();
+                        boolean temp=dir.mkdirs();
+                        if (!temp){
+                            Toast.makeText(MainActivity.this, "failed wtfffffffff", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    file.createNewFile();
+                    boolean temp1 = file.createNewFile();
+                    Toast.makeText(MainActivity.this, file.getPath(), Toast.LENGTH_SHORT).show();
+                    if (!temp1){
+                        Toast.makeText(MainActivity.this, "11111failed wtfffffffff", Toast.LENGTH_SHORT).show();
+                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -142,7 +153,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Success!!!", Toast.LENGTH_SHORT).show();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "rilegou", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                     Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
@@ -343,11 +355,13 @@ public class MainActivity extends AppCompatActivity {
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
-        //add_follower("Official_Account", "Official_Account");
+        //add_follower("Zheren888", "abc_user");
         //add_following("Official_Account", "Official_Account");
         //get_uid_by_username("Official_Account");
+        //download("cs", "abc_user","manifest.xml");
         //delete_file("PrF8HN3WQWTLnP4f8kESHpqsgMr2","delin66", "test.pdf", "Bio");
-        update_file("Official_Account", "test.pdf", "Bio", "this is just a test file");
+        //update_file("abc_user", "manifest.xml", "cs", "this is just a test file");
+        //upload("delin66668","/sdcard/Download/Literacy Practices.pdf","math");
         //set_isNew("6o8Ql6AYBEfHfcoSiCH9YpoLSb62");
 
         //get current user
