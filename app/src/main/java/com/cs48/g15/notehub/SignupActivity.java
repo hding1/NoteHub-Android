@@ -20,6 +20,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +42,14 @@ public class SignupActivity extends AppCompatActivity {
         childUpdate.put("/users/" + uid + "/following/" + uid2, username);
         mDatabase.updateChildren(childUpdate);
     }
+
+    public void add_pdf(String uid){
+        PDF pdf = new PDF("no_file.hehe", "", "", "", 0,0,0);
+        Map<String, Object> childUpdate = new HashMap<>();
+        childUpdate.put("/users/" + uid + "/pdfs/no_file_hehe", pdf);
+        mDatabase.updateChildren(childUpdate);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,6 +126,7 @@ public class SignupActivity extends AppCompatActivity {
 //                                            .setDisplayName(inputUsername.getText().toString()).build();
                                     add_follower(auth.getUid(), auth.getUid(), inputUsername.getText().toString());
                                     add_following(auth.getUid(), auth.getUid(), inputUsername.getText().toString());
+                                    add_pdf(auth.getUid());
 //                                    FirebaseUser user1 = auth.getCurrentUser();
 ////                                    user1.updateProfile(profileUpdates);
 //                                    mDatabase.child("users").child(auth.getUid()).setValue(user);

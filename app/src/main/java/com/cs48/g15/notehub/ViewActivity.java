@@ -68,7 +68,12 @@ public class ViewActivity extends AppCompatActivity {
                 myUser = snapshot.getValue(User.class);
                 myPDF = myUser.pdfs;
                 list.clear();
-                setList(myPDF);
+                for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                    if (!entry.getValue().filename.equals("no_file.hehe")){
+                        //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                        list.add(entry.getValue().filename);
+                    }
+                }
                 adapter.notifyDataSetChanged();
             }
             @Override
@@ -92,7 +97,13 @@ public class ViewActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot snapshot) {
                         myUser = snapshot.getValue(User.class);
                         myPDF = myUser.pdfs;
-                        List<PDF> list = new ArrayList<PDF>(myPDF.values());
+                        List<PDF> list = new ArrayList<PDF>();
+                        for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                            if (!entry.getValue().filename.equals("no_file.hehe")){
+                                //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                list.add(entry.getValue());
+                            }
+                        }
 
                         for(int i = 0;i<list.size();i++){
                             if(list.get(i).filename.equals(s)){

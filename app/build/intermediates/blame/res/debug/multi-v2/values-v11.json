@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "/Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/build/intermediates/bundles/debug/res/values-v11/values-v11.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "53",
-                        "endOffsets": "104"
-                    }
-                },
-                {
-                    "source": "/Users/peterding/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/43736c51ee006c8f74c3619dd0db6430/res/values-v11/values-v11.xml",
+                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\14b3f915f9a07895a51c75c678a0c16d\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -30,6 +20,16 @@
                         "endLines": "8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,136,191,192",
                         "endColumns": "12,12,12,12,12,12,88,12,12,100,12,12,102,12,12,12,12,12,12,70,82,12,12,90",
                         "endOffsets": "523,948,1376,1802,2229,2654,2743,2989,3238,3339,3591,3846,3949,4202,4610,5030,5452,5559,5688,5759,5842,9867,14035,14126"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\values-v11\\values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "53",
+                        "endOffsets": "104"
                     }
                 }
             ]

@@ -55,7 +55,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
     private FirebaseStorage storage;
-    private DatabaseReference mUserReference;
+    private DatabaseReference mUserReference, mUserReference1;
     private User myUser;
     private String userID;
     private String myUsername,myPath, myPathName;
@@ -160,8 +160,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
             InputStream stream = new FileInputStream(FIleChooser.getPath(this,file));
             //InputStream stream = new FileInputStream(new File(file_dir));
             UploadTask uploadTask = pdfRef.putStream(stream);
-            Toast.makeText(this, "upload success",
-                    Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "upload success",Toast.LENGTH_LONG).show();
             uploadTask.addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
@@ -202,13 +201,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         };
         mUserReference.addListenerForSingleValueEvent(postListener);
     }
-    public void update_file_helper(final String uid, final String filename, final String tag, String description){
-        String file_name = filename.replace('.', '_');
-        Calendar c = Calendar.getInstance();
-        PDF pdf = new PDF(filename, tag, description, c.get(Calendar.YEAR), c.get(Calendar.MONTH));
-        Map<String, Object> childUpdate = new HashMap<>();
-        childUpdate.put("/users/" + userID + "/pdfs/" + file_name, pdf);
-        mDatabase.updateChildren(childUpdate);
+    public void update_file_helper(final String uid, final String filename, final String tag, final String description){
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(userID);
 
         ValueEventListener postListener = new ValueEventListener() {
@@ -235,6 +228,54 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
             }
         };
         mUserReference.addListenerForSingleValueEvent(postListener);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        final String file_name = filename.replace('.', '_');
+
+        mUserReference1 = FirebaseDatabase.getInstance().getReference().child("users").child(userID);
+
+        ValueEventListener postListener1 = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                User user = dataSnapshot.getValue(User.class);
+                String username = user.username;
+                final String file_name1 = username + "_" + filename;
+                StorageReference storageRef = storage.getReference();
+                StorageReference fileRef = storageRef.child(tag + "/" + file_name1);
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        // Got the download URL for 'users/me/profile.png'
+                        String temp = uri.toString();
+                        Calendar c = Calendar.getInstance();
+                        //Toast.makeText(UploadActivity.this, temp, Toast.LENGTH_SHORT).show();
+                        PDF pdf = new PDF(filename, tag, description, temp, c.get(Calendar.YEAR), c.get(Calendar.MONTH)+1, c.get(Calendar.DAY_OF_MONTH));
+                        Map<String, Object> childUpdate = new HashMap<>();
+                        childUpdate.put("/users/" + userID + "/pdfs/" + file_name, pdf);
+                        mDatabase.updateChildren(childUpdate);
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle any errors
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                //Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        mUserReference1.addListenerForSingleValueEvent(postListener1);
     }
 }
 
