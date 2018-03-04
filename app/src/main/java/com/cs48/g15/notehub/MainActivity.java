@@ -53,6 +53,69 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mUserReference2;
     private User user;
 
+    public String getURL(String tag, String filename){
+        StorageReference storageRef = storage.getReference();
+        return storageRef.child(tag+"/"+filename).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        }).toString();
+    }
+
+    public void get_follower_num(final String username){
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("username").child(username);
+        ValueEventListener postListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                final String uid = dataSnapshot.getValue(String.class);
+                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
+
+                DatabaseReference ref1 = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
+                ValueEventListener postListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // Get Post object and use the values to update the UI
+                        User user = dataSnapshot.getValue(User.class);
+
+                        for (Map.Entry<String, PDF> entry : user.pdfs.entrySet()){
+                            String file_name = entry.getValue().filename;
+                            String tag1 = entry.getValue().tag;
+                            String temp = getURL(tag1,file_name);
+                            Toast.makeText(MainActivity.this, temp, Toast.LENGTH_SHORT).show();
+                        }
+
+                        //TODO: replace this
+                        //Toast.makeText(MainActivity.this, "hehe"+n, Toast.LENGTH_SHORT).show();
+                        //set_follower_num(user.followers.size());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Getting Post failed, log a message
+                        Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                        // ...
+                    }
+                };
+                ref1.addListenerForSingleValueEvent(postListener);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        };
+        ref.addListenerForSingleValueEvent(postListener);
+    }
+
     public void update_file_helper(final String uid, final String filename, final String tag, String description){
         String file_name = filename.replace('.', '_');
         Calendar c = Calendar.getInstance();
@@ -115,7 +178,26 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //TODO: how to store in memory.
+    public void download_byURL(String tag, String username, String filename){
+        final String file_name = username + "_" + filename;
+        StorageReference storageRef = storage.getReference();
+        StorageReference fileRef = storageRef.child(tag + "/" + file_name);
+        fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                // Got the download URL for 'users/me/profile.png'
+                String temp = uri.toString();
+                Toast.makeText(MainActivity.this, temp, Toast.LENGTH_SHORT).show();
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
+    }
+
     public void download(String tag, String username, final String filename){
         final String file_name = username + "_" + filename;
         StorageReference storageRef = storage.getReference();
@@ -207,7 +289,7 @@ public class MainActivity extends AppCompatActivity {
                 user = dataSnapshot.getValue(User.class);
                 user.pdfs.remove(file_name);
                 Map<String, Object> delete_pdf = new HashMap<>();
-                for (Map.Entry<String, Object> entry : user.pdfs.entrySet()){
+                for (Map.Entry<String, PDF> entry : user.pdfs.entrySet()){
                     if (entry.getKey()!=file_name){
                         delete_pdf.put(entry.getKey(), entry.getValue());
                     }
@@ -355,13 +437,52 @@ public class MainActivity extends AppCompatActivity {
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
-        //add_follower("Zheren888", "abc_user");
+        //get_follower_num("abc_user");
+        //add_follower("delin66668", "abc_user");
         //add_following("Official_Account", "Official_Account");
         //get_uid_by_username("Official_Account");
         //download("cs", "abc_user","manifest.xml");
         //delete_file("PrF8HN3WQWTLnP4f8kESHpqsgMr2","delin66", "test.pdf", "Bio");
         //update_file("abc_user", "manifest.xml", "cs", "this is just a test file");
-        //upload("delin66668","/sdcard/Download/Literacy Practices.pdf","math");
+        download_byURL("Mathematics", "delin66668","Literacy Practices.pdf");
+
+        /*update_file("delin66668","Literacy Practices.pdf","Mathematics", "this is just a test file");
+        update_file("delin66668","Literacy Practices-1.pdf","Computer Science", "this is just a test file");
+        update_file("delin66668","Literacy Practices-2.pdf","Art & Music", "this is just a test file");
+        update_file("Official_Account","Literacy Practices.pdf","Literature", "this is just a test file");
+        update_file("Official_Account","Literacy Practices-1.pdf","Chemistry", "this is just a test file");
+        update_file("Official_Account","Literacy Practices-2.pdf","Physics", "this is just a test file");
+        update_file("abc_user","Literacy Practices.pdf","Business", "this is just a test file");
+        update_file("abc_user","Literacy Practices-1.pdf","Statistical Science", "this is just a test file");
+        update_file("abc_user","Literacy Practices-2.pdf","World History", "this is just a test file");
+        update_file("Zheren888","Literacy Practices.pdf","Mathematics", "this is just a test file");
+        update_file("Zheren888","Literacy Practices-1.pdf","Computer Science", "this is just a test file");
+        update_file("Zheren888","Literacy Practices-2.pdf","Art & Music", "this is just a test file");
+        update_file("chandra","Literacy Practices.pdf","Literature", "this is just a test file");
+        update_file("chandra","Literacy Practices-1.pdf","Chemistry", "this is just a test file");
+        update_file("chandra","Literacy Practices-2.pdf","Physics", "this is just a test file");
+        update_file("szc666","Literacy Practices.pdf","Business", "this is just a test file");
+        update_file("szc666","Literacy Practices-1.pdf","Statistical Science", "this is just a test file");
+        update_file("szc666","Literacy Practices-2.pdf","World History", "this is just a test file");
+
+        upload("delin66668","/sdcard/Download/Literacy Practices.pdf","Mathematics");
+        upload("delin66668","/sdcard/Download/Literacy Practices-1.pdf","Computer Science");
+        upload("delin66668","/sdcard/Download/Literacy Practices-2.pdf","Art & Music");
+        upload("Official_Account","/sdcard/Download/Literacy Practices.pdf","Literature");
+        upload("Official_Account","/sdcard/Download/Literacy Practices-1.pdf","Chemistry");
+        upload("Official_Account","/sdcard/Download/Literacy Practices-2.pdf","Physics");
+        upload("abc_user","/sdcard/Download/Literacy Practices.pdf","Business");
+        upload("abc_user","/sdcard/Download/Literacy Practices-1.pdf","Statistical Science");
+        upload("abc_user","/sdcard/Download/Literacy Practices-2.pdf","World History");
+        upload("Zheren888","/sdcard/Download/Literacy Practices.pdf","Mathematics");
+        upload("Zheren888","/sdcard/Download/Literacy Practices-1.pdf","Computer Science");
+        upload("Zheren888","/sdcard/Download/Literacy Practices-2.pdf","Art & Music");
+        upload("chandra","/sdcard/Download/Literacy Practices.pdf","Literature");
+        upload("chandra","/sdcard/Download/Literacy Practices-1.pdf","Chemistry");
+        upload("chandra","/sdcard/Download/Literacy Practices-2.pdf","Physics");
+        upload("szc666","/sdcard/Download/Literacy Practices.pdf","Business");
+        upload("szc666","/sdcard/Download/Literacy Practices-1.pdf","Statistical Science");
+        upload("szc666","/sdcard/Download/Literacy Practices-2.pdf","World History");*/
         //set_isNew("6o8Ql6AYBEfHfcoSiCH9YpoLSb62");
 
         //get current user
