@@ -1,5 +1,6 @@
 package com.cs48.g15.notehub;
 
+import android.*;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
 //    private EditText ;
     private String myUsername;
-    private ProgressBar progressBar;
+//    private ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
@@ -95,39 +96,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         mUserReference.addValueEventListener(postListener);
-    }
-
-    public void upload(String username, String file_dir, String tag){
-        Uri file = Uri.fromFile(new File(file_dir));
-        String filename = username + "_" + file.getLastPathSegment();
-        StorageReference storageRef = storage.getReference();
-        //StorageReference pdfRed = storageRef.child(filename);
-        StorageReference pdfRef = storageRef.child(tag + "/" + filename);
-
-        try {
-            InputStream stream = new FileInputStream(FIleChooser.getPath(this,myuri));
-            //InputStream stream = new FileInputStream(new File(file_dir));
-            UploadTask uploadTask = pdfRef.putStream(stream);
-            Toast.makeText(MainActivity.this, "test111",
-                    Toast.LENGTH_LONG).show();
-            uploadTask.addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception exception) {
-                    // Handle unsuccessful uploads
-                }
-            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
-                    Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                }
-            });
-        }
-        catch (FileNotFoundException e){
-            Toast.makeText(MainActivity.this, "test111111",
-                    Toast.LENGTH_LONG).show();
-            //handle file not found.
-        }
     }
 
     public void add_follower(String uid, String uid2, final String username){
@@ -238,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
                 myUser = dataSnapshot.getValue(User.class);
                 myUser.pdfs.remove(file_name);
                 Map<String, Object> delete_pdf = new HashMap<>();
-                for (Map.Entry<String, Object> entry : myUser.pdfs.entrySet()){
+                for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()){
                     if (entry.getKey()!=file_name){
                         delete_pdf.put(entry.getKey(), entry.getValue());
                     }
@@ -320,17 +288,26 @@ public class MainActivity extends AppCompatActivity {
         btnUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "choose your file",
+                        Toast.LENGTH_LONG).show();
+                if(!checkPermissionExtertalStorage()){
+                    try {
+                        requestPermissionExtertalStorage();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
                 showChooser();
 
             }
         });
 //
-//        btnViewFile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        btnViewFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ViewActivity.class));
+            }
+        });
 //
 //        btnFollowers.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -407,8 +384,6 @@ public class MainActivity extends AppCompatActivity {
                             intent.putExtra("path",path);
                             intent.putExtra("username",myUsername);
                             startActivity(intent);
-                            Toast.makeText(MainActivity.this,
-                                    "File Selected: " + path, Toast.LENGTH_LONG).show();
                         } catch (Exception e) {
                             Toast.makeText(MainActivity.this, "test2",
                                     Toast.LENGTH_LONG).show();
@@ -419,6 +394,28 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+    //check permissions
+    public boolean checkPermissionExtertalStorage() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int result = getApplicationContext().checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE);
+            int result1 = getApplicationContext().checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            return result == PackageManager.PERMISSION_GRANTED || result1 == PackageManager.PERMISSION_GRANTED;
+        }
+        return false;
+    }
+
+    //permission dialog
+    public void requestPermissionExtertalStorage() throws Exception {
+        try {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
+                    REQUEST_CODE);
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    REQUEST_CODE);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
     //sign out method
     public void signOut() {
