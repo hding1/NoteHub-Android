@@ -39,7 +39,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/upload_file"
+            android:text="upload Local files"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/scanbot_button"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Upload With Camera"
             android:textStyle="bold" />
 
         <Button
@@ -48,17 +57,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="View Files"
+            android:text="Download Files"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/followers_button"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Followers"
-            android:textStyle="bold" />
+
 
         <Button
             android:id="@+id/remove_user_button"

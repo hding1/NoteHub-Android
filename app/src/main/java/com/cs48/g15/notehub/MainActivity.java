@@ -49,7 +49,7 @@ import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnUploadFile, btnViewFile, btnFollowers,  btnRemoveUser, remove, signOut;
+    private Button btnUploadFile, btnViewFile, btnScanbot,  btnRemoveUser, remove, signOut;
 
 //    private EditText ;
     private String myUsername;
@@ -273,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnUploadFile = (Button) findViewById(R.id.upload_file_button);
         btnViewFile = (Button) findViewById(R.id.view_file_button);
-        btnFollowers = (Button) findViewById(R.id.followers_button);
+        btnScanbot = (Button) findViewById(R.id.scanbot_button);
         btnRemoveUser = (Button) findViewById(R.id.remove_user_button);
         signOut = (Button) findViewById(R.id.sign_out);
 //
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
 //        if (progressBar != null) {
 //            progressBar.setVisibility(View.GONE);
 //        }
-//孙德林写这里
+//upload class through aFileChooser
         btnUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -308,12 +308,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ViewActivity.class));
             }
         });
-//
-//        btnFollowers.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//            }
-//        });
+//矛盾体写这里，像我这样加个intent就行
+        btnScanbot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //startActivity(new Intent(getApplicationContext(), ScanbotActivity.class));
+            }
+        });
 
 
         btnRemoveUser.setOnClickListener(new View.OnClickListener() {

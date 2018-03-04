@@ -96,7 +96,6 @@ public class ViewActivity extends AppCompatActivity {
 
                         for(int i = 0;i<list.size();i++){
                             if(list.get(i).filename.equals(s)){
-                                Toast.makeText(getApplicationContext(), "found something", Toast.LENGTH_LONG).show();
                                 download(list.get(i).tag,myUser.username,list.get(i).filename);
                                 break;
                             }
