@@ -11,6 +11,7 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.content.Intent;
 
 import net.doo.snap.lib.detector.ContourDetector;
 import net.doo.snap.lib.detector.DetectionResult;
@@ -28,8 +29,8 @@ public class EditPolygonImageActivity extends AppCompatActivity {
     private MagnifierView magnifierView;
     private Bitmap originalBitmap;
     private ImageView resultImageView;
-    private Button cropButton;
-    private Button backButton;
+    private Button cropButton, backCameraButton, backButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +42,13 @@ public class EditPolygonImageActivity extends AppCompatActivity {
 
         editPolygonView = (EditPolygonImageView) findViewById(R.id.polygonView);
 
+        Intent intent = getIntent();
+        Bitmap bitmap = (Bitmap)intent.getParcelableExtra("Picture");
+
+        //BitmapDrawable p = new BitmapDrawable(getResources(),bitmap);
+
         //在这里要change source，真实情况应该是存在storage的某个地址
-        editPolygonView.setImageResource(R.drawable.test_receipt);
+        editPolygonView.setImageBitmap(bitmap);
         originalBitmap = ((BitmapDrawable) editPolygonView.getDrawable()).getBitmap();
 
         magnifierView = (MagnifierView) findViewById(R.id.magnifier);

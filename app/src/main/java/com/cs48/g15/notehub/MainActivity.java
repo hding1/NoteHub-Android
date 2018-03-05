@@ -1,10 +1,13 @@
 package com.cs48.g15.notehub;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mUserReference;
     private DatabaseReference mUserReference2;
     private User user;
+    private static final int PERMISSIONS_REQUEST_CAMERA = 314;
 
     public void update_file_helper(final String uid, final String filename, final String tag, String description){
         String file_name = filename.replace('.', '_');
@@ -385,9 +389,25 @@ public class MainActivity extends AppCompatActivity {
         btnUploadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CameraFragmentActivity.class);
-                startActivity(intent);
-                finish();
+                if (ContextCompat.checkSelfPermission(MainActivity.this,
+                        android.Manifest.permission.CAMERA)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
+                            android.Manifest.permission.CAMERA)) {
+                    } else {
+                        ActivityCompat.requestPermissions(MainActivity.this,
+                                new String[]{android.Manifest.permission.CAMERA},
+                                PERMISSIONS_REQUEST_CAMERA);
+                        Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                        startActivity(intent);
+                        onPause();
+                    }
+                } else {
+                    Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                    startActivity(intent);
+                    onPause();
+                }
                 //update_file(uid, filename, tag);
                 //upload(username, pathname, tag);
             }
@@ -464,5 +484,10 @@ public class MainActivity extends AppCompatActivity {
         if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.finish();
     }
 }

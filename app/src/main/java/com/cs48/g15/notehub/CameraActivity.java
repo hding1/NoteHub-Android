@@ -3,6 +3,7 @@ package com.cs48.g15.notehub;
 import android.content.Intent;
 import android.graphics.PointF;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -133,12 +134,15 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
         });
 
 
-        findViewById(R.id.viewImage).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.result).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CameraActivity.this, EditPolygonImageActivity.class);
-                startActivity(intent);
-                finish();
+                Intent EditPolygon = new Intent(CameraActivity.this, EditPolygonImageActivity.class);
+                //ImageView imageView = (ImageView)this.findViewById(R.class.resultView);
+                Bitmap documentImage = ((BitmapDrawable)resultView.getDrawable()).getBitmap();
+                EditPolygon.putExtra("Picture",documentImage);
+                startActivity(EditPolygon);
+                onResume();
                 //update_file(uid, filename, tag);
                 //upload(username, pathname, tag);
             }
@@ -149,9 +153,16 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
 
     @Override
     protected void onResume() {
-        super.onResume();
         cameraView.onResume();
+        super.onResume();
+        //cameraView.startPreview();
     }
+
+    @Override
+    public void onBackPressed(){
+        super.finish();
+    }
+
 
     @Override
     protected void onPause() {

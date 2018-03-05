@@ -15,6 +15,15 @@
         android:text="Crop"/>
 
     <Button
+        android:id="@+id/backCameraButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:text="Back to Camera"
+        android:visibility="gone"/>
+
+    <Button
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
