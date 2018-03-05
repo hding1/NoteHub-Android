@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     private String myPath;
     private User myUser;
     private static final int REQUEST_CODE = 6384;
+    private static final int PERMISSIONS_REQUEST_CAMERA = 314;
 
     public void update_file(final String uid, final String filename, final String tag){
         String file_name = filename.replace('.', '_');
@@ -312,6 +313,25 @@ public class MainActivity extends AppCompatActivity {
         btnScanbot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (ContextCompat.checkSelfPermission(MainActivity.this,
+                        android.Manifest.permission.CAMERA)
+                        != PackageManager.PERMISSION_GRANTED) {
+
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
+                            android.Manifest.permission.CAMERA)) {
+                    } else {
+                        ActivityCompat.requestPermissions(MainActivity.this,
+                                new String[]{android.Manifest.permission.CAMERA},
+                                PERMISSIONS_REQUEST_CAMERA);
+                        Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                        startActivity(intent);
+                        onPause();
+                    }
+                } else {
+                    Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                    startActivity(intent);
+                    onPause();
+                }
                 //startActivity(new Intent(getApplicationContext(), ScanbotActivity.class));
             }
         });
@@ -352,10 +372,12 @@ public class MainActivity extends AppCompatActivity {
     private void showChooser() {
         // Use the GET_CONTENT intent from the utility class
         Intent target = FileUtils.createGetContentIntent();
+        target.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
         // Create the chooser Intent
         Intent intent = Intent.createChooser(
                 target, "Select a file");
         try {
+            intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
             startActivityForResult(intent, REQUEST_CODE);
         } catch (ActivityNotFoundException e) {
             // The reason for the existence of aFileChooser

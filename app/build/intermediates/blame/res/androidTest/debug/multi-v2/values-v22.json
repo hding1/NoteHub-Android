@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v22\\values-v22.xml",
+            "outputFile": "/Users/Edwardong/Desktop/34Test/NoteHub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\14b3f915f9a07895a51c75c678a0c16d\\res\\values-v22\\values-v22.xml",
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/805ccc0a0036ffcbfd76016567c956cb/res/values-v22/values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

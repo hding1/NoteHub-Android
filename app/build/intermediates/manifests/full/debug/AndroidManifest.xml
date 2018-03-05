@@ -5,9 +5,9 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:maxSdkVersion="22"
-        android:minSdkVersion="14"
-        android:targetSdkVersion="26" />
+        android:maxSdkVersion="27"
+        android:minSdkVersion="15"
+        android:targetSdkVersion="27" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- Required permission for App measurement to run. -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -29,6 +30,7 @@
     <uses-permission android:name="com.cs48.g15.notehub.permission.C2D_MESSAGE" />
 
     <application
+        android:name="com.cs48.g15.notehub.Scanbotinitialize"
         android:allowBackup="true"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
@@ -52,6 +54,8 @@
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme" />
         <activity android:name="com.cs48.g15.notehub.MainActivity" />
+        <activity android:name="com.cs48.g15.notehub.CameraActivity" />
+        <activity android:name="com.cs48.g15.notehub.EditPolygonImageActivity" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:enabled="@bool/use_activity"
@@ -72,6 +76,17 @@
             android:label="@string/title_activity_upload"
             android:theme="@style/AppTheme" />
         <activity android:name="com.cs48.g15.notehub.ViewActivity" />
+        <activity android:name="com.cs48.g15.notehub.ProcessingActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.cs48.g15.notehub.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"
@@ -91,10 +106,6 @@
             android:launchMode="singleInstance"
             android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
@@ -157,9 +168,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="android.arch.lifecycle.VERSION"
-            android:value="27.0.0-SNAPSHOT" />
     </application>
 
 </manifest>

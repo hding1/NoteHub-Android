@@ -3,8 +3,8 @@
     package="com.cs48.g15.notehub.test" >
 
     <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="26" />
+        android:minSdkVersion="15"
+        android:targetSdkVersion="27" />
 
     <instrumentation
         android:name="android.support.test.runner.AndroidJUnitRunner"

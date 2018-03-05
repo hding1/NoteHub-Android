@@ -27,6 +27,13 @@ allprojects {
         jcenter()
         maven { url 'https://maven.fabric.io/public' }
         mavenLocal()
+
+        maven {
+            url 'https://nexus.scanbot.io/nexus/content/repositories/releases/'
+        }
+        maven {
+            url 'https://nexus.scanbot.io/nexus/content/repositories/snapshots/'
+        }
     }
 }
 task clean(type: Delete) {

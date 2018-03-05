@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cs48.g15.notehub">
 
-    <uses-sdk android:maxSdkVersion="22" />
+    <uses-sdk android:maxSdkVersion="27" />
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -10,8 +10,10 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".Scanbotinitialize"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="NoteHub"
@@ -33,6 +35,8 @@
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".CameraActivity" />
+        <activity android:name=".EditPolygonImageActivity" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:enabled="@bool/use_activity"
@@ -52,7 +56,17 @@
             android:name=".UploadActivity"
             android:label="@string/title_activity_upload"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ViewActivity"/>
+        <activity android:name=".ViewActivity" />
+        <activity android:name=".ProcessingActivity" />
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.cs48.g15.notehub.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
     </application>
 
 </manifest>

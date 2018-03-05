@@ -1,571 +1,574 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
-MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\ba504f365689b5e1f3c0365d177398fe\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-database:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-11.8.0.aar\e91c16dd1ddb5c6b970814a202a24ef4\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:17:1-37:12
-MERGED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:17:1-32:12
-MERGED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\14b3f915f9a07895a51c75c678a0c16d\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7a9bc6029e458fae65cfb9d360db7134\AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.firebase:firebase-storage:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.8.0.aar\61ed087b45800372c0652b1d86af0a35\AndroidManifest.xml:2:1-8:12
-MERGED from [:aFileChooser] C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\aFileChooser\build\intermediates\manifests\full\debug\AndroidManifest.xml:17:1-28:12
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:17:1-54:12
-MERGED from [com.google.firebase:firebase-database-connection:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.8.0.aar\71eb52b3d3cca4326204fba5f5673f61\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:17:1-40:12
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:17:1-59:12
-MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:2:1-15:12
-MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\f6e5835014cf4f37f04c9277790fa228\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.firebase:firebase-storage-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.8.0.aar\67546c6e5667debc925a56d564a18e44\AndroidManifest.xml:2:1-8:12
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\1e1fda68daec0c3ec56f86dd7a8383e8\AndroidManifest.xml:17:1-28:12
-MERGED from [com.google.firebase:firebase-database-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.8.0.aar\fb3c0dbd926c7beec6688ce59743e19a\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\b708410dfacf22187f9d5b5d515d0ef8\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-auth-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.8.0.aar\4670cb0e2652508f5fa5e1bb49901c3c\AndroidManifest.xml:2:1-6:12
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\f3001e84a2d99422c1220ab91fcfb97a\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\d138b36df45bb3ca879a0727d5f9c5ce\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\28ab30120af87ff4a8cbeee96cda47d8\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6398cfdc8108ff9ec7154007ce835a96\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\64107d4b8d5b8bf98c7ba00869768a7f\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e5028427e6f0de15a5cc0a2acb32ddde\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\00273c3ae72db3c206b5f81487b1f154\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\8ece5e610fed578eeacfcd221b03cffe\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\f2dfb7a14a2fa77f7bb126c77b88505d\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\3d1fa200348b7d18a1db529b77394065\AndroidManifest.xml:17:1-31:12
-MERGED from [com.google.firebase:firebase-storage-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.8.0.aar\bb38ad3c1c1b9afbed69063e674a8eac\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\54bf915db666c13521ad8a6d3a7e7739\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.8.0.aar\c1f39dfb0963920bd9294d2f2ee4ead0\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\72366fa8f4c98836e7f825b87bf96506\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\0b7c3431f1e31c0a781da7091c9e7d62\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\394fd6a3980e456bbb6b5722505fb2a2\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\aa8774aa60abd14a21f5170dbc44fe30\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\55110c9f5eae4b58e2bd07b3844a3df9\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.8.0.aar\0d3b1a3b2090f1ac583b690396502565\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\5966e96abf164fd2f50378d93c23843c\AndroidManifest.xml:2:1-6:12
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\522b6305a45f38e1d60da676f2b8ad4e\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/9daa2ef031c55fb4c2e4a14bf79b3fdd/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-11.8.0.aar/9b1730d0ae7ab887dce0f752d68f2369/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:17:1-32:12
+MERGED from [io.scanbot:sdk-package-1:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-package-1-1.27.0.aar/0043b00ab45a525c47c1f8c0343fc3ec/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:design:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/4dc50d76940af2a9fe42ba36cfbf8c03/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/805ccc0a0036ffcbfd76016567c956cb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/64822d2030cd1ef50d747b4abff6612d/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-storage:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.8.0.aar/0df1321738ce1ff1366968cbac6f7019/AndroidManifest.xml:2:1-8:12
+MERGED from [:aFileChooser] /Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:17:1-54:12
+MERGED from [com.google.firebase:firebase-database-connection:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.8.0.aar/86b7fd974e7f16f1fb944526c623010c/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:17:1-59:12
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:2:1-15:12
+MERGED from [io.scanbot:sdk-base:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-base-1.27.0.aar/e4144c317e9a929c6ab65e2ad26e74a0/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.gms:play-services-vision:10.2.6] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-vision-10.2.6.aar/71548996206a66fa386bdf49dc09c466/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/ad298ba7c8663f08818cc0f1b6eeedfb/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-storage-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.8.0.aar/8b5f69a7f4b79d1a524108d6d1f11342/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/1a251e7583e4dbbe9c8aa0c8bc1f00a1/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.firebase:firebase-database-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.8.0.aar/cf88c5ea223161acac29c206ba3ee0fd/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/8919e294ecf3a388e91cc817bf2f8317/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/bc1de0f3e720b77d10611998a8a29a8b/AndroidManifest.xml:2:1-6:12
+MERGED from [com.commonsware.cwac.camera:camera:0.6.25.9] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/camera-0.6.25.9.aar/1a14e4ef74ea5b7e571da47128b0fa60/AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:support-v4:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/47a8680e06a3f044dc93aec0b866527d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/7a264773579d67f47c7cb5b33d0aec91/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f5ed43c35a158ef4cc6923c4ecf976b5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/f0fb5494d24cd3558ee4bfe929d2c7ed/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/39e0c51ac98413d78414522e99d9c750/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/86c9436eb97814c212705be4ee58846f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/f6753a0431a9c14d8ef6c2be232f81a2/AndroidManifest.xml:17:1-22:12
+MERGED from [io.scanbot:sdk-core:1.3.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-core-1.3.1.aar/ee47b4f4701719988f142c5585f88dc9/AndroidManifest.xml:2:1-13:12
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/61b71b6882f745c0b446927828f22851/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/1b5a4c95541a272bbd87abf1ece187a4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/9cfbd504de9a929ae1372a394cd8cebd/AndroidManifest.xml:17:1-22:12
+MERGED from [io.scanbot:tess-two:2.0.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/tess-two-2.0.0.aar/45de2a8f10633e8ea796e95382479b80/AndroidManifest.xml:17:1-26:12
+MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/7784d77ae9e69e05afafebe6a2cd492c/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/838071d69d6c5efd9eec8d0128da3606/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.8.0.aar/12e74927dd57039092b57fe9f8a284ff/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9f80129544110935cd2edf11c9ae1f57/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/e40e6796f09bd0de2501b72aef55126b/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/104bb75eaf62eb73d16231da8edcb571/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/83315fdf8bd90c974ca4fb6df02ce089/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6d37dca73523ef2159ae85221d7a99c0/AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:multidex:1.0.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/3a10209ff6834dd68f926c676344759a/AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/ded35028e0cc9d3a859acd49d55ccec8/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/67d28cd2312d0dc507c2385658661fe7/AndroidManifest.xml:2:1-6:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/5109cdec6d443f5c330fcb5c5e4d2a69/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
 	package
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:3:5-35
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:3:5-35
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:1-58:12
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:1-72:12
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:2:11-69
 uses-sdk
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:5:5-44
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:5:5-44
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\ba504f365689b5e1f3c0365d177398fe\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\ba504f365689b5e1f3c0365d177398fe\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-database:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-11.8.0.aar\e91c16dd1ddb5c6b970814a202a24ef4\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-database:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-11.8.0.aar\e91c16dd1ddb5c6b970814a202a24ef4\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\14b3f915f9a07895a51c75c678a0c16d\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\14b3f915f9a07895a51c75c678a0c16d\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7a9bc6029e458fae65cfb9d360db7134\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7a9bc6029e458fae65cfb9d360db7134\AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.firebase:firebase-storage:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.8.0.aar\61ed087b45800372c0652b1d86af0a35\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-storage:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.8.0.aar\61ed087b45800372c0652b1d86af0a35\AndroidManifest.xml:6:5-44
-MERGED from [:aFileChooser] C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\aFileChooser\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:5-23:40
-MERGED from [:aFileChooser] C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\aFileChooser\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:5-23:40
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-database-connection:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.8.0.aar\71eb52b3d3cca4326204fba5f5673f61\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-database-connection:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.8.0.aar\71eb52b3d3cca4326204fba5f5673f61\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\f6e5835014cf4f37f04c9277790fa228\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\f6e5835014cf4f37f04c9277790fa228\AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-storage-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.8.0.aar\67546c6e5667debc925a56d564a18e44\AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-storage-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.8.0.aar\67546c6e5667debc925a56d564a18e44\AndroidManifest.xml:6:5-44
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\1e1fda68daec0c3ec56f86dd7a8383e8\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\1e1fda68daec0c3ec56f86dd7a8383e8\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-database-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.8.0.aar\fb3c0dbd926c7beec6688ce59743e19a\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-database-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.8.0.aar\fb3c0dbd926c7beec6688ce59743e19a\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\b708410dfacf22187f9d5b5d515d0ef8\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\b708410dfacf22187f9d5b5d515d0ef8\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-auth-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.8.0.aar\4670cb0e2652508f5fa5e1bb49901c3c\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-auth-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.8.0.aar\4670cb0e2652508f5fa5e1bb49901c3c\AndroidManifest.xml:4:5-43
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\f3001e84a2d99422c1220ab91fcfb97a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\f3001e84a2d99422c1220ab91fcfb97a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\d138b36df45bb3ca879a0727d5f9c5ce\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\d138b36df45bb3ca879a0727d5f9c5ce\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\28ab30120af87ff4a8cbeee96cda47d8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\28ab30120af87ff4a8cbeee96cda47d8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6398cfdc8108ff9ec7154007ce835a96\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6398cfdc8108ff9ec7154007ce835a96\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\64107d4b8d5b8bf98c7ba00869768a7f\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\64107d4b8d5b8bf98c7ba00869768a7f\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e5028427e6f0de15a5cc0a2acb32ddde\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e5028427e6f0de15a5cc0a2acb32ddde\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\00273c3ae72db3c206b5f81487b1f154\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\00273c3ae72db3c206b5f81487b1f154\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\8ece5e610fed578eeacfcd221b03cffe\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\8ece5e610fed578eeacfcd221b03cffe\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\f2dfb7a14a2fa77f7bb126c77b88505d\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\f2dfb7a14a2fa77f7bb126c77b88505d\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\3d1fa200348b7d18a1db529b77394065\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\3d1fa200348b7d18a1db529b77394065\AndroidManifest.xml:21:5-23:58
-MERGED from [com.google.firebase:firebase-storage-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.8.0.aar\bb38ad3c1c1b9afbed69063e674a8eac\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-storage-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.8.0.aar\bb38ad3c1c1b9afbed69063e674a8eac\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\54bf915db666c13521ad8a6d3a7e7739\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\54bf915db666c13521ad8a6d3a7e7739\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.8.0.aar\c1f39dfb0963920bd9294d2f2ee4ead0\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.8.0.aar\c1f39dfb0963920bd9294d2f2ee4ead0\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\72366fa8f4c98836e7f825b87bf96506\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\72366fa8f4c98836e7f825b87bf96506\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\0b7c3431f1e31c0a781da7091c9e7d62\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\0b7c3431f1e31c0a781da7091c9e7d62\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\394fd6a3980e456bbb6b5722505fb2a2\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\394fd6a3980e456bbb6b5722505fb2a2\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\aa8774aa60abd14a21f5170dbc44fe30\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\aa8774aa60abd14a21f5170dbc44fe30\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\55110c9f5eae4b58e2bd07b3844a3df9\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\55110c9f5eae4b58e2bd07b3844a3df9\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.8.0.aar\0d3b1a3b2090f1ac583b690396502565\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.8.0.aar\0d3b1a3b2090f1ac583b690396502565\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\5966e96abf164fd2f50378d93c23843c\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\5966e96abf164fd2f50378d93c23843c\AndroidManifest.xml:4:5-43
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\522b6305a45f38e1d60da676f2b8ad4e\AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\522b6305a45f38e1d60da676f2b8ad4e\AndroidManifest.xml:20:5-22:41
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:5:5-44
-INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:5:5-44
-	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:23:9-59
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:5:5-44
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:5:5-44
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/9daa2ef031c55fb4c2e4a14bf79b3fdd/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/9daa2ef031c55fb4c2e4a14bf79b3fdd/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-11.8.0.aar/9b1730d0ae7ab887dce0f752d68f2369/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-11.8.0.aar/9b1730d0ae7ab887dce0f752d68f2369/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:20:5-44
+MERGED from [io.scanbot:sdk-package-1:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-package-1-1.27.0.aar/0043b00ab45a525c47c1f8c0343fc3ec/AndroidManifest.xml:8:5-10:41
+MERGED from [io.scanbot:sdk-package-1:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-package-1-1.27.0.aar/0043b00ab45a525c47c1f8c0343fc3ec/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:design:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/4dc50d76940af2a9fe42ba36cfbf8c03/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/4dc50d76940af2a9fe42ba36cfbf8c03/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/805ccc0a0036ffcbfd76016567c956cb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/805ccc0a0036ffcbfd76016567c956cb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/64822d2030cd1ef50d747b4abff6612d/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/64822d2030cd1ef50d747b4abff6612d/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-storage:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.8.0.aar/0df1321738ce1ff1366968cbac6f7019/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-storage:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-11.8.0.aar/0df1321738ce1ff1366968cbac6f7019/AndroidManifest.xml:6:5-44
+MERGED from [:aFileChooser] /Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:5-23:40
+MERGED from [:aFileChooser] /Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:5-23:40
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-connection:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.8.0.aar/86b7fd974e7f16f1fb944526c623010c/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database-connection:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.8.0.aar/86b7fd974e7f16f1fb944526c623010c/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:5:5-44
+MERGED from [io.scanbot:sdk-base:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-base-1.27.0.aar/e4144c317e9a929c6ab65e2ad26e74a0/AndroidManifest.xml:6:5-8:41
+MERGED from [io.scanbot:sdk-base:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-base-1.27.0.aar/e4144c317e9a929c6ab65e2ad26e74a0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.gms:play-services-vision:10.2.6] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-vision-10.2.6.aar/71548996206a66fa386bdf49dc09c466/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-vision:10.2.6] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-vision-10.2.6.aar/71548996206a66fa386bdf49dc09c466/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/ad298ba7c8663f08818cc0f1b6eeedfb/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/ad298ba7c8663f08818cc0f1b6eeedfb/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-storage-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.8.0.aar/8b5f69a7f4b79d1a524108d6d1f11342/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-storage-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-11.8.0.aar/8b5f69a7f4b79d1a524108d6d1f11342/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/1a251e7583e4dbbe9c8aa0c8bc1f00a1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/1a251e7583e4dbbe9c8aa0c8bc1f00a1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.8.0.aar/cf88c5ea223161acac29c206ba3ee0fd/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.8.0.aar/cf88c5ea223161acac29c206ba3ee0fd/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/8919e294ecf3a388e91cc817bf2f8317/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/8919e294ecf3a388e91cc817bf2f8317/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/bc1de0f3e720b77d10611998a8a29a8b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/bc1de0f3e720b77d10611998a8a29a8b/AndroidManifest.xml:4:5-43
+MERGED from [com.commonsware.cwac.camera:camera:0.6.25.9] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/camera-0.6.25.9.aar/1a14e4ef74ea5b7e571da47128b0fa60/AndroidManifest.xml:7:5-9:41
+MERGED from [com.commonsware.cwac.camera:camera:0.6.25.9] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/camera-0.6.25.9.aar/1a14e4ef74ea5b7e571da47128b0fa60/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/47a8680e06a3f044dc93aec0b866527d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/47a8680e06a3f044dc93aec0b866527d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/7a264773579d67f47c7cb5b33d0aec91/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/7a264773579d67f47c7cb5b33d0aec91/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f5ed43c35a158ef4cc6923c4ecf976b5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/f5ed43c35a158ef4cc6923c4ecf976b5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/f0fb5494d24cd3558ee4bfe929d2c7ed/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/f0fb5494d24cd3558ee4bfe929d2c7ed/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/39e0c51ac98413d78414522e99d9c750/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/39e0c51ac98413d78414522e99d9c750/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/86c9436eb97814c212705be4ee58846f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/86c9436eb97814c212705be4ee58846f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/f6753a0431a9c14d8ef6c2be232f81a2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/f6753a0431a9c14d8ef6c2be232f81a2/AndroidManifest.xml:20:5-44
+MERGED from [io.scanbot:sdk-core:1.3.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-core-1.3.1.aar/ee47b4f4701719988f142c5585f88dc9/AndroidManifest.xml:7:5-9:41
+MERGED from [io.scanbot:sdk-core:1.3.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-core-1.3.1.aar/ee47b4f4701719988f142c5585f88dc9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/61b71b6882f745c0b446927828f22851/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/61b71b6882f745c0b446927828f22851/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/1b5a4c95541a272bbd87abf1ece187a4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/1b5a4c95541a272bbd87abf1ece187a4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/9cfbd504de9a929ae1372a394cd8cebd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/9cfbd504de9a929ae1372a394cd8cebd/AndroidManifest.xml:20:5-44
+MERGED from [io.scanbot:tess-two:2.0.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/tess-two-2.0.0.aar/45de2a8f10633e8ea796e95382479b80/AndroidManifest.xml:22:5-24:41
+MERGED from [io.scanbot:tess-two:2.0.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/tess-two-2.0.0.aar/45de2a8f10633e8ea796e95382479b80/AndroidManifest.xml:22:5-24:41
+MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/7784d77ae9e69e05afafebe6a2cd492c/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/7784d77ae9e69e05afafebe6a2cd492c/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/838071d69d6c5efd9eec8d0128da3606/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/838071d69d6c5efd9eec8d0128da3606/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.8.0.aar/12e74927dd57039092b57fe9f8a284ff/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.8.0.aar/12e74927dd57039092b57fe9f8a284ff/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9f80129544110935cd2edf11c9ae1f57/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9f80129544110935cd2edf11c9ae1f57/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/e40e6796f09bd0de2501b72aef55126b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/e40e6796f09bd0de2501b72aef55126b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/104bb75eaf62eb73d16231da8edcb571/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/104bb75eaf62eb73d16231da8edcb571/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/83315fdf8bd90c974ca4fb6df02ce089/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/83315fdf8bd90c974ca4fb6df02ce089/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6d37dca73523ef2159ae85221d7a99c0/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6d37dca73523ef2159ae85221d7a99c0/AndroidManifest.xml:4:5-43
+MERGED from [com.android.support:multidex:1.0.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/3a10209ff6834dd68f926c676344759a/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:multidex:1.0.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/3a10209ff6834dd68f926c676344759a/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/ded35028e0cc9d3a859acd49d55ccec8/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/ded35028e0cc9d3a859acd49d55ccec8/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/67d28cd2312d0dc507c2385658661fe7/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/67d28cd2312d0dc507c2385658661fe7/AndroidManifest.xml:4:5-43
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/5109cdec6d443f5c330fcb5c5e4d2a69/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/5109cdec6d443f5c330fcb5c5e4d2a69/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:5:5-44
+INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:5:5-44
 	android:maxSdkVersion
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:5:15-41
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:5:15-41
 	android:targetSdkVersion
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:5:5-44
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:5:5-44
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:5:5-44
-		INJECTED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:5:5-44
+		INJECTED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:8:5-71
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:8:5-71
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:8:22-68
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:8:22-68
 uses-permission#android.permission.READ_PROFILE
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:9:5-71
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:9:5-71
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:9:22-68
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:9:22-68
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:10:5-72
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:10:5-72
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:10:22-69
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:10:22-69
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:11:5-80
-MERGED from [:aFileChooser] C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\aFileChooser\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-80
-MERGED from [:aFileChooser] C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\aFileChooser\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-80
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:11:5-80
+MERGED from [:aFileChooser] /Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-80
+MERGED from [:aFileChooser] /Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-80
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:11:22-77
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:11:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:12:5-81
-MERGED from [:aFileChooser] C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\aFileChooser\build\intermediates\manifests\full\debug\AndroidManifest.xml:26:5-81
-MERGED from [:aFileChooser] C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\aFileChooser\build\intermediates\manifests\full\debug\AndroidManifest.xml:26:5-81
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:12:5-81
+MERGED from [:aFileChooser] /Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/manifests/full/debug/AndroidManifest.xml:26:5-81
+MERGED from [:aFileChooser] /Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/manifests/full/debug/AndroidManifest.xml:26:5-81
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:12:22-78
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:12:22-78
+uses-permission#android.permission.CAMERA
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:13:5-65
+	android:name
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:13:22-62
 application
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:14:5-56:19
-MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\ba504f365689b5e1f3c0365d177398fe\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\ba504f365689b5e1f3c0365d177398fe\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:22:5-35:19
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:22:5-35:19
-MERGED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:22:5-30:19
-MERGED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:22:5-30:19
-MERGED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\14b3f915f9a07895a51c75c678a0c16d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\14b3f915f9a07895a51c75c678a0c16d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7a9bc6029e458fae65cfb9d360db7134\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\7a9bc6029e458fae65cfb9d360db7134\AndroidManifest.xml:9:5-20
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:27:5-52:19
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:27:5-52:19
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:27:5-38:19
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:27:5-38:19
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:34:5-57:19
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:34:5-57:19
-MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:7:5-13:19
-MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:7:5-13:19
-MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\f6e5835014cf4f37f04c9277790fa228\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\f6e5835014cf4f37f04c9277790fa228\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\1e1fda68daec0c3ec56f86dd7a8383e8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\1e1fda68daec0c3ec56f86dd7a8383e8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.firebase:firebase-database-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.8.0.aar\fb3c0dbd926c7beec6688ce59743e19a\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-database-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-license-11.8.0.aar\fb3c0dbd926c7beec6688ce59743e19a\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\b708410dfacf22187f9d5b5d515d0ef8\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\b708410dfacf22187f9d5b5d515d0ef8\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-auth-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.8.0.aar\4670cb0e2652508f5fa5e1bb49901c3c\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-auth-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-license-11.8.0.aar\4670cb0e2652508f5fa5e1bb49901c3c\AndroidManifest.xml:5:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\f3001e84a2d99422c1220ab91fcfb97a\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\f3001e84a2d99422c1220ab91fcfb97a\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\d138b36df45bb3ca879a0727d5f9c5ce\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\d138b36df45bb3ca879a0727d5f9c5ce\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\28ab30120af87ff4a8cbeee96cda47d8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\28ab30120af87ff4a8cbeee96cda47d8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6398cfdc8108ff9ec7154007ce835a96\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6398cfdc8108ff9ec7154007ce835a96\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\64107d4b8d5b8bf98c7ba00869768a7f\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\64107d4b8d5b8bf98c7ba00869768a7f\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e5028427e6f0de15a5cc0a2acb32ddde\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e5028427e6f0de15a5cc0a2acb32ddde\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\00273c3ae72db3c206b5f81487b1f154\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\00273c3ae72db3c206b5f81487b1f154\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\8ece5e610fed578eeacfcd221b03cffe\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\8ece5e610fed578eeacfcd221b03cffe\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\f2dfb7a14a2fa77f7bb126c77b88505d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\f2dfb7a14a2fa77f7bb126c77b88505d\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\3d1fa200348b7d18a1db529b77394065\AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\3d1fa200348b7d18a1db529b77394065\AndroidManifest.xml:25:5-29:19
-MERGED from [com.google.firebase:firebase-storage-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.8.0.aar\bb38ad3c1c1b9afbed69063e674a8eac\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-storage-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-license-11.8.0.aar\bb38ad3c1c1b9afbed69063e674a8eac\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\54bf915db666c13521ad8a6d3a7e7739\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\54bf915db666c13521ad8a6d3a7e7739\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.8.0.aar\c1f39dfb0963920bd9294d2f2ee4ead0\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-license-11.8.0.aar\c1f39dfb0963920bd9294d2f2ee4ead0\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\72366fa8f4c98836e7f825b87bf96506\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\72366fa8f4c98836e7f825b87bf96506\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\0b7c3431f1e31c0a781da7091c9e7d62\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\0b7c3431f1e31c0a781da7091c9e7d62\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\394fd6a3980e456bbb6b5722505fb2a2\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\394fd6a3980e456bbb6b5722505fb2a2\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\aa8774aa60abd14a21f5170dbc44fe30\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\aa8774aa60abd14a21f5170dbc44fe30\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\55110c9f5eae4b58e2bd07b3844a3df9\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\55110c9f5eae4b58e2bd07b3844a3df9\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.8.0.aar\0d3b1a3b2090f1ac583b690396502565\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-license-11.8.0.aar\0d3b1a3b2090f1ac583b690396502565\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\5966e96abf164fd2f50378d93c23843c\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\5966e96abf164fd2f50378d93c23843c\AndroidManifest.xml:5:5-20
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\522b6305a45f38e1d60da676f2b8ad4e\AndroidManifest.xml:24:5-28:19
-MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\522b6305a45f38e1d60da676f2b8ad4e\AndroidManifest.xml:24:5-28:19
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:15:5-70:19
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/9daa2ef031c55fb4c2e4a14bf79b3fdd/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/9daa2ef031c55fb4c2e4a14bf79b3fdd/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:22:5-30:19
+MERGED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:22:5-30:19
+MERGED from [io.scanbot:sdk-package-1:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-package-1-1.27.0.aar/0043b00ab45a525c47c1f8c0343fc3ec/AndroidManifest.xml:12:5-20
+MERGED from [io.scanbot:sdk-package-1:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-package-1-1.27.0.aar/0043b00ab45a525c47c1f8c0343fc3ec/AndroidManifest.xml:12:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/64822d2030cd1ef50d747b4abff6612d/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/64822d2030cd1ef50d747b4abff6612d/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:27:5-52:19
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:27:5-52:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:27:5-38:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:27:5-38:19
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:34:5-57:19
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:34:5-57:19
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:7:5-13:19
+MERGED from [io.scanbot:sdk-base:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-base-1.27.0.aar/e4144c317e9a929c6ab65e2ad26e74a0/AndroidManifest.xml:10:5-20
+MERGED from [io.scanbot:sdk-base:1.27.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-base-1.27.0.aar/e4144c317e9a929c6ab65e2ad26e74a0/AndroidManifest.xml:10:5-20
+MERGED from [com.google.android.gms:play-services-vision:10.2.6] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-vision-10.2.6.aar/71548996206a66fa386bdf49dc09c466/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-vision:10.2.6] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-vision-10.2.6.aar/71548996206a66fa386bdf49dc09c466/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/ad298ba7c8663f08818cc0f1b6eeedfb/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/ad298ba7c8663f08818cc0f1b6eeedfb/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/1a251e7583e4dbbe9c8aa0c8bc1f00a1/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/1a251e7583e4dbbe9c8aa0c8bc1f00a1/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.firebase:firebase-database-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.8.0.aar/cf88c5ea223161acac29c206ba3ee0fd/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-license-11.8.0.aar/cf88c5ea223161acac29c206ba3ee0fd/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/8919e294ecf3a388e91cc817bf2f8317/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/8919e294ecf3a388e91cc817bf2f8317/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/bc1de0f3e720b77d10611998a8a29a8b/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-auth-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-license-11.8.0.aar/bc1de0f3e720b77d10611998a8a29a8b/AndroidManifest.xml:5:5-20
+MERGED from [com.commonsware.cwac.camera:camera:0.6.25.9] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/camera-0.6.25.9.aar/1a14e4ef74ea5b7e571da47128b0fa60/AndroidManifest.xml:11:5-20
+MERGED from [com.commonsware.cwac.camera:camera:0.6.25.9] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/camera-0.6.25.9.aar/1a14e4ef74ea5b7e571da47128b0fa60/AndroidManifest.xml:11:5-20
+MERGED from [io.scanbot:sdk-core:1.3.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-core-1.3.1.aar/ee47b4f4701719988f142c5585f88dc9/AndroidManifest.xml:11:5-20
+MERGED from [io.scanbot:sdk-core:1.3.1] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/sdk-core-1.3.1.aar/ee47b4f4701719988f142c5585f88dc9/AndroidManifest.xml:11:5-20
+MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/7784d77ae9e69e05afafebe6a2cd492c/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-license-11.8.0.aar/7784d77ae9e69e05afafebe6a2cd492c/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/838071d69d6c5efd9eec8d0128da3606/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/838071d69d6c5efd9eec8d0128da3606/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.8.0.aar/12e74927dd57039092b57fe9f8a284ff/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-database-connection-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-license-11.8.0.aar/12e74927dd57039092b57fe9f8a284ff/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9f80129544110935cd2edf11c9ae1f57/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9f80129544110935cd2edf11c9ae1f57/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/e40e6796f09bd0de2501b72aef55126b/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/e40e6796f09bd0de2501b72aef55126b/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/104bb75eaf62eb73d16231da8edcb571/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/104bb75eaf62eb73d16231da8edcb571/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/83315fdf8bd90c974ca4fb6df02ce089/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/83315fdf8bd90c974ca4fb6df02ce089/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6d37dca73523ef2159ae85221d7a99c0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6d37dca73523ef2159ae85221d7a99c0/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/ded35028e0cc9d3a859acd49d55ccec8/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-storage-common-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-license-11.8.0.aar/ded35028e0cc9d3a859acd49d55ccec8/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/67d28cd2312d0dc507c2385658661fe7/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/67d28cd2312d0dc507c2385658661fe7/AndroidManifest.xml:5:5-20
 	android:supportsRtl
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:19:9-35
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:21:9-35
 	android:label
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:17:9-32
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:19:9-32
 	android:roundIcon
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:18:9-54
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:20:9-54
 	android:icon
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:16:9-43
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:18:9-43
 	android:allowBackup
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:20:9-40
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:22:9-40
+	android:name
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:16:9-42
 activity#com.cs48.g15.notehub.LoginActivity
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:21:9-29:20
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:23:9-31:20
 	android:label
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:23:13-36
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:25:13-36
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:22:13-42
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:24:13-42
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:24:13-28:29
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:27:17-77
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:27:27-74
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:29:27-74
 activity#com.cs48.g15.notehub.SignupActivity
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:30:9-52
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:32:9-52
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:30:19-49
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:32:19-49
 activity#com.cs48.g15.notehub.ResetPasswordActivity
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:31:9-34:47
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:33:9-36:47
 	android:label
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:33:13-66
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:35:13-66
 	android:theme
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:34:13-44
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:36:13-44
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:32:13-50
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:34:13-50
 activity#com.cs48.g15.notehub.MainActivity
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:35:9-50
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:37:9-50
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:35:19-47
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:37:19-47
+activity#com.cs48.g15.notehub.CameraActivity
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:38:9-52
+	android:name
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:38:19-49
+activity#com.cs48.g15.notehub.EditPolygonImageActivity
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:39:9-62
+	android:name
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:39:19-59
 activity#com.ipaulpro.afilechooser.FileChooserActivity
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:36:9-50:20
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:40:9-54:20
 	android:enabled
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:38:13-49
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:42:13-49
 	android:label
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:41:13-48
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:45:13-48
 	android:exported
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:39:13-36
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:43:13-36
 	android:icon
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:40:13-48
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:44:13-48
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:37:13-73
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:41:13-73
 intent-filter#android.intent.action.GET_CONTENT+android.intent.category.DEFAULT+android.intent.category.OPENABLE
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:42:13-49:29
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:46:13-53:29
 action#android.intent.action.GET_CONTENT
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:43:17-76
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:47:17-76
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:43:25-73
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:47:25-73
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:45:17-76
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:49:17-76
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:45:27-73
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:49:27-73
 category#android.intent.category.OPENABLE
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:46:17-77
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:50:17-77
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:46:27-74
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:50:27-74
 data
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:48:17-48
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:52:17-48
 	android:mimeType
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:48:23-45
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:52:23-45
 activity#com.cs48.g15.notehub.UploadActivity
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:51:9-54:47
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:55:9-58:47
 	android:label
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:53:13-58
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:57:13-58
 	android:theme
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:54:13-44
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:58:13-44
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:52:13-43
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:56:13-43
 activity#com.cs48.g15.notehub.ViewActivity
-ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:55:9-49
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:59:9-50
 	android:name
-		ADDED from C:\Users\Delin Sun\Documents\GitHub\NoteHub-Android\app\src\main\AndroidManifest.xml:55:19-47
-service#com.google.firebase.messaging.FirebaseMessagingService
-ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:28:9-34:19
-	android:exported
-		ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:30:13-36
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:59:19-47
+activity#com.cs48.g15.notehub.ProcessingActivity
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:60:9-56
 	android:name
-		ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:29:13-82
-intent-filter#com.google.firebase.MESSAGING_EVENT
-ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:31:13-33:29
-	android:priority
-		ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:31:28-51
-action#com.google.firebase.MESSAGING_EVENT
-ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:32:17-78
-	android:name
-		ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\aaa87276c49e1d9a83a78f64409f3e38\AndroidManifest.xml:32:25-75
-activity#com.google.firebase.auth.internal.FederatedSignInActivity
-ADDED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:23:9-29:75
-	android:excludeFromRecents
-		ADDED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:25:13-46
-	android:launchMode
-		ADDED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:27:13-48
-	android:exported
-		ADDED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:26:13-36
-	android:permission
-		ADDED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:28:13-102
-	android:theme
-		ADDED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:29:13-72
-	android:name
-		ADDED from [com.google.firebase:firebase-auth:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.8.0.aar\f03bec0fe199d5b70e2e6bf1bc369b36\AndroidManifest.xml:24:13-85
-meta-data#android.support.VERSION
-ADDED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\14b3f915f9a07895a51c75c678a0c16d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\14b3f915f9a07895a51c75c678a0c16d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\f3001e84a2d99422c1220ab91fcfb97a\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\f3001e84a2d99422c1220ab91fcfb97a\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\d138b36df45bb3ca879a0727d5f9c5ce\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\d138b36df45bb3ca879a0727d5f9c5ce\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\28ab30120af87ff4a8cbeee96cda47d8\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\28ab30120af87ff4a8cbeee96cda47d8\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6398cfdc8108ff9ec7154007ce835a96\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6398cfdc8108ff9ec7154007ce835a96\AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\64107d4b8d5b8bf98c7ba00869768a7f\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\64107d4b8d5b8bf98c7ba00869768a7f\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e5028427e6f0de15a5cc0a2acb32ddde\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e5028427e6f0de15a5cc0a2acb32ddde\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\00273c3ae72db3c206b5f81487b1f154\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\00273c3ae72db3c206b5f81487b1f154\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\8ece5e610fed578eeacfcd221b03cffe\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\8ece5e610fed578eeacfcd221b03cffe\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\f2dfb7a14a2fa77f7bb126c77b88505d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\f2dfb7a14a2fa77f7bb126c77b88505d\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\3d1fa200348b7d18a1db529b77394065\AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\3d1fa200348b7d18a1db529b77394065\AndroidManifest.xml:26:9-28:38
-	android:value
-		ADDED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:28:13-35
-	android:name
-		ADDED from [com.android.support:design:26.1.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\3182d597e232ab47c99419237be3f9f6\AndroidManifest.xml:27:13-51
-uses-permission#android.permission.INTERNET
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:23:5-67
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:23:22-64
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:22:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:24:22-76
-uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:24:5-68
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:25:22-65
-receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:28:9-32:20
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:28:9-32:20
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:28:9-32:20
-	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:30:13-35
-	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:31:13-37
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:29:13-85
-receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:33:9-41:20
-	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:35:13-35
-	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:36:13-36
-	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:37:13-69
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:34:13-100
-intent-filter#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:38:13-40:29
-action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:39:17-79
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:39:25-76
-service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:43:9-46:40
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:34:9-37:40
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\cea5b8a3664e98740b5b9b4fd90595b2\AndroidManifest.xml:34:9-37:40
-	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:45:13-35
-	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:46:13-37
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:44:13-84
-service#com.google.android.gms.measurement.AppMeasurementJobService
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:47:9-51:72
-	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:49:13-35
-	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:50:13-37
-	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:51:13-69
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\d9842bc963af74bd4059922028f4ea2b\AndroidManifest.xml:48:13-87
-uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:26:5-82
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:26:22-79
-permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:28:5-30:47
-	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:30:9-44
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:29:9-63
-permission#com.cs48.g15.notehub.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:28:5-30:47
-	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:30:9-44
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:29:9-63
-uses-permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:32:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:32:22-76
-uses-permission#com.cs48.g15.notehub.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:32:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:32:22-76
-receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:35:9-44:20
-	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:37:13-36
-	android:permission
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:38:13-73
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:36:13-78
-intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:39:13-43:29
-intent-filter#com.cs48.g15.notehub+com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:39:13-43:29
-action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:40:17-81
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:40:25-78
-category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:42:17-61
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:42:27-58
-category#com.cs48.g15.notehub
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:42:17-61
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:42:27-58
-service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:50:9-56:19
-	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:52:13-36
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:51:13-77
-intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:53:13-55:29
-	android:priority
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:53:28-51
-action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:54:17-80
-	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\4ce8eeb9afde8cf925eeaac4fd99b3f9\AndroidManifest.xml:54:25-77
-provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:8:9-12:39
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:60:19-53
+provider#android.support.v4.content.FileProvider
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:61:9-69:20
+	android:grantUriPermissions
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:65:13-47
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:10:13-72
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:63:13-68
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:11:13-37
-	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:12:13-36
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:64:13-37
 	android:name
-		ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\703023d6ddfdfdfa786d3a092ac87b60\AndroidManifest.xml:9:13-77
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:23:9-26:75
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:62:13-67
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:66:13-68:57
+	android:resource
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:68:17-55
+	android:name
+		ADDED from /Users/Edwardong/Desktop/34Test/NoteHub-Android/app/src/main/AndroidManifest.xml:67:17-67
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:28:9-34:19
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:25:13-37
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:30:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:29:13-82
+intent-filter#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:31:13-33:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:31:28-51
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:32:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/03f68f242e6269228cc1711391a67b0f/AndroidManifest.xml:32:25-75
+activity#com.google.firebase.auth.internal.FederatedSignInActivity
+ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:23:9-29:75
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:25:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:27:13-48
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:26:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:28:13-102
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:26:13-72
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:29:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\720fc8e04eae7bbef39ad50703c2262a\AndroidManifest.xml:24:13-79
+		ADDED from [com.google.firebase:firebase-auth:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.8.0.aar/fd4c4507a131d8c7b464f152b2e02c2d/AndroidManifest.xml:24:13-85
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:23:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:24:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:25:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:28:9-32:20
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:28:9-32:20
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:28:9-32:20
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:30:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:29:13-85
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:33:9-41:20
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:35:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:36:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:37:13-69
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:34:13-100
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:38:13-40:29
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:39:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:39:25-76
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:43:9-46:40
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:34:9-37:40
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/92998d3dd48dc0aaf73b71a9101e6d06/AndroidManifest.xml:34:9-37:40
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:45:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:46:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:44:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:47:9-51:72
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:49:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:50:13-37
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:51:13-69
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/5a832e3d307b90f0b31aa8a51b68e1a2/AndroidManifest.xml:48:13-87
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:26:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:28:5-30:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:30:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:29:9-63
+permission#com.cs48.g15.notehub.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:28:5-30:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:30:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:29:9-63
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:32:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:32:22-76
+uses-permission#com.cs48.g15.notehub.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:32:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:32:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:35:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:37:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:38:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:36:13-78
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:39:13-43:29
+intent-filter#com.cs48.g15.notehub+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:39:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:40:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:40:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:42:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:42:27-58
+category#com.cs48.g15.notehub
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:42:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:42:27-58
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:50:9-56:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:52:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:51:13-77
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:53:13-55:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:53:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:54:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/08186f211f938345374c19fe3941a251/AndroidManifest.xml:54:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:8:9-12:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:11:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:12:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/7335411c03a2e275556403c992a1715d/AndroidManifest.xml:9:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/f1dcf11c62c52b1a405adff103aea79c/AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\1e1fda68daec0c3ec56f86dd7a8383e8\AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/1a251e7583e4dbbe9c8aa0c8bc1f00a1/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\1e1fda68daec0c3ec56f86dd7a8383e8\AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/1a251e7583e4dbbe9c8aa0c8bc1f00a1/AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\1e1fda68daec0c3ec56f86dd7a8383e8\AndroidManifest.xml:24:13-58
-meta-data#android.arch.lifecycle.VERSION
-ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\522b6305a45f38e1d60da676f2b8ad4e\AndroidManifest.xml:25:9-27:47
-	android:value
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\522b6305a45f38e1d60da676f2b8ad4e\AndroidManifest.xml:27:13-44
-	android:name
-		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Delin Sun\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\522b6305a45f38e1d60da676f2b8ad4e\AndroidManifest.xml:26:13-58
+		ADDED from [com.google.android.gms:play-services-basement:11.8.0] /Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/1a251e7583e4dbbe9c8aa0c8bc1f00a1/AndroidManifest.xml:24:13-58

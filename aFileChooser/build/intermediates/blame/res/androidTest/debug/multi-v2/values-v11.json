@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\aFileChooser\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "/Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\values-v11\\values-v11.xml",
+                    "source": "/Users/Edwardong/Desktop/34Test/NoteHub-Android/aFileChooser/build/intermediates/bundles/debug/res/values-v11/values-v11.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
