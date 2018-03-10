@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/bg_view">
     <com.cs48.g15.notehub.SwipeListView.SwipeListView
         android:splitMotionEvents="false"
         android:layout_width="match_parent"

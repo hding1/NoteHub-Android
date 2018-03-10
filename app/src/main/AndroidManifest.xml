@@ -56,9 +56,20 @@
             android:name=".UploadActivity"
             android:label="@string/title_activity_upload"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ViewActivity"
-            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name=".ViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity android:name=".ProcessingActivity" />
+
+        <!--<provider-->
+            <!--android:name="android.support.v4.content.FileProvider"-->
+            <!--android:authorities="com.cs48.g15.notehub.fileProvider"-->
+            <!--android:exported="false"-->
+            <!--android:grantUriPermissions="true">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                <!--android:resource="@xml/provider_paths" />-->
+        <!--</provider>-->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.cs48.g15.notehub.fileProvider"
@@ -68,6 +79,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
         </provider>
+
     </application>
 
 </manifest>

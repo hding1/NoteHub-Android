@@ -1,12 +1,19 @@
 package com.cs48.g15.notehub;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -86,57 +93,94 @@ public class ViewActivity extends AppCompatActivity {
                 list.clear();
                 for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
 
-                    if (!entry.getValue().filename.equals("no_file.hehe")){
+                    if (!entry.getValue().filename.equals("no_file.hehe")) {
                         Info info = new Info();
                         info.name = entry.getValue().filename;
-                        info.desc = entry.getValue().description;
+                        info.desc = entry.getValue().tag+" - " + entry.getValue().description;
                         listData.add(info);
                         adapter.notifyDataSetChanged();
                         //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
                         list.add(entry.getValue().filename);
                     }
                 }
+
                 adapter = new ListAdapter(listData);
                 listView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
                 listView.setListener(new OnSwipeListItemClickListener() {
                     @Override
                     public void OnClick(View view, int index) {
+
+                        final String s = adapter.getItem(index).toString();
                         //item点击
-                        AlertDialog.Builder ab = new AlertDialog.Builder(ViewActivity.this);
-                        ab.setTitle("Click");
-                        ab.setMessage("click item "+index);
-                        ab.create().show();
+                        List<PDF> list = new ArrayList<PDF>();
+                        for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                            if (!entry.getValue().filename.equals("no_file.hehe")) {
+                                //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                list.add(entry.getValue());
+                            }
+                        }
+                        for (int i = 0; i < list.size(); i++) {
+
+                            if (list.get(i).filename.equals(s)) {
+                                download(list.get(i).tag, myUser.username, list.get(i).filename);
+                                // Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
+                                //File file = new File("/sdcard/Download/"+s);
+                                File dir = new File("/sdcard/Download");
+                                //Toast.makeText(ViewActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
+                                final File file = new File(dir, s);
+                                if (file.exists()) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    Uri apkURI = FileProvider.getUriForFile(
+                                            ViewActivity.this,
+                                            "com.cs48.g15.notehub.fileProvider", file);
+                                    Uri path = Uri.fromFile(file);
+                                    intent.setDataAndType(apkURI, "application/pdf");
+                                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    try {
+                                        startActivity(intent);
+                                    } catch (ActivityNotFoundException e) {
+                                        Toast.makeText(ViewActivity.this,
+                                                "No Application Available to View PDF",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                                break;
+                            }
+                        }
                     }
+
                     @Override
                     public boolean OnLongClick(View view, int index) {
                         //item点击长按
                         AlertDialog.Builder ab = new AlertDialog.Builder(ViewActivity.this);
                         ab.setTitle("LongClick");
-                        ab.setMessage("long click item "+index);
+                        ab.setMessage("long click item " + index);
                         ab.create().show();
                         return false;
                     }
+
                     @Override
                     public void OnControlClick(int rid, View view, int index) {
                         final String s = adapter.getItem(index).toString();
                         AlertDialog.Builder ab = new AlertDialog.Builder(ViewActivity.this);
-                        switch (rid){
+                        switch (rid) {
                             case R.id.modify:
-                                //item点击modify
+                                //item点击Download
 
                                 List<PDF> list = new ArrayList<PDF>();
                                 for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
-                                    if (!entry.getValue().filename.equals("no_file.hehe")){
-                                //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                    if (!entry.getValue().filename.equals("no_file.hehe")) {
+                                        //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
                                         list.add(entry.getValue());
                                     }
                                 }
-                                for(int i = 0;i<list.size();i++){
-                                   // Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
-                                    if(list.get(i).filename.equals(s)){
-                                        download(list.get(i).tag,myUser.username,list.get(i).filename);
-                                    break;
+                                for (int i = 0; i < list.size(); i++) {
+                                    // Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
+                                    if (list.get(i).filename.equals(s)) {
+                                        download(list.get(i).tag, myUser.username, list.get(i).filename);
+                                        break;
                                     }
                                 }
                                 break;
@@ -144,15 +188,14 @@ public class ViewActivity extends AppCompatActivity {
                                 //item点击delete
                                 list = new ArrayList<PDF>();
                                 for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
-                                    if (!entry.getValue().filename.equals("no_file.hehe")){
+                                    if (!entry.getValue().filename.equals("no_file.hehe")) {
                                         //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
                                         list.add(entry.getValue());
                                     }
                                 }
-                                for(int i = 0;i<list.size();i++){
-                                    // Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
-                                    if(list.get(i).filename.equals(s)){
-                                        delete_file(myUser.username,list.get(i).filename,list.get(i).tag);
+                                for (int i = 0; i < list.size(); i++) {
+                                    if (list.get(i).filename.equals(s)) {
+                                        delete_file(myUser.username, list.get(i).filename, list.get(i).tag);
                                         adapter.remove(index);
                                         adapter.notifyDataSetChanged();
                                         listView.invalidateViews();
@@ -163,53 +206,19 @@ public class ViewActivity extends AppCompatActivity {
                         }
                         adapter.notifyDataSetChanged();
                     }
-                },new int[]{R.id.modify,R.id.delete});
+                }, new int[]{R.id.modify, R.id.delete});
                 adapter.notifyDataSetChanged();
 
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.e("The read failed: " ,databaseError.getMessage());
+                Log.e("The read failed: ", databaseError.getMessage());
             }
 
         });
 
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                final String s = adapterView.getItemAtPosition(i).toString();
-//
-////                adapter.dismiss(); // If you want to close the adapter
-//                mUserReference.addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot snapshot) {
-//                        myUser = snapshot.getValue(User.class);
-//                        myPDF = myUser.pdfs;
-//                        List<PDF> list = new ArrayList<PDF>();
-//                        for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
-//                            if (!entry.getValue().filename.equals("no_file.hehe")){
-//                                //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
-//                                list.add(entry.getValue());
-//                            }
-//                        }
-//
-//                        for(int i = 0;i<list.size();i++){
-//                            if(list.get(i).filename.equals(s)){
-//                                download(list.get(i).tag,myUser.username,list.get(i).filename);
-//                                break;
-//                            }
-//                        }
-// //                       adapter.notifyDataSetChanged();
-//                    }
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//                        Log.e("The read failed: " ,databaseError.getMessage());
-//                    }
-//                });
-//            }
-//        });
     }
-
     //Firebase Methods
 
     //Firebase Download
@@ -237,7 +246,7 @@ public class ViewActivity extends AppCompatActivity {
                     }
                     boolean temp1 = file.createNewFile();
                     if (!temp1){
-                        Toast.makeText(ViewActivity.this, "file already exists", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ViewActivity.this, "file already exists", Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (IOException e) {

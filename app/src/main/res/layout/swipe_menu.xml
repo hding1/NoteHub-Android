@@ -42,7 +42,7 @@
                 android:layout_height="match_parent">
                 <Button
                     android:id="@+id/modify"
-                    android:text="Modify"
+                    android:text="Download"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"/>
                 <Button
