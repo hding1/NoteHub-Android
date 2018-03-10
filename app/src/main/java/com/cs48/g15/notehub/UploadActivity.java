@@ -49,7 +49,7 @@ import com.google.firebase.storage.UploadTask;
 
 public class UploadActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Button btnUpload, btnBack;
-    private EditText inputName, description;
+    private EditText inputName, getDescription;
     private String name, myDescription;
     private String selected;
     private FirebaseAuth auth;
@@ -77,11 +77,15 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         btnUpload = (Button) findViewById(R.id.btn_upload);
         btnBack = (Button) findViewById(R.id.btn_backHome);
         inputName = (EditText) findViewById(R.id.item_name);
-        name = inputName.getText().toString();
-        description = (EditText) findViewById(R.id.description);
-        myDescription = description.getText().toString();
+
+        getDescription = (EditText) findViewById(R.id.get_description);
+        myDescription = "  ";
+
+
         userID = auth.getCurrentUser().getUid();
-        myPathName = path.substring(path.lastIndexOf('/') + 1);;
+        Toast.makeText(getApplicationContext(),path,Toast.LENGTH_LONG).show();
+//        myPathName = path.substring(path.lastIndexOf('/') + 1);
+
         // Spinner element
         Spinner spinner = findViewById(R.id.spinner);
 
@@ -113,10 +117,14 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                myPathName = path.substring(path.lastIndexOf('/') + 1);
+                name = inputName.getText().toString();
+                myDescription = getDescription.getText().toString();
                 upload(myUsername,myPath,selected);
                 update_file_helper(userID,myPathName,selected,myDescription);
                 Intent intent = new Intent(UploadActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                 startActivity(intent);
                 finish();
             }

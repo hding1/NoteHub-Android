@@ -30,14 +30,13 @@
     <uses-permission android:name="com.cs48.g15.notehub.permission.C2D_MESSAGE" />
 
     <application
-        android:name="com.cs48.g15.notehub.Scanbotinitialize"
+        android:name="com.cs48.g15.notehub.Scanbot.Scanbotinitialize"
         android:allowBackup="true"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="NoteHub"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.cs48.g15.notehub.LoginActivity"
@@ -54,8 +53,8 @@
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme" />
         <activity android:name="com.cs48.g15.notehub.MainActivity" />
-        <activity android:name="com.cs48.g15.notehub.CameraActivity" />
-        <activity android:name="com.cs48.g15.notehub.EditPolygonImageActivity" />
+        <activity android:name="com.cs48.g15.notehub.Scanbot.CameraActivity" />
+        <activity android:name="com.cs48.g15.notehub.Scanbot.EditPolygonImageActivity" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:enabled="@bool/use_activity"
@@ -75,7 +74,9 @@
             android:name="com.cs48.g15.notehub.UploadActivity"
             android:label="@string/title_activity_upload"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.cs48.g15.notehub.ViewActivity" />
+        <activity
+            android:name="com.cs48.g15.notehub.ViewActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name="com.cs48.g15.notehub.ProcessingActivity" />
 
         <provider

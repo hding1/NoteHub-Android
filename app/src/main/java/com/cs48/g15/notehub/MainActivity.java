@@ -1,6 +1,5 @@
 package com.cs48.g15.notehub;
 
-import android.*;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,20 +7,17 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+import com.cs48.g15.notehub.Scanbot.CameraActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -31,19 +27,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.ipaulpro.afilechooser.utils.FileUtils;
-import com.cs48.g15.notehub.FIleChooser;
 
 import static android.content.ContentValues.TAG;
 
@@ -169,61 +161,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void delete_file(final String username, final String filename, final String tag){
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("username").child(username);
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                String uid = dataSnapshot.getValue(String.class);
-                delete_file_helper(uid, username, filename, tag);
-                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
-                // ...
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-        mUserReference.addListenerForSingleValueEvent(postListener);
-    }
-
-    public void delete_file_helper(final String uid, String username, String filename, String tag){
-        // Create a storage reference from our app
-        StorageReference storageRef = storage.getReference();
-        final String file_name = filename.replace('.', '_');;
-
-        // Create a reference to the file to delete
-        StorageReference deleteRef = storageRef.child(tag + "/" + username + "_" + filename);
-
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
-
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                myUser = dataSnapshot.getValue(User.class);
-                myUser.pdfs.remove(file_name);
-                Map<String, Object> delete_pdf = new HashMap<>();
-                for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()){
-                    if (entry.getKey()!=file_name){
-                        delete_pdf.put(entry.getKey(), entry.getValue());
-                    }
-                }
-                mDatabase.child("users").child(uid).child("pdfs").setValue(delete_pdf);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-        mUserReference.addListenerForSingleValueEvent(postListener);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

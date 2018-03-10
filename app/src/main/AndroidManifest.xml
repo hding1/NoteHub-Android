@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name=".Scanbotinitialize"
+        android:name=".Scanbot.Scanbotinitialize"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="NoteHub"
@@ -35,8 +35,8 @@
             android:label="@string/title_activity_reset_password"
             android:theme="@style/AppTheme" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".CameraActivity" />
-        <activity android:name=".EditPolygonImageActivity" />
+        <activity android:name=".Scanbot.CameraActivity" />
+        <activity android:name=".Scanbot.EditPolygonImageActivity" />
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:enabled="@bool/use_activity"
@@ -56,7 +56,8 @@
             android:name=".UploadActivity"
             android:label="@string/title_activity_upload"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ViewActivity" />
+        <activity android:name=".ViewActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity android:name=".ProcessingActivity" />
         <provider
             android:name="android.support.v4.content.FileProvider"
