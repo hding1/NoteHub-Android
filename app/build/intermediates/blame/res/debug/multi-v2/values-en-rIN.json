@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
+            "outputFile": "/Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\6eccc9e8fdc8ba1c41ee2be4377082fc\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/726f49df447a9507c2848e13c18acb8a/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.8.0.aar\\2efc1142d63bab91b7b4ffc8da1d7bd9\\res\\values-en-rIN\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "242",
-                        "endColumns": "99",
-                        "endOffsets": "341"
-                    },
-                    "to": {
-                        "startLines": "41",
-                        "startColumns": "4",
-                        "startOffsets": "3933",
-                        "endColumns": "103",
-                        "endOffsets": "4032"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.0.aar\\2ad27b8bd3eb6f17c0edfde6aacf87bb\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/1dd589b01f261d141e39cf378c98a62c/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ca2c5b504e660aa454ea5a04f58d33db\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/6672ba9c4ec064e7da665c3ffb886c68/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -69,6 +52,23 @@
                         "startOffsets": "1825,1925,2031,2139,2250,2345,2427,2519,2621,2717,2813,2907,2999,3107,3215,3299,3380,3470,3570,3656",
                         "endColumns": "99,105,107,110,94,81,91,101,95,95,93,91,107,107,83,80,89,99,85,93",
                         "endOffsets": "1920,2026,2134,2245,2340,2422,2514,2616,2712,2808,2902,2994,3102,3210,3294,3375,3465,3565,3651,3745"
+                    }
+                },
+                {
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.8.0.aar/bc9419ffa688948053ac351f62136d25/res/values-en-rIN/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "242",
+                        "endColumns": "99",
+                        "endOffsets": "341"
+                    },
+                    "to": {
+                        "startLines": "41",
+                        "startColumns": "4",
+                        "startOffsets": "3933",
+                        "endColumns": "103",
+                        "endOffsets": "4032"
                     }
                 }
             ]

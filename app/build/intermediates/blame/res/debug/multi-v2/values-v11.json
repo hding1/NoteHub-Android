@@ -1,10 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "/Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-appinvite-11.8.0.aar\\88e015ce1bf0366d31958a222957375c\\res\\values-v11\\values.xml",
+                    "source": "/Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/build/intermediates/bundles/debug/res/values-v11/values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "53",
+                        "endOffsets": "104"
+                    }
+                },
+                {
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-11.8.0.aar/34e540ae84287fdc71de34b3722a7ce4/res/values-v11/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -20,16 +30,6 @@
                         "endLines": "4",
                         "endColumns": "8",
                         "endOffsets": "230"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\aFileChooser\\build\\intermediates\\bundles\\debug\\res\\values-v11\\values-v11.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "53",
-                        "endOffsets": "104"
                     }
                 }
             ]

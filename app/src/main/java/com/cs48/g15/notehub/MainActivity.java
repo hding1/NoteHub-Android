@@ -262,6 +262,7 @@ public class MainActivity extends AppCompatActivity {
                                 new String[]{android.Manifest.permission.CAMERA},
                                 PERMISSIONS_REQUEST_CAMERA);
                         Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                        intent.putExtra("username",myUsername);
                         startActivity(intent);
                         onPause();
                     }

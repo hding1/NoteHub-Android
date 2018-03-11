@@ -1,27 +1,20 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Delin Sun\\Documents\\GitHub\\NoteHub-Android\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "/Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.8.0.aar\\f72d29dbda2fdff77dc5800c2329c36f\\res\\values-land\\values.xml",
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/726f49df447a9507c2848e13c18acb8a/res/values-land/values-land.xml",
                     "from": {
-                        "startLines": "4,5,6,7,8,9",
-                        "startColumns": "0,0,0,0,0,0",
-                        "startOffsets": "183,264,344,414,483,578",
-                        "endColumns": "80,79,69,68,94,90",
-                        "endOffsets": "263,343,413,482,577,668"
-                    },
-                    "to": {
-                        "startLines": "6,7,8,9,10,11",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "328,413,497,571,644,743",
-                        "endColumns": "84,83,73,72,98,94",
-                        "endOffsets": "408,492,566,639,738,833"
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,125,189,260",
+                        "endColumns": "69,63,70,67",
+                        "endOffsets": "120,184,255,323"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ca2c5b504e660aa454ea5a04f58d33db\\res\\values-land\\values-land.xml",
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/6672ba9c4ec064e7da665c3ffb886c68/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -38,7 +31,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.0.aar\\dcc7881892423f858de17751db7e75b3\\res\\values-land\\values-land.xml",
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/18cee260415798e9dd063b8f4d150450/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -57,13 +50,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Delin Sun\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.0.aar\\6eccc9e8fdc8ba1c41ee2be4377082fc\\res\\values-land\\values-land.xml",
+                    "source": "/Users/Edwardong/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.8.0.aar/47340460ddc3275c7052441275726b78/res/values-land/values.xml",
                     "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,125,189,260",
-                        "endColumns": "69,63,70,67",
-                        "endOffsets": "120,184,255,323"
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "0,0,0,0,0,0",
+                        "startOffsets": "183,264,344,414,483,578",
+                        "endColumns": "80,79,69,68,94,90",
+                        "endOffsets": "263,343,413,482,577,668"
+                    },
+                    "to": {
+                        "startLines": "6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "328,413,497,571,644,743",
+                        "endColumns": "84,83,73,72,98,94",
+                        "endOffsets": "408,492,566,639,738,833"
                     }
                 }
             ]

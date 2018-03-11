@@ -1,11 +1,13 @@
 package com.cs48.g15.notehub.Scanbot;
 
-import android.app.Dialog;
 import android.content.ContextWrapper;
+import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
+import android.net.Uri;
 import android.os.Environment;
-import android.support.v4.app.DialogFragment;
+import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.graphics.Bitmap;
@@ -14,48 +16,83 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.support.v4.view.WindowCompat;
 import android.util.Pair;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.content.Intent;
+import android.util.DisplayMetrics;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.cs48.g15.notehub.R;
-
-import net.doo.snap.camera.AutoSnappingController;
-import net.doo.snap.camera.CameraOpenCallback;
-import net.doo.snap.camera.ContourDetectorFrameHandler;
-import net.doo.snap.camera.PictureCallback;
-import net.doo.snap.camera.ScanbotCameraView;
+import net.doo.snap.ScanbotSDK;
+import net.doo.snap.entity.Page;
+//import net.doo.snap.entity.Document;
+import net.doo.snap.entity.SnappingDraft;
 import net.doo.snap.lib.detector.ContourDetector;
 import net.doo.snap.lib.detector.DetectionResult;
 import net.doo.snap.lib.detector.Line2D;
+import net.doo.snap.persistence.PageFactory;
 import net.doo.snap.ui.EditPolygonImageView;
 import net.doo.snap.ui.MagnifierView;
-import net.doo.snap.ui.PolygonView;
+import net.doo.snap.persistence.cleanup.Cleaner;
+import net.doo.snap.process.DocumentProcessingResult;
+import net.doo.snap.process.DocumentProcessor;
+import net.doo.snap.process.draft.DocumentDraftExtractor;
+import net.doo.snap.process.util.DocumentDraft;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Executors;
-//import com.itextpdf.text.Document;
-//import com.itextpdf.text.Image;
-//import com.itextpdf.text.pdf.PdfWriter;
+
+import com.cs48.g15.notehub.R;
+import com.cs48.g15.notehub.UploadActivity;
+import com.itextpdf.text.Document;
+
+import com.ipaulpro.afilechooser.utils.FileUtils;
+
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import static android.os.Environment.getExternalStoragePublicDirectory;
+
 
 public class EditPolygonImageActivity extends AppCompatActivity {
 
     private EditPolygonImageView editPolygonView;
     private MagnifierView magnifierView;
     private Bitmap originalBitmap;
+    private View progressView;
     private ImageView resultImageView;
-    private Button cropButton, backCameraButton, backButton, saveButton;
+    private PageFactory pageFactory;
+    private DocumentDraftExtractor documentDraftExtractor;
+    private DocumentProcessor documentProcessor;
+    private Cleaner cleaner;
+    private Button cropButton, uploadButton, backButton, saveButton;
+    private List<DocumentProcessingResult> results = new ArrayList<>();
+
+    private String path;
+    private String user;
+    private String Path;
+    private String saved;
+
+    private Bitmap GetBitmap;
+    //TextView tv;
+
+    //private Uri uri;
 
 
     @Override
@@ -64,14 +101,28 @@ public class EditPolygonImageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_polygon_image);
 
+        initializeDependencies();
+
         //getSupportActionBar().hide();
 
         editPolygonView = (EditPolygonImageView) findViewById(R.id.polygonView);
 
         Intent intent = getIntent();
-        String path = intent.getStringExtra("Path");
+        //path = intent.getStringExtra("Path");
+        user = intent.getStringExtra("username");
+        String pictureUri= intent.getStringExtra("pictureUri");
+        Uri uri = Uri.parse(pictureUri);
+        try {
+            GetBitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        loadImageFromStorage(path);
+//
+//        GetBitmap = BitmapFactory.decodeByteArray(bis, 0, bis.length);
+//
+
+        //loadImageFromStorage(path);
 
 //        try {
 //            File f = new File(path,"temp,jpg");
@@ -85,7 +136,7 @@ public class EditPolygonImageActivity extends AppCompatActivity {
         //BitmapDrawable p = new BitmapDrawable(getResources(),bitmap);
 
         //在这里要change source，真实情况应该是存在storage的某个地址
-        //editPolygonView.setImageBitmap(b);
+        editPolygonView.setImageBitmap(GetBitmap);
         originalBitmap = ((BitmapDrawable) editPolygonView.getDrawable()).getBitmap();
 
         magnifierView = (MagnifierView) findViewById(R.id.magnifier);
@@ -93,10 +144,13 @@ public class EditPolygonImageActivity extends AppCompatActivity {
         magnifierView.setupMagnifier(editPolygonView);
 
         resultImageView = (ImageView) findViewById(R.id.resultImageView);
+        progressView = findViewById(R.id.progressBar);
         resultImageView.setVisibility(View.GONE);
 
         cropButton = (Button) findViewById(R.id.cropButton);
         saveButton = (Button) findViewById(R.id.saveButton);
+
+        uploadButton = findViewById(R.id.uploadButton);
 
         cropButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,21 +178,62 @@ public class EditPolygonImageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Bitmap bit;
                 bit = originalBitmap = ((BitmapDrawable) resultImageView.getDrawable()).getBitmap();
-                String saved = saveToExternalStorage(bit);
+                saved = saveToExternalStorage(bit);
+                Toast.makeText(EditPolygonImageActivity.this, "Your pdf file has been saved to Download folder.", Toast.LENGTH_SHORT).show();
 
-                // Input file
-                String inputPath = saved;
 
-                // Output file
-                String outputPath = Environment.getExternalStorageDirectory() + File.separator + "out.pdf";
-                convertToPdf(inputPath,outputPath);
+                //results = SaveBitmap2PDF(bit);
+                //progressView.setVisibility(View.VISIBLE);
+                //Path = getPath()；
 
-                //println(t);
+                uploadButton.setVisibility(View.VISIBLE);
+
             }
         });
 
+        uploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    Path = createPdf(saved);
+                    Toast.makeText(EditPolygonImageActivity.this, "Your pdf file has been saved to Download folder.", Toast.LENGTH_SHORT).show();
+                } catch (DocumentException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                Intent intent = new Intent(EditPolygonImageActivity.this, UploadActivity.class);
+                intent.putExtra("path",Path);
+                intent.putExtra("username",user);
+                startActivity(intent);
+            }
+        });
+
+
+
         new InitImageViewTask().executeOnExecutor(Executors.newSingleThreadExecutor(), originalBitmap);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //setup();
+    }
+
+//    /**
+//     * Initializes variables used for convenience
+//     */
+//    private void setup() {
+//        // Enable Android-style asset loading (highly recommended)
+//        PDFBoxResourceLoader.init(getApplicationContext());
+//        // Find the root of the external storage.
+//        root = android.os.Environment.getExternalStorageDirectory();
+//        assetManager = getAssets();
+//        //tv = (TextView) findViewById(R.id.statusTextView);
+//    }
 
     private void crop() {
         // crop & warp image by selected polygon (editPolygonView.getPolygon())
@@ -201,6 +296,14 @@ public class EditPolygonImageActivity extends AppCompatActivity {
         }
     }
 
+    private void initializeDependencies() {
+        ScanbotSDK scanbotSDK = new ScanbotSDK(this);
+        pageFactory = scanbotSDK.pageFactory();
+        documentDraftExtractor = scanbotSDK.documentDraftExtractor();
+        documentProcessor = scanbotSDK.documentProcessor();
+        cleaner = scanbotSDK.cleaner();
+    }
+
     private void loadImageFromStorage(String path) {
 
         try {
@@ -215,18 +318,15 @@ public class EditPolygonImageActivity extends AppCompatActivity {
 
     }
 
-//    private void saveImagetoStorage(Bitmap bit){
-//        File directory = Context.getExternalFilesDir();
-//        File f = new(File)
-//    }
 
     private String saveToExternalStorage(Bitmap bitmapImage){
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         // path
-        File externalFilesDir = getExternalFilesDir(null);
+        File externalFilesDir = getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
         // Create savedImages
         String fileName = new SimpleDateFormat("yyyyMMddHHmm'.jpg'").format(new Date());
         File mypath=new File(externalFilesDir,fileName);
+        Toast.makeText(EditPolygonImageActivity.this, "Saving process will be finished in a few seconds.", Toast.LENGTH_SHORT).show();
 
         FileOutputStream fos = null;
         try {
@@ -242,182 +342,153 @@ public class EditPolygonImageActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-        return Environment.getExternalStorageDirectory()+ File.separator + fileName;
+        //return externalFilesDir+ File.separator + fileName;
+        return fileName;
     }
 
-    public static boolean convertToPdf(String jpgFilePath, String outputPdfPath)
-    {
-        try
-        {
-            // Check if Jpg file exists or not
-            File inputFile = new File(jpgFilePath);
-            if (!inputFile.exists()) throw new Exception("File '" + jpgFilePath + "' doesn't exist.");
+    private String createPdf(String Filename) throws IOException, DocumentException {
+        Document document=new Document(PageSize.A4);
+        String dirpath=getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
+        String fileName = new SimpleDateFormat("yyyyMMddHHmm'.pdf'").format(new Date());
+        PdfWriter.getInstance(document,new FileOutputStream(dirpath+"/" + fileName));
 
-            // Create output file if needed
-            File outputFile = new File(outputPdfPath);
-            if (!outputFile.exists()) outputFile.createNewFile();
+        document.open();
+        String imagepath = getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString();
+        Image img=Image.getInstance(imagepath+"/"+Filename);  // Replace logo.png with your image name with extension
+        img.scalePercent(20,20);
+        img.setAbsolutePosition((PageSize.A4.getWidth() - img.getScaledWidth()) / 2, (PageSize.A4.getHeight() - img.getScaledHeight()) / 2);
+        document.add(img);
+        document.close();
 
+        return dirpath+ "/" + fileName;
+
+    }
+
+
+
+//    private String getPath(List<DocumentProcessingResult> documentProcessingResult){
+//        Document document = documentProcessingResult.get(0).getDocument();
+//        File documentFile = documentProcessingResult.get(0).getDocumentFile();
+//        String Path;
+//        Path = documentFile.getPath();
+//
+////        Uri uri = FileProvider.getUriForFile(EditPolygonImageActivity.this,BuildConfig.APPLICATION_ID+".fileProvider",documentFile);
+//
+//        return Path;
+//    }
+
+//    private List<DocumentProcessingResult> SaveBitmap2PDF(Bitmap map){
+//        int screenWidth;
+//        int screenHeight;
+//        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+//        screenWidth = displayMetrics.widthPixels;
+//        screenHeight = displayMetrics.heightPixels;
+//        List<DocumentProcessingResult> results = new ArrayList<>();
+//
+//        try {
+//            Bitmap result = map;
+//
+//            Page page = pageFactory.buildPage(result, screenWidth, screenHeight).page;
+//            SnappingDraft snappingDraft = new SnappingDraft(page);
+//            DocumentDraft[] drafts = documentDraftExtractor.extract(snappingDraft);
+//
+//            for (DocumentDraft draft : drafts) {
+//                try {
+//                    results.add(documentProcessor.processDocument(draft));
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            cleaner.cleanUp();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        return results;
+//    }
+
+//    private void saveImagetoStorage(Bitmap bit){
+//        File directory = Context.getExternalFilesDir();
+//        File f = new(File)
+//    }
+
+
+
+//    /**
+//     * Creates a new PDF from scratch and saves it to a file
+//     */
+//    public void createPdf(Bitmap bitmap, String Filename) throws IOException {
+//        try {
+//            PDDocument document = new PDDocument();
+//            PDPage page = new PDPage();
+//            document.addPage(page);
+//
+//            //File f=new (Filename);
+//            InputStream in = new FileInputStream(Filename);
+//
+//            PDImageXObject ximage = JPEGFactory.createFromStream(document, in);
+//            PDPageContentStream contentStream = new PDPageContentStream(document, page);
+//            contentStream.drawImage(ximage,20,20);
+//
+//
+//            // Create a new font object selecting one of the PDF base fonts
+////            PDFont font = PDType1Font.HELVETICA;
+//            // Or a custom font
+////		    try {
+////			    PDType0Font font = PDType0Font.load(document, assetManager.open("MyFontFile.TTF"));
+////		    } catch(IOException e) {
+////			    e.printStackTrace();
+////		    }
+////
+////            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+////            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+////            InputStream bs = new ByteArrayInputStream(outputStream.toByteArray());
+//
+//            //PDImageXObject alphaXimage = LosslessFactory.createFromImage(document, bitmap);
+//
+////            PDImageXObject pdImage = new PDImageXObject(document, bs,
+////                    COSName.DCT_DECODE, bitmap.getWidth(), bitmap.getHeight(),
+////                    8, //awtImage.getColorModel().getComponentSize(0),TODO
+////                    PDDeviceRGB.INSTANCE);
+//
+//            //PDPageContentStream contentStream = new PDPageContentStream(document, page);
+//            //contentStream.drawImage(alphaXimage, 20, 20);
+//
+//            contentStream.close();
+//            document.save(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "test.pdf"));
+//            document.close();
+//        } catch(IOException e){
+//            e.printStackTrace();
+//        }
+//    }
+
+//    public static boolean convertToPdf(String jpgFilePath, String outputPdfPath)
+//    {
+//        try
+//        {
+//            // Check if Jpg file exists or not
+//            File inputFile = new File(jpgFilePath);
+//            if (!inputFile.exists()) throw new Exception("File '" + jpgFilePath + "' doesn't exist.");
+//
+//            // Create output file if needed
+//            File outputFile = new File(outputPdfPath);
+//            if (!outputFile.exists()) outputFile.createNewFile();
+//
 //            Document document = new Document();
 //            PdfWriter.getInstance(document, new FileOutputStream(outputFile));
 //            document.open();
 //            Image image = Image.getInstance(jpgFilePath);
 //            document.add(image);
 //            document.close();
-
-            return true;
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-    /**
-     * {@link ScanbotCameraView} integrated in {@link DialogFragment} example
-     */
-    public static class CameraDialogFragment extends DialogFragment implements PictureCallback {
-        private ScanbotCameraView cameraView;
-        private ImageView resultView;
-        private AutoSnappingController autoSnappingController;
-        private PolygonView polygonView;
-        private ContourDetectorFrameHandler contourDetectorFrameHandler;
-
-        boolean flashEnabled = false;
-        private boolean autoSnappingEnabled = true;
-
-        /**
-         * Create a new instance of CameraDialogFragment
-         */
-        static CameraDialogFragment newInstance() {
-            return new CameraDialogFragment();
-        }
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View baseView =  getActivity().getLayoutInflater().inflate(R.layout.activity_camera, container, false);
-
-            cameraView = (ScanbotCameraView) baseView.findViewById(R.id.camera);
-            cameraView.setCameraOpenCallback(new CameraOpenCallback() {
-                @Override
-                public void onCameraOpened() {
-                    cameraView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            cameraView.continuousFocus();
-                            cameraView.useFlash(flashEnabled);
-                        }
-                    }, 700);
-                }
-            });
-
-            resultView = (ImageView) baseView.findViewById(R.id.result);
-
-            ContourDetectorFrameHandler contourDetectorFrameHandler = ContourDetectorFrameHandler.attach(cameraView);
-
-            PolygonView polygonView = (PolygonView) baseView.findViewById(R.id.polygonView);
-            contourDetectorFrameHandler.addResultHandler(polygonView);
-
-            AutoSnappingController.attach(cameraView, contourDetectorFrameHandler);
-
-            cameraView.addPictureCallback(this);
-
-            baseView.findViewById(R.id.snap).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    cameraView.takePicture(false);
-                }
-            });
-
-            baseView.findViewById(R.id.flash).setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    flashEnabled = !flashEnabled;
-                    cameraView.useFlash(flashEnabled);
-                }
-            });
-
-            baseView.findViewById(R.id.autoSnappingToggle).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    autoSnappingEnabled = !autoSnappingEnabled;
-                    setAutoSnapEnabled(autoSnappingEnabled);
-                }
-            });
-
-            return baseView;
-        }
-
-        @Override
-        public void onStart()
-        {
-            super.onStart();
-            Dialog dialog = getDialog();
-            if (dialog != null) {
-                int width = ViewGroup.LayoutParams.MATCH_PARENT;
-                int height = ViewGroup.LayoutParams.MATCH_PARENT;
-                dialog.getWindow().setLayout(width, height);
-            }
-        }
-
-        @Override
-        public void onResume() {
-            super.onResume();
-            cameraView.onResume();
-        }
-
-        @Override
-        public void onPause() {
-            super.onPause();
-            cameraView.onPause();
-        }
-
-        @Override
-        public void onPictureTaken(final byte[] image, int imageOrientation) {
-            // Here we get the full image from the camera.
-            // Implement a suitable async(!) detection and image handling here.
-            // This is just a demo showing detected image as downscaled preview image.
-
-            // Decode Bitmap from bytes of original image:
-            final BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inSampleSize = 8; // use 1 for original size (if you want no downscale)!
-            // in this demo we downscale the image to 1/8 for the preview.
-            Bitmap originalBitmap = BitmapFactory.decodeByteArray(image, 0, image.length, options);
-
-            // rotate original image if required:
-            if (imageOrientation > 0) {
-                final Matrix matrix = new Matrix();
-                matrix.setRotate(imageOrientation, originalBitmap.getWidth() / 2f, originalBitmap.getHeight() / 2f);
-                originalBitmap = Bitmap.createBitmap(originalBitmap, 0, 0, originalBitmap.getWidth(), originalBitmap.getHeight(), matrix, false);
-            }
-
-            // Run document detection on original image:
-            final ContourDetector detector = new ContourDetector();
-            detector.detect(originalBitmap);
-            final Bitmap documentImage = detector.processImageAndRelease(originalBitmap, detector.getPolygonF(), ContourDetector.IMAGE_FILTER_NONE);
-
-            resultView.post(new Runnable() {
-                @Override
-                public void run() {
-                    resultView.setImageBitmap(documentImage);
-                    cameraView.continuousFocus();
-                    cameraView.startPreview();
-                }
-            });
-        }
-
-        private void setAutoSnapEnabled(boolean enabled) {
-            autoSnappingController.setEnabled(enabled);
-            contourDetectorFrameHandler.setEnabled(enabled);
-            polygonView.setVisibility(enabled ? View.VISIBLE : View.GONE);
-        }
-    }
+//
+//            return true;
+//        }
+//        catch (Exception e)
+//        {
+//            e.printStackTrace();
+//        }
+//
+//        return false;
+//    }
 }

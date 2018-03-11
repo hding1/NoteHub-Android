@@ -1,6 +1,7 @@
 package com.cs48.g15.notehub;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.PointF;
 import android.net.Uri;
@@ -10,7 +11,10 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+//import com.tom_roush.pdfbox.util.PDFBoxResourceLoader;
 
 import net.doo.snap.ScanbotSDK;
 import net.doo.snap.entity.Document;
@@ -42,6 +46,11 @@ public class ProcessingActivity extends AppCompatActivity {
     private Cleaner cleaner;
 
     private View progressView;
+
+    File root;
+    AssetManager assetManager;
+    Bitmap pageImage;
+    TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +105,7 @@ public class ProcessingActivity extends AppCompatActivity {
         new ProcessDocumentTask(imageUri).execute();
         progressView.setVisibility(View.VISIBLE);
     }
+
 
     private void openDocument(DocumentProcessingResult documentProcessingResult) {
         Document document = documentProcessingResult.getDocument();

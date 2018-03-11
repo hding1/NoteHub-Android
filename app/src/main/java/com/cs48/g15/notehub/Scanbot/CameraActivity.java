@@ -3,6 +3,12 @@ package com.cs48.g15.notehub.Scanbot;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.graphics.PointF;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.graphics.Bitmap;
@@ -10,8 +16,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Build;
 import android.support.v4.view.WindowCompat;
+import android.util.Pair;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -25,10 +33,21 @@ import net.doo.snap.camera.ScanbotCameraView;
 import net.doo.snap.lib.detector.ContourDetector;
 import net.doo.snap.lib.detector.DetectionResult;
 import net.doo.snap.ui.PolygonView;
+import net.doo.snap.lib.detector.ContourDetector;
+import net.doo.snap.lib.detector.DetectionResult;
+import net.doo.snap.lib.detector.Line2D;
+import net.doo.snap.ui.EditPolygonImageView;
+import net.doo.snap.ui.MagnifierView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executors;
 
 public class CameraActivity extends AppCompatActivity implements PictureCallback,
         ContourDetectorFrameHandler. ResultHandler{
@@ -54,7 +73,10 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
     private boolean flashEnabled = false;
     private boolean autoSnappingEnabled = true;
 
-    private String savedPath;
+    //private String savedPath;
+    private String user;
+
+    private Bitmap savedBitmap;
 
 
     @Override
@@ -63,6 +85,8 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_camera);
+        Intent intent = getIntent();
+        user = intent.getStringExtra("username");
 
         //getSupportActionBar().hide();
 
@@ -135,9 +159,17 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
                 Intent EditPolygon = new Intent(CameraActivity.this, EditPolygonImageActivity.class);
                 //ImageView imageView = (ImageView)this.findViewById(R.class.resultView);
                 //Bitmap documentImage = ((BitmapDrawable)resultView.getDrawable()).getBitmap();
-                EditPolygon.putExtra("Path",savedPath);
+
+//                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//                savedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+//                byte[] bitmapByte = baos.toByteArray();
+
+                Uri uri = Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), savedBitmap, null,null));
+
+                EditPolygon.putExtra("pictureUri",uri.toString());
+                EditPolygon.putExtra("username",user);
                 startActivity(EditPolygon);
-                onResume();
+                finish();
                 //update_file(uid, filename, tag);
                 //upload(username, pathname, tag);
             }
@@ -148,8 +180,9 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
 
     @Override
     protected void onResume() {
-        cameraView.onResume();
         super.onResume();
+        cameraView.onResume();
+
         //cameraView.startPreview();
     }
 
@@ -226,14 +259,19 @@ public class CameraActivity extends AppCompatActivity implements PictureCallback
         options.inSampleSize = 1; // use 1 for original size (if you want no downscale)!
         // in this demo we downscale the image to 1/8 for the preview.
         Bitmap originalBitmap = BitmapFactory.decodeByteArray(image, 0, image.length, options);
-        savedPath = saveToInternalStorage(originalBitmap);
+        //rotate original image if required:
+        if (imageOrientation > 0) {
+            final Matrix matrix = new Matrix();
+            matrix.setRotate(imageOrientation, originalBitmap.getWidth() / 2f, originalBitmap.getHeight() / 2f);
+            originalBitmap = Bitmap.createBitmap(originalBitmap, 0, 0, originalBitmap.getWidth(), originalBitmap.getHeight(), matrix, false);
+        }
+
+        savedBitmap = originalBitmap;
+        //savedPath = saveToInternalStorage(originalBitmap);
 
 
         options.inSampleSize = 8;
         originalBitmap = BitmapFactory.decodeByteArray(image, 0, image.length, options);
-
-
-         //rotate original image if required:
         if (imageOrientation > 0) {
             final Matrix matrix = new Matrix();
             matrix.setRotate(imageOrientation, originalBitmap.getWidth() / 2f, originalBitmap.getHeight() / 2f);
