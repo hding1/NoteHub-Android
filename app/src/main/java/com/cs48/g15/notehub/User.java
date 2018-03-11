@@ -1,5 +1,6 @@
 package com.cs48.g15.notehub;
 
+import com.cs48.g15.notehub.SwipeListView.Abstract_User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 
@@ -10,7 +11,7 @@ import java.util.Map;
  * Created by Delin Sun on 2/21/2018.
  */
 
-public class User {
+public class User extends Abstract_User{
 
     public String username;
     public String email;
@@ -46,6 +47,26 @@ public class User {
         this.tags.put("initial_tag", "intial_tag");
         this.isNew = false;
     }
+
+    public String getInfo(){
+        String rtn_info = "username: ";
+        rtn_info += this.username + "\n";
+        rtn_info += "email: "+this.email + "\n";
+        for (Map.Entry<String, Object> entry : this.followers.entrySet()){
+            rtn_info += "follower:"+entry.getKey()+"\n";
+        }
+        for (Map.Entry<String, Object> entry : this.following.entrySet()){
+            rtn_info += "following: "+entry.getKey()+"\n";
+        }
+        for (Map.Entry<String, PDF> entry : this.pdfs.entrySet()){
+            rtn_info += "PDF: "+entry.getKey()+"\n";
+        }
+        for (Map.Entry<String, Object> entry : this.tags.entrySet()){
+            rtn_info += "tags: "+entry.getKey()+"\n";
+        }
+        return rtn_info;
+    }
+
 }
 
 
