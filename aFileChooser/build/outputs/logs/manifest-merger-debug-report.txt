@@ -1,35 +1,35 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:17:2-26:12
-INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:17:2-26:12
-INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:17:2-26:12
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:17:2-26:12
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:17:2-26:12
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:17:2-26:12
 	package
-		ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:18:5-40
-		INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
-		INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:18:5-40
+		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:17:12-70
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:17:12-70
 uses-sdk
-ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
-INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
-INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
-INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
-INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
+INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
 	android:maxSdkVersion
-		ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:15-41
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:15-41
 	android:targetSdkVersion
-		INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
-		ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
-		INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
+		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
-		ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
-		INJECTED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
+		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:20:5-43
+		INJECTED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:21:5-79
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:21:5-79
 	android:name
-		ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:21:22-77
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:21:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:22:5-80
+ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:22:5-80
 	android:name
-		ADDED from /Users/Edwardong/Desktop/cs48Mar11/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:22:22-78
+		ADDED from /Users/peterding/Documents/College/W18/CS48/Notehub/Notehub-test3/NoteHub-Android/aFileChooser/src/main/AndroidManifest.xml:22:22-78

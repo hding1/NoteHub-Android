@@ -70,8 +70,8 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         Intent intent2 = getIntent();
         final String path=intent2.getExtras().getString("path");
         myPath=intent2.getExtras().getString("path");
-        final String username=intent2.getExtras().getString("username");
-        myUsername = username;
+//        final String username=intent2.getExtras().getString("username");
+//        myUsername = username;
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         btnUpload = (Button) findViewById(R.id.btn_upload);
@@ -80,7 +80,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
 
         getDescription = (EditText) findViewById(R.id.get_description);
         myDescription = "  ";
-
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(auth.getUid());
 
         userID = auth.getCurrentUser().getUid();
         Toast.makeText(getApplicationContext(),path,Toast.LENGTH_LONG).show();
@@ -112,30 +112,61 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
 // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-
-        btnUpload.setOnClickListener(new View.OnClickListener() {
+//        setSupportActionBar(toolbar);Toast.makeText(this, myUsername,Toast.LENGTH_LONG).show();
+//        btnUpload.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                myPathName = path.substring(path.lastIndexOf('/') + 1);
+//                name = inputName.getText().toString();
+//                myDescription = getDescription.getText().toString();
+//                upload(myUsername,myPath,selected);
+//                update_file_helper(userID,myPathName,selected,myDescription);
+//                Intent intent = new Intent(UploadActivity.this, MainActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
+//        btnBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
+        mUserReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                myPathName = path.substring(path.lastIndexOf('/') + 1);
-                name = inputName.getText().toString();
-                myDescription = getDescription.getText().toString();
-                upload(myUsername,myPath,selected);
-                update_file_helper(userID,myPathName,selected,myDescription);
-                Intent intent = new Intent(UploadActivity.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                startActivity(intent);
-                finish();
+                User user = dataSnapshot.getValue(User.class);
+                myUsername = user.username;
+                btnUpload.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        myPathName = path.substring(path.lastIndexOf('/') + 1);
+                        name = inputName.getText().toString();
+                        myDescription = getDescription.getText().toString();
+                        upload(myUsername,myPath,selected,inputName.getText().toString());
+                        update_file_helper(userID,inputName.getText().toString(),selected,myDescription);
+                        Intent intent = new Intent(UploadActivity.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+                btnBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
             }
         });
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -157,9 +188,9 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-    public void upload(String username, String file_dir, String tag){
+    public void upload(String username, String file_dir, String tag, String file_name){
         Uri file = Uri.fromFile(new File(file_dir));
-        String filename = username + "_" + file.getLastPathSegment();
+        String filename = username + "_" + file_name;
         StorageReference storageRef = storage.getReference();
         //StorageReference pdfRed = storageRef.child(filename);
         StorageReference pdfRef = storageRef.child(tag + "/" + filename);

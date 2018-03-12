@@ -1,4 +1,4 @@
-package com.cs48.g15.notehub;
+package com.cs48.g15.notehub.Scanbot;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -15,6 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 //import com.tom_roush.pdfbox.util.PDFBoxResourceLoader;
+
+import com.cs48.g15.notehub.BuildConfig;
+import com.cs48.g15.notehub.R;
 
 import net.doo.snap.ScanbotSDK;
 import net.doo.snap.entity.Document;
@@ -114,7 +117,7 @@ public class ProcessingActivity extends AppCompatActivity {
         Intent openIntent = new Intent();
         openIntent.setAction(Intent.ACTION_VIEW);
         openIntent.setDataAndType(
-                FileProvider.getUriForFile(ProcessingActivity.this,BuildConfig.APPLICATION_ID+".fileProvider",documentFile),
+                FileProvider.getUriForFile(ProcessingActivity.this, BuildConfig.APPLICATION_ID+".fileProvider",documentFile),
                 MimeUtils.getMimeByName(document.getName())
         );
 
