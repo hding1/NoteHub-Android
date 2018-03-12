@@ -305,6 +305,18 @@ public class ViewActivity extends AppCompatActivity {
         // Create a reference to the file to delete
         StorageReference deleteRef = storageRef.child(tag + "/" + username + "_" + filename);
 
+        deleteRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                // File deleted successfully
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Uh-oh, an error occurred!
+            }
+        });
+
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
 
         ValueEventListener postListener = new ValueEventListener() {
