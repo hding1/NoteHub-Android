@@ -16,7 +16,7 @@ public class User extends Abstract_User{
     public String username;
     public String email;
     public Map<String, Object> followers;
-    public Map<String, Object> following;
+    public Map<String, String> following;
     public Map<String, PDF> pdfs;
     public Map<String, Object> tags;
     public boolean isNew;
@@ -27,11 +27,11 @@ public class User extends Abstract_User{
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(String username, String email, Map<String, Object> followers, Map<String, Object> following, Map<String, PDF> pdfs, Map<String, Object> tags, boolean isNew) {
+    public User(String username, String email, Map<String, Object> followers, Map<String, String> following, Map<String, PDF> pdfs, Map<String, Object> tags, boolean isNew) {
         this.username = username;
         this.email = email;
         this.followers = new HashMap<String, Object>(followers);
-        this.following = new HashMap<String, Object>(following);
+        this.following = new HashMap<String, String>(following);
         this.pdfs = new HashMap<String, PDF>(pdfs);
         this.tags = new HashMap<String, Object>(tags);
         this.isNew = isNew;
@@ -55,7 +55,7 @@ public class User extends Abstract_User{
         for (Map.Entry<String, Object> entry : this.followers.entrySet()){
             rtn_info += "follower:"+entry.getKey()+"\n";
         }
-        for (Map.Entry<String, Object> entry : this.following.entrySet()){
+        for (Map.Entry<String, String> entry : this.following.entrySet()){
             rtn_info += "following: "+entry.getKey()+"\n";
         }
         for (Map.Entry<String, PDF> entry : this.pdfs.entrySet()){

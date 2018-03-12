@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -78,9 +79,11 @@ public class ViewActivity extends AppCompatActivity {
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         list = new ArrayList<String>();
+        Intent intent2 = getIntent();
+        final String myUid=intent2.getExtras().getString("uid");
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(user.getUid());
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(myUid);
         listView = (SwipeListView) findViewById(R.id.listView);
         adapter = new ListAdapter(listData);
 //        listView.setAdapter(adapter);
@@ -126,7 +129,7 @@ public class ViewActivity extends AppCompatActivity {
                                 download(list.get(i).tag, myUser.username, list.get(i).filename);
                                 // Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
                                 //File file = new File("/sdcard/Download/"+s);
-                                File dir = new File("/sdcard/Download");
+                                File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
                                 //Toast.makeText(ViewActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
                                 final File file = new File(dir, s);
                                 if (file.exists()) {
@@ -232,7 +235,7 @@ public class ViewActivity extends AppCompatActivity {
         fileRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
-                File dir = new File("/sdcard/Download");
+                File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
                 //Toast.makeText(ViewActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
                 final File file = new File(dir, filename);
                 String path= file.getPath();
@@ -304,6 +307,18 @@ public class ViewActivity extends AppCompatActivity {
 
         // Create a reference to the file to delete
         StorageReference deleteRef = storageRef.child(tag + "/" + username + "_" + filename);
+
+        deleteRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                // File deleted successfully
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Uh-oh, an error occurred!
+            }
+        });
 
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
 

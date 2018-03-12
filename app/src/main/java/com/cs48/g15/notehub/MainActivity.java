@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseStorage storage;
     private DatabaseReference mUserReference;
     private Uri myuri;
-    private String myPath;
+    private String myPath,myUid;
     private User myUser;
     private static final int REQUEST_CODE = 6384;
     private static final int PERMISSIONS_REQUEST_CAMERA = 314;
@@ -107,59 +107,6 @@ public class MainActivity extends AppCompatActivity {
         mDatabase.child("users").child(uid).child("isNew").setValue(false);
     }
 
-    //TODO: how to store in memory.
-    public void download(String tag, String username, final String filename){
-        final String file_name = username + "_" + filename;
-        StorageReference storageRef = storage.getReference();
-        StorageReference fileRef = storageRef.child(tag + "/" + file_name);
-
-        final long ONE_MEGABYTE = 1024 * 1024;
-        fileRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] bytes) {
-                File dir = new File("/sdcard/Download");
-                //Toast.makeText(MainActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
-                final File file = new File(dir, filename);
-                String path= file.getPath();
-
-                try {
-                    if (!dir.exists()) {
-                        boolean temp=dir.mkdirs();
-                        if (!temp){
-                            Toast.makeText(MainActivity.this, "failed wtfffffffff", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    boolean temp1 = file.createNewFile();
-                    Toast.makeText(MainActivity.this, file.getPath(), Toast.LENGTH_SHORT).show();
-                    if (!temp1){
-                        Toast.makeText(MainActivity.this, "11111failed wtfffffffff", Toast.LENGTH_SHORT).show();
-                    }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    FileOutputStream fos=new FileOutputStream(path);
-                    fos.write(bytes);
-                    fos.close();
-                    Toast.makeText(MainActivity.this, "Success!!!", Toast.LENGTH_SHORT).show();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                    Toast.makeText(MainActivity.this, "rilegou", Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-                Toast.makeText(MainActivity.this, "failed!!!!!!!!", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
 
 
@@ -189,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         };
         //get current user
         FirebaseUser user = auth.getCurrentUser();
+        myUid = user.getUid();
         if(user!=null)
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(user.getUid());
         ValueEventListener postListener = new ValueEventListener() {
@@ -244,7 +192,17 @@ public class MainActivity extends AppCompatActivity {
         btnViewFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ViewActivity.class));
+                if(!checkPermissionExtertalStorage()){
+                    try {
+                        requestPermissionExtertalStorage();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                Intent intent = new Intent(MainActivity.this, ViewActivity.class);
+                intent.putExtra("uid",myUid);
+                intent.putExtra("username",myUsername);
+                startActivity(intent);
             }
         });
 //矛盾体写这里，像我这样加个intent就行
@@ -279,24 +237,7 @@ public class MainActivity extends AppCompatActivity {
         btnRemoveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                progressBar.setVisibility(View.VISIBLE);
-//                if (user != null) {
-//                    user.delete()
-//                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                    if (task.isSuccessful()) {
-//                                        Toast.makeText(MainActivity.this, "Your profile is deleted:( Create a account now!", Toast.LENGTH_SHORT).show();
-//                                        startActivity(new Intent(MainActivity.this, SignupActivity.class));
-//                                        finish();
-//                                        progressBar.setVisibility(View.GONE);
-//                                    } else {
-//                                        Toast.makeText(MainActivity.this, "Failed to delete your account!", Toast.LENGTH_SHORT).show();
-//                                        progressBar.setVisibility(View.GONE);
-//                                    }
-//                                }
-//                            });
-//                }
+                startActivity(new Intent(getApplicationContext(), ViewFollowingActivity.class));
             }
         });
 
@@ -347,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
                             intent.putExtra("username",myUsername);
                             startActivity(intent);
                         } catch (Exception e) {
-                            Toast.makeText(MainActivity.this, "test2",
+                            Toast.makeText(MainActivity.this, e.toString(),
                                     Toast.LENGTH_LONG).show();
                             Log.e("FileSelectorActivity", "File select error", e);
                         }
