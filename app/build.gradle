@@ -26,6 +26,8 @@ dependencies {
     compile 'com.google.android.gms:play-services:11.8.0'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.0'
+    compile 'com.android.support:animated-vector-drawable:27.1.0'
+    compile 'com.android.support:mediarouter-v7:27.1.0'
     implementation 'com.android.support:design:27.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.google.firebase:firebase-auth:11.8.0'
@@ -46,6 +48,7 @@ dependencies {
     implementation files('src/lib/itext-pdfa-5.5.4.jar')
     implementation files('src/lib/itextpdf-5.5.4.jar')
 }
+
 
 
 
