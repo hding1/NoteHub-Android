@@ -50,7 +50,7 @@ public class SwipeListViewScroll extends HorizontalScrollView{
         if(changed){
             width=r-l;
             initLayout(width);
-            measureChildren(width,b-t);//重新设置了子元素LayoutParams，更新子元素
+            measureChildren(width,b-t);
         }
         super.onLayout(changed, l, t, r, b);
     }
@@ -142,7 +142,7 @@ public class SwipeListViewScroll extends HorizontalScrollView{
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         if(!canSwipe)return false;
-        boolean sys = super.onTouchEvent(ev);//先执行系统要处理的，否则无法滚动
+        boolean sys = super.onTouchEvent(ev);
         int scrollX = this.getScrollX();
         if(ev.getAction() != MotionEvent.ACTION_MOVE){
             if(scrollX < moveWidth){

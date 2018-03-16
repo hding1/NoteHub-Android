@@ -63,6 +63,7 @@ public class ViewFollowingActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final Map<String, String> myNewHashMap = new HashMap<>();
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(user.getUid());
 
         mUserReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -70,16 +71,17 @@ public class ViewFollowingActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 listView = (ListView) findViewById(R.id.list);
                 myUser = snapshot.getValue(User.class);
-                myFollowing = myUser.following;
-                list.clear();
-                for (Object test : myFollowing.values()){
-                    list.add(test.toString());
-                }
-                final Map<String, String> myNewHashMap = new HashMap<>();
-                for(Map.Entry<String, String> entry : myFollowing.entrySet()){
-                    myNewHashMap.put(entry.getValue(), entry.getKey());
-                }
+                if(myUser!=null) {
+                    myFollowing = myUser.following;
+                    list.clear();
+                    for (Object test : myFollowing.values()) {
+                        list.add(test.toString());
+                    }
 
+                    for (Map.Entry<String, String> entry : myFollowing.entrySet()) {
+                        myNewHashMap.put(entry.getValue(), entry.getKey());
+                    }
+                }
                 adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, list);
                 listView.setAdapter(adapter);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -97,7 +99,7 @@ public class ViewFollowingActivity extends AppCompatActivity {
 //                                List<PDF> list = new ArrayList<PDF>(my.values());
 
                                 String myUid= myNewHashMap.get(s);
-                                Intent intent = new Intent(ViewFollowingActivity.this, ViewActivity.class);
+                                Intent intent = new Intent(ViewFollowingActivity.this, ViewFollowingFilesActivity.class);
                                 intent.putExtra("uid",myUid);
                                 startActivity(intent);
                                 //                       adapter.notifyDataSetChanged();

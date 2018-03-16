@@ -84,6 +84,10 @@
         <activity
             android:name=".ViewFollowingActivity"
             android:label="View Following Users"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".ViewFollowingFilesActivity"
+            android:label="View Following Users Files"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
     </application>
 

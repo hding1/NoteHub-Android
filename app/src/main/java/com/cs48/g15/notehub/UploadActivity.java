@@ -70,8 +70,8 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         Intent intent2 = getIntent();
         final String path=intent2.getExtras().getString("path");
         myPath=intent2.getExtras().getString("path");
-//        final String username=intent2.getExtras().getString("username");
-//        myUsername = username;
+        final String username=intent2.getExtras().getString("username");
+        myUsername = username;
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         btnUpload = (Button) findViewById(R.id.btn_upload);
@@ -143,11 +143,26 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                 btnUpload.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        myPathName = path.substring(path.lastIndexOf('/') + 1);
-                        name = inputName.getText().toString();
-                        myDescription = getDescription.getText().toString();
-                        upload(myUsername,myPath,selected,inputName.getText().toString());
-                        update_file_helper(userID,inputName.getText().toString(),selected,myDescription);
+                        myPathName = inputName.getText().toString();
+                        String extension = "";
+
+                        int i = myPathName.lastIndexOf('.');
+                        int p = Math.max(myPathName.lastIndexOf('/'), myPathName.lastIndexOf('\\'));
+
+                        if (i > p) {
+                            extension = myPathName.substring(i+1);
+                        }else{
+                            myPathName = myPathName + ".pdf";
+                            extension = "pdf";
+                        }
+                        if(extension=="pdf") {
+                            name = inputName.getText().toString();
+                            myDescription = getDescription.getText().toString();
+                            upload(myUsername, myPath, selected, myPathName);
+                            update_file_helper(userID, myPathName, selected, myDescription);
+                        }else{
+                            Toast.makeText(UploadActivity.this, "File format is not supported",Toast.LENGTH_LONG).show();
+                        }
                         Intent intent = new Intent(UploadActivity.this, MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -268,7 +283,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         };
         mUserReference.addListenerForSingleValueEvent(postListener);
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

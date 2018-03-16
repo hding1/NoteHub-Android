@@ -1,4 +1,4 @@
-package com.cs48.g15.notehub.SwipeListView;
+package com.cs48.g15.notehub;
 
 import com.cs48.g15.notehub.PDF;
 import com.google.firebase.database.DatabaseReference;

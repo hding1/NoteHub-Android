@@ -56,7 +56,7 @@ import java.util.Map;
 import static android.content.ContentValues.TAG;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
-public class ViewActivity extends AppCompatActivity {
+public class ViewFollowingFilesActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
     private FirebaseStorage storage;
@@ -71,7 +71,7 @@ public class ViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         listData = new ArrayList<>();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view);
+        setContentView(R.layout.activity_view_following_files);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -102,7 +102,7 @@ public class ViewActivity extends AppCompatActivity {
                         info.desc = entry.getValue().tag+" - " + entry.getValue().description;
                         listData.add(info);
                         adapter.notifyDataSetChanged();
-                        //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ViewFollowingFilesActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
                         list.add(entry.getValue().filename);
                     }
                 }
@@ -119,7 +119,7 @@ public class ViewActivity extends AppCompatActivity {
                         List<PDF> list = new ArrayList<PDF>();
                         for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
                             if (!entry.getValue().filename.equals("no_file.hehe")) {
-                                //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ViewFollowingFilesActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
                                 list.add(entry.getValue());
                             }
                         }
@@ -127,15 +127,15 @@ public class ViewActivity extends AppCompatActivity {
 
                             if (list.get(i).filename.equals(s)) {
                                 download(list.get(i).tag, myUser.username, list.get(i).filename);
-                                //Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ViewFollowingFilesActivity.this, "test", Toast.LENGTH_SHORT).show();
                                 //File file = new File("/sdcard/Download/"+s);
                                 File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
-                                //Toast.makeText(ViewActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ViewFollowingFilesActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
                                 final File file = new File(dir, s);
                                 if (file.exists()) {
                                     Intent intent = new Intent(Intent.ACTION_VIEW);
                                     Uri apkURI = FileProvider.getUriForFile(
-                                            ViewActivity.this,
+                                            ViewFollowingFilesActivity.this,
                                             "com.cs48.g15.notehub.fileProvider", file);
                                     Uri path = Uri.fromFile(file);
                                     intent.setDataAndType(apkURI, "application/pdf");
@@ -144,7 +144,7 @@ public class ViewActivity extends AppCompatActivity {
                                     try {
                                         startActivity(intent);
                                     } catch (ActivityNotFoundException e) {
-                                        Toast.makeText(ViewActivity.this,
+                                        Toast.makeText(ViewFollowingFilesActivity.this,
                                                 "No Application Available to View PDF",
                                                 Toast.LENGTH_SHORT).show();
                                     }
@@ -156,56 +156,68 @@ public class ViewActivity extends AppCompatActivity {
 
                     @Override
                     public boolean OnLongClick(View view, int index) {
-                        //item点击长按
-                        AlertDialog.Builder ab = new AlertDialog.Builder(ViewActivity.this);
-                        ab.setTitle("LongClick");
-                        ab.setMessage("long click item " + index);
-                        ab.create().show();
-                        return false;
+                        final String s = adapter.getItem(index).toString();
+                        //item点击
+                        List<PDF> list = new ArrayList<PDF>();
+                        for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                            if (!entry.getValue().filename.equals("no_file.hehe")) {
+                                //Toast.makeText(ViewFollowingFilesActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                list.add(entry.getValue());
+                            }
+                        }
+                        for (int i = 0; i < list.size(); i++) {
+
+                            if (list.get(i).filename.equals(s)) {
+                                download(list.get(i).tag, myUser.username, list.get(i).filename);
+                                //Toast.makeText(ViewFollowingFilesActivity.this, "test", Toast.LENGTH_SHORT).show();
+                                //File file = new File("/sdcard/Download/"+s);
+                                File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
+                                //Toast.makeText(ViewFollowingFilesActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
+                                final File file = new File(dir, s);
+                                if (file.exists()) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    Uri apkURI = FileProvider.getUriForFile(
+                                            ViewFollowingFilesActivity.this,
+                                            "com.cs48.g15.notehub.fileProvider", file);
+                                    Uri path = Uri.fromFile(file);
+                                    intent.setDataAndType(apkURI, "application/pdf");
+                                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    try {
+                                        startActivity(intent);
+                                    } catch (ActivityNotFoundException e) {
+                                        Toast.makeText(ViewFollowingFilesActivity.this,
+                                                "No Application Available to View PDF",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                                break;
+                            }
+
+                        }
+                        return true;
                     }
 
                     @Override
                     public void OnControlClick(int rid, View view, int index) {
                         final String s = adapter.getItem(index).toString();
-                        AlertDialog.Builder ab = new AlertDialog.Builder(ViewActivity.this);
-//                        if(myUid!=user.getUid()){
-                            Button deleteButton = (Button) findViewById(R.id.delete);
-                            deleteButton.setVisibility(View.INVISIBLE);
+                        AlertDialog.Builder ab = new AlertDialog.Builder(ViewFollowingFilesActivity.this);
 
                         switch (rid) {
-                            case R.id.modify:
+                            case R.id.download:
                                 //item点击Download
 
                                 List<PDF> list = new ArrayList<PDF>();
                                 for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
                                     if (!entry.getValue().filename.equals("no_file.hehe")) {
-                                        //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(ViewFollowingFilesActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
                                         list.add(entry.getValue());
                                     }
                                 }
                                 for (int i = 0; i < list.size(); i++) {
-                                    // Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
+                                    // Toast.makeText(ViewFollowingFilesActivity.this, "test", Toast.LENGTH_SHORT).show();
                                     if (list.get(i).filename.equals(s)) {
                                         download(list.get(i).tag, myUser.username, list.get(i).filename);
-                                        break;
-                                    }
-                                }
-                                break;
-                            case R.id.delete:
-                                //item点击delete
-                                list = new ArrayList<PDF>();
-                                for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
-                                    if (!entry.getValue().filename.equals("no_file.hehe")) {
-                                        //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
-                                        list.add(entry.getValue());
-                                    }
-                                }
-                                for (int i = 0; i < list.size(); i++) {
-                                    if (list.get(i).filename.equals(s)) {
-                                        delete_file(myUser.username, list.get(i).filename, list.get(i).tag);
-                                        adapter.remove(index);
-                                        adapter.notifyDataSetChanged();
-                                        listView.invalidateViews();
                                         break;
                                     }
                                 }
@@ -213,7 +225,7 @@ public class ViewActivity extends AppCompatActivity {
                         }
                         adapter.notifyDataSetChanged();
                     }
-                }, new int[]{R.id.modify, R.id.delete});
+                }, new int[]{R.id.download});
                 adapter.notifyDataSetChanged();
 
             }
@@ -231,7 +243,7 @@ public class ViewActivity extends AppCompatActivity {
     //Firebase Download
     public void download(String tag, String username, final String filename){
         final String file_name = username + "_" + filename;
-//        Toast.makeText(ViewActivity.this, file_name, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ViewFollowingFilesActivity.this, file_name, Toast.LENGTH_SHORT).show();
         StorageReference storageRef = storage.getReference();
         StorageReference fileRef = storageRef.child(tag + "/" + file_name);
 
@@ -240,7 +252,7 @@ public class ViewActivity extends AppCompatActivity {
             @Override
             public void onSuccess(byte[] bytes) {
                 File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
-                //Toast.makeText(ViewActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(ViewFollowingFilesActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
                 final File file = new File(dir, filename);
                 String path= file.getPath();
 
@@ -248,12 +260,12 @@ public class ViewActivity extends AppCompatActivity {
                     if (!dir.exists()) {
                         boolean temp=dir.mkdirs();
                         if (!temp){
-                            Toast.makeText(ViewActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ViewFollowingFilesActivity.this, "failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                     boolean temp1 = file.createNewFile();
                     if (!temp1){
-                        //Toast.makeText(ViewActivity.this, "file already exists", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(ViewFollowingFilesActivity.this, "file already exists", Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (IOException e) {
@@ -263,92 +275,25 @@ public class ViewActivity extends AppCompatActivity {
                     FileOutputStream fos=new FileOutputStream(path);
                     fos.write(bytes);
                     fos.close();
-                    Toast.makeText(ViewActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewFollowingFilesActivity.this, "Success", Toast.LENGTH_SHORT).show();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    Toast.makeText(ViewActivity.this, "File Not Found", Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(ViewActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewFollowingFilesActivity.this, "File Not Found", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ViewFollowingFilesActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Toast.makeText(ViewActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewFollowingFilesActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
                 // Handle any errors
-                Toast.makeText(ViewActivity.this, "failed!!!!!!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewFollowingFilesActivity.this, "failed!!!!!!!!", Toast.LENGTH_SHORT).show();
             }
         });
     }
-    //firebase delete
-    public void delete_file(final String username, final String filename, final String tag){
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("username").child(username);
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                String uid = dataSnapshot.getValue(String.class);
-                delete_file_helper(uid, username, filename, tag);
-                //Toast.makeText(MainActivity.this, uid, Toast.LENGTH_SHORT).show();
-                // ...
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-        mUserReference.addListenerForSingleValueEvent(postListener);
-    }
-
-    public void delete_file_helper(final String uid, String username, String filename, String tag){
-        // Create a storage reference from our app
-        StorageReference storageRef = storage.getReference();
-        final String file_name = filename.replace('.', '_');;
-
-        // Create a reference to the file to delete
-        StorageReference deleteRef = storageRef.child(tag + "/" + username + "_" + filename);
-
-        deleteRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                // File deleted successfully
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Uh-oh, an error occurred!
-            }
-        });
-
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
-
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                myUser = dataSnapshot.getValue(User.class);
-                myUser.pdfs.remove(file_name);
-                Map<String, Object> delete_pdf = new HashMap<>();
-                for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()){
-                    if (entry.getKey()!=file_name){
-                        delete_pdf.put(entry.getKey(), entry.getValue());
-                    }
-                }
-                mDatabase.child("users").child(uid).child("pdfs").setValue(delete_pdf);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-        mUserReference.addListenerForSingleValueEvent(postListener);
-    }
     @Override
     protected void onResume() {
         super.onResume();
@@ -361,7 +306,6 @@ public class ViewActivity extends AppCompatActivity {
         public TextView name;
         public TextView desc;
         public Button modify;
-        public Button delete;
     }
     class ListAdapter extends com.cs48.g15.notehub.SwipeListView.SwipeListAdapter {
         private ArrayList<Info> listData;
@@ -391,11 +335,10 @@ public class ViewActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             ViewHolder viewHolder = new ViewHolder();
             if(convertView == null){
-                convertView = View.inflate(getBaseContext(),R.layout.swipe_menu,null);
+                convertView = View.inflate(getBaseContext(),R.layout.content_view_following_files,null);
                 viewHolder.name = (TextView) convertView.findViewById(R.id.name);
                 viewHolder.desc = (TextView) convertView.findViewById(R.id.desc);
-                viewHolder.modify = (Button) convertView.findViewById(R.id.modify);
-                viewHolder.delete = (Button) convertView.findViewById(R.id.delete);
+                viewHolder.modify = (Button) convertView.findViewById(R.id.download);
                 convertView.setTag(viewHolder);
             }
             else{

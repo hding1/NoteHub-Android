@@ -1,6 +1,5 @@
 package com.cs48.g15.notehub;
 
-import com.cs48.g15.notehub.SwipeListView.Abstract_User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 
