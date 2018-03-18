@@ -62,16 +62,76 @@
       "client_info": {
         "mobilesdk_app_id": "1:1094694673414:android:2b55ff5044b540a4",
         "android_client_info": {
+          "package_name": "com.example.peterding.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094694673414-ohqgsuf9qhnlhu05v8ev2dp09vhit10t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.peterding.myapplication",
+            "certificate_hash": "5e844c647f666d60072fa9fc7eb03741b6ce92de"
+          }
+        },
+        {
+          "client_id": "1094694673414-uf15pjnrdfcldc8f7p1frmm11iieg98k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.peterding.myapplication",
+            "certificate_hash": "9c92d5cffc725c835978615994672318c626ba68"
+          }
+        },
+        {
+          "client_id": "1094694673414-edql2dd9d1c5od2h9jqqivij7dtr5057.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBofSu3X4_fiOgdSN6nDvqaB-Hoj5p8vrU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094694673414-edql2dd9d1c5od2h9jqqivij7dtr5057.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094694673414:android:bf6d3b0002322f3a",
+        "android_client_info": {
           "package_name": "com.cs48.g15.notehub"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1094694673414-uf15pjnrdfcldc8f7p1frmm11iieg98k.apps.googleusercontent.com",
+          "client_id": "1094694673414-ai79q9uppk98kcgjvsm5kv72lo39f6pa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.cs48.g15.notehub",
             "certificate_hash": "9c92d5cffc725c835978615994672318c626ba68"
+          }
+        },
+        {
+          "client_id": "1094694673414-cgpgkmr7tqm0vfof75fsnh1ppsahtr0d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cs48.g15.notehub",
+            "certificate_hash": "ed2a433352ee4ae570958d3c8fce3466ca0723a9"
           }
         },
         {

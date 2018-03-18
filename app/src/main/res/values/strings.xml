@@ -43,4 +43,7 @@
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_upload">UploadActivity</string>
+    <string name="title_activity_view_following">ViewFollowingActivity</string>
+    <string name="title_activity_view_following_files">ViewFollowingFilesActivity</string>
 </resources>

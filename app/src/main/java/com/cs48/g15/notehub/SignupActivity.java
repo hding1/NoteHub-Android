@@ -15,9 +15,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +31,6 @@ public class SignupActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
-
     public void add_follower(String uid, String uid2, final String username){
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put("/users/" + uid + "/followers/" + uid2, username);
@@ -38,6 +40,13 @@ public class SignupActivity extends AppCompatActivity {
     public void add_following(String uid, String uid2, final String username){
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put("/users/" + uid + "/following/" + uid2, username);
+        mDatabase.updateChildren(childUpdate);
+    }
+
+    public void add_pdf(String uid){
+        PDF pdf = new PDF("no_file.hehe", "", "", "", 0,0,0);
+        Map<String, Object> childUpdate = new HashMap<>();
+        childUpdate.put("/users/" + uid + "/pdfs/no_file_hehe", pdf);
         mDatabase.updateChildren(childUpdate);
     }
 
@@ -113,8 +122,14 @@ public class SignupActivity extends AppCompatActivity {
                                     User user = new User(inputUsername.getText().toString(), inputEmail.getText().toString());
                                     mDatabase.child("users").child(auth.getUid()).setValue(user);
                                     mDatabase.child("username").child(username).setValue(auth.getUid());
+//                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                                            .setDisplayName(inputUsername.getText().toString()).build();
                                     add_follower(auth.getUid(), auth.getUid(), inputUsername.getText().toString());
                                     add_following(auth.getUid(), auth.getUid(), inputUsername.getText().toString());
+                                    add_pdf(auth.getUid());
+//                                    FirebaseUser user1 = auth.getCurrentUser();
+////                                    user1.updateProfile(profileUpdates);
+//                                    mDatabase.child("users").child(auth.getUid()).setValue(user);
                                     //登录成功
                                     //记得用 MainActicity.class instead of SignupActivity
                                     startActivity(new Intent(SignupActivity.this, MainActivity.class));
