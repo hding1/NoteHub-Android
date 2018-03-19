@@ -2,6 +2,8 @@
 > An Android Application for Notehub users to upload,share download, and view notes.
 
 ## Getting started
+Install the app using the APK in "release" directory.
+
 Users can register their own accounts using email. They can also reset the password if they forget it.
 <div  align="center">    
 <img src="https://github.com/hding1/NoteHub-Android/blob/master/Pictures/AndroidLogin.jpeg" width="400" height="700" align=center />
