@@ -162,7 +162,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                             myPathName = myPathName + ".pdf";
                             extension = "pdf";
                         }
-                        if(old_extension.equals(".pdf")) {
+                        if(old_extension.equals(".pdf")&&extension.equals("pdf")) {
                             name = inputName.getText().toString();
                             myDescription = getDescription.getText().toString();
                             try {
@@ -172,8 +172,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                             }
                             update_file_helper(userID, myPathName, selected, myDescription);
                         }else{
-                            //Toast.makeText(UploadActivity.this, "File format is not supported, Upload pdf file only",Toast.LENGTH_LONG).show();
-                            Toast.makeText(UploadActivity.this, old_extension,Toast.LENGTH_LONG).show();
+                            Toast.makeText(UploadActivity.this, "File format" + old_extension+" is not supported, Upload pdf file only",Toast.LENGTH_LONG).show();
                         }
                         Intent intent = new Intent(UploadActivity.this, MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
