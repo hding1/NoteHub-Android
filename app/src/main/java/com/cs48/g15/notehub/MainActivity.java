@@ -253,9 +253,8 @@ public class MainActivity extends AppCompatActivity {
                             //你要的路径
                             if(uri==null) {Toast.makeText(MainActivity.this, "no file selected",
                                     Toast.LENGTH_LONG).show();}
-                            final String path = FileUtils.getPath(this, uri);
+                            final String path = FileUtils.getPath(MainActivity.this, uri);
                             myuri = uri;
-
                             Intent intent = new Intent(this, UploadActivity.class);
                             intent.putExtra("path",path);
                             intent.putExtra("username",myUsername);
