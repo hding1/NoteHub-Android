@@ -2,11 +2,14 @@ package com.cs48.g15.notehub;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -46,6 +49,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import static android.content.ContentValues.TAG;
 
 public class UploadActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private Button btnUpload, btnBack;
@@ -145,8 +150,10 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                     public void onClick(View v) {
                         myPathName = inputName.getText().toString();
                         String extension = "";
-
+                        String old_extension = "";
+                        int pos = myPath.lastIndexOf('.');
                         int i = myPathName.lastIndexOf('.');
+                        old_extension = myPath.substring(pos);
                         int p = Math.max(myPathName.lastIndexOf('/'), myPathName.lastIndexOf('\\'));
 
                         if (i > p) {
@@ -155,13 +162,13 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                             myPathName = myPathName + ".pdf";
                             extension = "pdf";
                         }
-                        if(extension=="pdf") {
+                        if(old_extension.equals("pdf")) {
                             name = inputName.getText().toString();
                             myDescription = getDescription.getText().toString();
                             upload(myUsername, myPath, selected, myPathName);
                             update_file_helper(userID, myPathName, selected, myDescription);
                         }else{
-                            Toast.makeText(UploadActivity.this, "File format is not supported",Toast.LENGTH_LONG).show();
+                            Toast.makeText(UploadActivity.this, "File format is not supported, Upload pdf file only",Toast.LENGTH_LONG).show();
                         }
                         Intent intent = new Intent(UploadActivity.this, MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -196,7 +203,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String item = parent.getItemAtPosition(position).toString();
         selected = item;
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+ //       Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -209,6 +216,19 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         StorageReference storageRef = storage.getReference();
         //StorageReference pdfRed = storageRef.child(filename);
         StorageReference pdfRef = storageRef.child(tag + "/" + filename);
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                Log.v(TAG,"Permission is granted");
+            } else {
+
+                Log.v(TAG,"Permission is revoked");
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG,"Permission is granted");
+        }
 
         try {
             InputStream stream = new FileInputStream(FIleChooser.getPath(this,file));
@@ -330,6 +350,14 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
             }
         };
         mUserReference1.addListenerForSingleValueEvent(postListener1);
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
+            Log.v(TAG,"Permission: "+permissions[0]+ "was "+grantResults[0]);
+            //resume tasks needing this permission
+        }
     }
 }
 

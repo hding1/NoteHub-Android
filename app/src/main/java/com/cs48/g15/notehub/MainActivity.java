@@ -57,40 +57,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 6384;
     private static final int PERMISSIONS_REQUEST_CAMERA = 314;
 
-    public void update_file(final String uid, final String filename, final String tag){
-        String file_name = filename.replace('.', '_');
-        Map<String, Object> childUpdate = new HashMap<>();
-        childUpdate.put("/users/" + uid + "/pdfs/" + file_name, tag);
-        mDatabase.updateChildren(childUpdate);
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
-
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                User user = dataSnapshot.getValue(User.class);
-                myUsername = user.username;
-                if (user.tags.get(tag)==null){
-                    Map<String, Object> updateTag = new HashMap<>();
-                    updateTag.put("/users/" + uid + "/tags/" + tag, tag);
-                    mDatabase.updateChildren(updateTag);
-                }
-
-                for (Map.Entry<String, Object> entry : user.followers.entrySet()){
-                    mDatabase.child("users").child(entry.getKey()).child("isNew").setValue(true);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };
-        mUserReference.addValueEventListener(postListener);
-    }
-
     public void add_follower(String uid, String uid2, final String username){
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put("/users/" + uid + "/followers/" + uid2, username);
@@ -134,6 +100,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
+        if(!checkPermissionExtertalStorage()){
+            try {
+                requestPermissionExtertalStorage();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
         //get current user
         FirebaseUser user = auth.getCurrentUser();
         myUid = user.getUid();
@@ -200,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 Intent intent = new Intent(MainActivity.this, ViewActivity.class);
-                intent.putExtra("uid",myUid);
+                intent.putExtra("uid",auth.getCurrentUser().getUid());
                 intent.putExtra("username",myUsername);
                 startActivity(intent);
             }
@@ -278,11 +251,10 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             // Get the file path from the URI
                             //你要的路径
-                            if(uri==null) {Toast.makeText(MainActivity.this, "test1",
+                            if(uri==null) {Toast.makeText(MainActivity.this, "no file selected",
                                     Toast.LENGTH_LONG).show();}
-                            final String path = FileUtils.getPath(this, uri);
+                            final String path = FileUtils.getPath(MainActivity.this, uri);
                             myuri = uri;
-
                             Intent intent = new Intent(this, UploadActivity.class);
                             intent.putExtra("path",path);
                             intent.putExtra("username",myUsername);
