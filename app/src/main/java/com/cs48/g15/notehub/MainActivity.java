@@ -100,13 +100,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-        if(!checkPermissionExtertalStorage()){
             try {
+                //Toast.makeText(MainActivity.this, "permission guiguiguigui", Toast.LENGTH_LONG).show();
+                //requestPermissionCamera();
+                //onPause();
                 requestPermissionExtertalStorage();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
         //get current user
         FirebaseUser user = auth.getCurrentUser();
         myUid = user.getUid();
@@ -182,26 +183,11 @@ public class MainActivity extends AppCompatActivity {
         btnScanbot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(MainActivity.this,
-                        android.Manifest.permission.CAMERA)
-                        != PackageManager.PERMISSION_GRANTED) {
 
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
-                            android.Manifest.permission.CAMERA)) {
-                    } else {
-                        ActivityCompat.requestPermissions(MainActivity.this,
-                                new String[]{android.Manifest.permission.CAMERA},
-                                PERMISSIONS_REQUEST_CAMERA);
-                        Intent intent = new Intent(MainActivity.this, CameraActivity.class);
-                        intent.putExtra("username",myUsername);
-                        startActivity(intent);
-                        onPause();
-                    }
-                } else {
-                    Intent intent = new Intent(MainActivity.this, CameraActivity.class);
-                    startActivity(intent);
-                    onPause();
-                }
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                intent.putExtra("username",myUsername);
+                startActivity(intent);
+                onPause();
                 //startActivity(new Intent(getApplicationContext(), ScanbotActivity.class));
             }
         });
@@ -284,15 +270,14 @@ public class MainActivity extends AppCompatActivity {
     //permission dialog
     public void requestPermissionExtertalStorage() throws Exception {
         try {
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
-                    REQUEST_CODE);
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE,android.Manifest.permission.WRITE_EXTERNAL_STORAGE,android.Manifest.permission.CAMERA},
                     REQUEST_CODE);
         } catch (Exception e) {
             e.printStackTrace();
             throw e;
         }
     }
+
     //sign out method
     public void signOut() {
         auth.signOut();
