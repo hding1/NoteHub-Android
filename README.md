@@ -2,7 +2,7 @@
 > An Android Application for Notehub users to upload,share download, and view notes.
 
 ## Getting started
-Install the app using the APK in "release" directory.
+Install the app using the APK in "release" directory. It is suggested to use emulator in Android Studio, real phone may have some old version issues that leads to undefined behavior. For emulator in Android Studio, simply update the Google Play Service will make you all set!
 
 Users can register their own accounts using email. They can also reset the password if they forget it.
 <div  align="center">    
