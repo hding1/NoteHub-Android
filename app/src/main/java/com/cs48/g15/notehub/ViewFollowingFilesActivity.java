@@ -9,11 +9,13 @@ import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -242,6 +244,19 @@ public class ViewFollowingFilesActivity extends AppCompatActivity {
 
     //Firebase Download
     public void download(String tag, String username, final String filename){
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                Log.v(TAG,"Permission is granted");
+            } else {
+
+                Log.v(TAG,"Permission is revoked");
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG,"Permission is granted");
+        }
         final String file_name = username + "_" + filename;
 //        Toast.makeText(ViewFollowingFilesActivity.this, file_name, Toast.LENGTH_SHORT).show();
         StorageReference storageRef = storage.getReference();
@@ -347,6 +362,14 @@ public class ViewFollowingFilesActivity extends AppCompatActivity {
             viewHolder.name.setText(listData.get(position).name);
             viewHolder.desc.setText(listData.get(position).desc);
             return super.bindView(position, convertView);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
+            Log.v(TAG,"Permission: "+permissions[0]+ "was "+grantResults[0]);
+            //resume tasks needing this permission
         }
     }
 }

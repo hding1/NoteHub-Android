@@ -9,11 +9,13 @@ import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -67,6 +69,7 @@ public class ViewActivity extends AppCompatActivity {
     static List<String> list;
     private SwipeListView listView;
     private ArrayList<Info> listData;
+    private FirebaseAuth.AuthStateListener authListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         listData = new ArrayList<>();
@@ -79,143 +82,188 @@ public class ViewActivity extends AppCompatActivity {
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         list = new ArrayList<String>();
-        Intent intent2 = getIntent();
-        final String myUid=intent2.getExtras().getString("uid");
         //get current user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(myUid);
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(ViewActivity.this, LoginActivity.class));
+                    finish();
+                }
+            }
+        };
+        mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(auth.getCurrentUser().getUid());
         listView = (SwipeListView) findViewById(R.id.listView);
         adapter = new ListAdapter(listData);
 //        listView.setAdapter(adapter);
         mUserReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
+
                 myUser = snapshot.getValue(User.class);
-                myPDF = myUser.pdfs;
+//                Map<String,PDF> myPDF = myUser.pdfs;
                 listData.clear();
                 list.clear();
-                for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                if(myUser!=null) {
+                    for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
 
-                    if (!entry.getValue().filename.equals("no_file.hehe")) {
-                        Info info = new Info();
-                        info.name = entry.getValue().filename;
-                        info.desc = entry.getValue().tag+" - " + entry.getValue().description;
-                        listData.add(info);
-                        adapter.notifyDataSetChanged();
-                        //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
-                        list.add(entry.getValue().filename);
-                    }
-                }
-
-                adapter = new ListAdapter(listData);
-                listView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-                listView.setListener(new OnSwipeListItemClickListener() {
-                    @Override
-                    public void OnClick(View view, int index) {
-
-                        final String s = adapter.getItem(index).toString();
-                        //item点击
-                        List<PDF> list = new ArrayList<PDF>();
-                        for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
-                            if (!entry.getValue().filename.equals("no_file.hehe")) {
-                                //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
-                                list.add(entry.getValue());
-                            }
+                        if (!entry.getValue().filename.equals("no_file.hehe")) {
+                            Info info = new Info();
+                            info.name = entry.getValue().filename;
+                            info.desc = entry.getValue().tag + " - " + entry.getValue().description;
+                            listData.add(info);
+                            adapter.notifyDataSetChanged();
+                            //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                            list.add(entry.getValue().filename);
                         }
-                        for (int i = 0; i < list.size(); i++) {
+                    }
 
-                            if (list.get(i).filename.equals(s)) {
-                                download(list.get(i).tag, myUser.username, list.get(i).filename);
-                                //Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
-                                //File file = new File("/sdcard/Download/"+s);
-                                File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
-                                //Toast.makeText(ViewActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
-                                final File file = new File(dir, s);
-                                if (file.exists()) {
-                                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                                    Uri apkURI = FileProvider.getUriForFile(
-                                            ViewActivity.this,
-                                            "com.cs48.g15.notehub.fileProvider", file);
-                                    Uri path = Uri.fromFile(file);
-                                    intent.setDataAndType(apkURI, "application/pdf");
-                                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-//                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                    try {
-                                        startActivity(intent);
-                                    } catch (ActivityNotFoundException e) {
-                                        Toast.makeText(ViewActivity.this,
-                                                "No Application Available to View PDF",
-                                                Toast.LENGTH_SHORT).show();
-                                    }
+                    adapter = new ListAdapter(listData);
+                    listView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                    listView.setListener(new OnSwipeListItemClickListener() {
+                        @Override
+                        public void OnClick(View view, int index) {
+
+                            final String s = adapter.getItem(index).toString();
+                            //item点击
+                            List<PDF> list = new ArrayList<PDF>();
+                            for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                                if (!entry.getValue().filename.equals("no_file.hehe")) {
+                                    //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                    list.add(entry.getValue());
                                 }
-                                break;
+                            }
+                            for (int i = 0; i < list.size(); i++) {
+
+                                if (list.get(i).filename.equals(s)) {
+                                    download(list.get(i).tag, myUser.username, list.get(i).filename);
+                                    //Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
+                                    //File file = new File("/sdcard/Download/"+s);
+                                    File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
+                                    //Toast.makeText(ViewActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
+                                    final File file = new File(dir, s);
+                                    if (file.exists()) {
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        Uri apkURI = FileProvider.getUriForFile(
+                                                ViewActivity.this,
+                                                "com.cs48.g15.notehub.fileProvider", file);
+                                        Uri path = Uri.fromFile(file);
+                                        intent.setDataAndType(apkURI, "application/pdf");
+                                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        try {
+                                            startActivity(intent);
+                                        } catch (ActivityNotFoundException e) {
+                                            Toast.makeText(ViewActivity.this,
+                                                    "No Application Available to View PDF",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                    break;
+                                }
                             }
                         }
-                    }
 
-                    @Override
-                    public boolean OnLongClick(View view, int index) {
-                        //item点击长按
-                        AlertDialog.Builder ab = new AlertDialog.Builder(ViewActivity.this);
-                        ab.setTitle("LongClick");
-                        ab.setMessage("long click item " + index);
-                        ab.create().show();
-                        return false;
-                    }
+                        @Override
+                        public boolean OnLongClick(View view, int index) {
+                            final String s = adapter.getItem(index).toString();
+                            //item点击
+                            List<PDF> list = new ArrayList<PDF>();
+                            for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                                if (!entry.getValue().filename.equals("no_file.hehe")) {
+                                    //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                    list.add(entry.getValue());
+                                }
+                            }
+                            for (int i = 0; i < list.size(); i++) {
 
-                    @Override
-                    public void OnControlClick(int rid, View view, int index) {
-                        final String s = adapter.getItem(index).toString();
-                        AlertDialog.Builder ab = new AlertDialog.Builder(ViewActivity.this);
+                                if (list.get(i).filename.equals(s)) {
+                                    download(list.get(i).tag, myUser.username, list.get(i).filename);
+                                    //Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
+                                    //File file = new File("/sdcard/Download/"+s);
+                                    File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath());
+                                    //Toast.makeText(ViewActivity.this, dir.getPath(), Toast.LENGTH_SHORT).show();
+                                    final File file = new File(dir, s);
+                                    if (file.exists()) {
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        Uri apkURI = FileProvider.getUriForFile(
+                                                ViewActivity.this,
+                                                "com.cs48.g15.notehub.fileProvider", file);
+                                        Uri path = Uri.fromFile(file);
+                                        intent.setDataAndType(apkURI, "application/pdf");
+                                        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        try {
+                                            startActivity(intent);
+                                        } catch (ActivityNotFoundException e) {
+                                            Toast.makeText(ViewActivity.this,
+                                                    "No Application Available to View PDF",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                    break;
+                                }
+                            }
+                            return true;
+                        }
+
+                        @Override
+                        public void OnControlClick(int rid, View view, int index) {
+                            final String s = adapter.getItem(index).toString();
+                            AlertDialog.Builder ab = new AlertDialog.Builder(ViewActivity.this);
 //                        if(myUid!=user.getUid()){
                             Button deleteButton = (Button) findViewById(R.id.delete);
                             deleteButton.setVisibility(View.INVISIBLE);
 
-                        switch (rid) {
-                            case R.id.modify:
-                                //item点击Download
+                            switch (rid) {
+                                case R.id.modify:
+                                    //item点击Download
 
-                                List<PDF> list = new ArrayList<PDF>();
-                                for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
-                                    if (!entry.getValue().filename.equals("no_file.hehe")) {
-                                        //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
-                                        list.add(entry.getValue());
+                                    List<PDF> list = new ArrayList<PDF>();
+                                    for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                                        if (!entry.getValue().filename.equals("no_file.hehe")) {
+                                            //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                            list.add(entry.getValue());
+                                        }
                                     }
-                                }
-                                for (int i = 0; i < list.size(); i++) {
-                                    // Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
-                                    if (list.get(i).filename.equals(s)) {
-                                        download(list.get(i).tag, myUser.username, list.get(i).filename);
-                                        break;
+                                    for (int i = 0; i < list.size(); i++) {
+                                        // Toast.makeText(ViewActivity.this, "test", Toast.LENGTH_SHORT).show();
+                                        if (list.get(i).filename.equals(s)) {
+                                            download(list.get(i).tag, myUser.username, list.get(i).filename);
+                                            break;
+                                        }
                                     }
-                                }
-                                break;
-                            case R.id.delete:
-                                //item点击delete
-                                list = new ArrayList<PDF>();
-                                for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
-                                    if (!entry.getValue().filename.equals("no_file.hehe")) {
-                                        //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
-                                        list.add(entry.getValue());
+                                    break;
+                                case R.id.delete:
+                                    //item点击delete
+                                    list = new ArrayList<PDF>();
+                                    for (Map.Entry<String, PDF> entry : myUser.pdfs.entrySet()) {
+                                        if (!entry.getValue().filename.equals("no_file.hehe")) {
+                                            //Toast.makeText(ViewActivity.this, entry.getValue().filename, Toast.LENGTH_SHORT).show();
+                                            list.add(entry.getValue());
+                                        }
                                     }
-                                }
-                                for (int i = 0; i < list.size(); i++) {
-                                    if (list.get(i).filename.equals(s)) {
-                                        delete_file(myUser.username, list.get(i).filename, list.get(i).tag);
-                                        adapter.remove(index);
-                                        adapter.notifyDataSetChanged();
-                                        listView.invalidateViews();
-                                        break;
+                                    for (int i = 0; i < list.size(); i++) {
+                                        if (list.get(i).filename.equals(s)) {
+                                            delete_file(myUser.username, list.get(i).filename, list.get(i).tag);
+                                            adapter.remove(index);
+                                            adapter.notifyDataSetChanged();
+                                            listView.invalidateViews();
+                                            break;
+                                        }
                                     }
-                                }
-                                break;
+                                    break;
+                            }
+                            adapter.notifyDataSetChanged();
                         }
-                        adapter.notifyDataSetChanged();
-                    }
-                }, new int[]{R.id.modify, R.id.delete});
-                adapter.notifyDataSetChanged();
-
+                    }, new int[]{R.id.modify, R.id.delete});
+                    adapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -234,6 +282,19 @@ public class ViewActivity extends AppCompatActivity {
 //        Toast.makeText(ViewActivity.this, file_name, Toast.LENGTH_SHORT).show();
         StorageReference storageRef = storage.getReference();
         StorageReference fileRef = storageRef.child(tag + "/" + file_name);
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                Log.v(TAG,"Permission is granted");
+            } else {
+
+                Log.v(TAG,"Permission is revoked");
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            Log.v(TAG,"Permission is granted");
+        }
 
         final long ONE_MEGABYTE = 1024 * 1024 * 25;
         fileRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
@@ -266,7 +327,7 @@ public class ViewActivity extends AppCompatActivity {
                     Toast.makeText(ViewActivity.this, "Success", Toast.LENGTH_SHORT).show();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                    Toast.makeText(ViewActivity.this, "File Not Found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                     //Toast.makeText(ViewActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -404,6 +465,14 @@ public class ViewActivity extends AppCompatActivity {
             viewHolder.name.setText(listData.get(position).name);
             viewHolder.desc.setText(listData.get(position).desc);
             return super.bindView(position, convertView);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
+            Log.v(TAG,"Permission: "+permissions[0]+ "was "+grantResults[0]);
+            //resume tasks needing this permission
         }
     }
 }

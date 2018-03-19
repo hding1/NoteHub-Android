@@ -65,6 +65,9 @@ public class User extends Abstract_User{
         }
         return rtn_info;
     }
+    public Map<String,PDF> getPDFS(){
+        return pdfs;
+    }
 
 }
 
