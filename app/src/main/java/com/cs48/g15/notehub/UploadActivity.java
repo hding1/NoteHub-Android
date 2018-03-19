@@ -88,7 +88,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
         mUserReference = FirebaseDatabase.getInstance().getReference().child("users").child(auth.getUid());
 
         userID = auth.getCurrentUser().getUid();
-        Toast.makeText(getApplicationContext(),path,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),path,Toast.LENGTH_LONG).show();
 //        myPathName = path.substring(path.lastIndexOf('/') + 1);
 
         // Spinner element
@@ -162,13 +162,18 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                             myPathName = myPathName + ".pdf";
                             extension = "pdf";
                         }
-                        if(old_extension.equals("pdf")) {
+                        if(old_extension.equals(".pdf")) {
                             name = inputName.getText().toString();
                             myDescription = getDescription.getText().toString();
-                            upload(myUsername, myPath, selected, myPathName);
+                            try {
+                                upload(myUsername, myPath, selected, myPathName);
+                            } catch (WrongPostfixException e) {
+                                e.printStackTrace();
+                            }
                             update_file_helper(userID, myPathName, selected, myDescription);
                         }else{
-                            Toast.makeText(UploadActivity.this, "File format is not supported, Upload pdf file only",Toast.LENGTH_LONG).show();
+                            //Toast.makeText(UploadActivity.this, "File format is not supported, Upload pdf file only",Toast.LENGTH_LONG).show();
+                            Toast.makeText(UploadActivity.this, old_extension,Toast.LENGTH_LONG).show();
                         }
                         Intent intent = new Intent(UploadActivity.this, MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -210,7 +215,11 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-    public void upload(String username, String file_dir, String tag, String file_name){
+    public void upload(String username, String file_dir, String tag, String file_name) throws WrongPostfixException {
+        int i = file_name.indexOf('.');
+        if (!file_name.substring(i).equals(".pdf")){
+            throw new WrongPostfixException("Only PDF files are allowed");
+        }
         Uri file = Uri.fromFile(new File(file_dir));
         String filename = username + "_" + file_name;
         StorageReference storageRef = storage.getReference();

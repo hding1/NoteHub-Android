@@ -255,6 +255,7 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.LENGTH_LONG).show();}
                             final String path = FileUtils.getPath(MainActivity.this, uri);
                             myuri = uri;
+                            Toast.makeText(MainActivity.this, path, Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(this, UploadActivity.class);
                             intent.putExtra("path",path);
                             intent.putExtra("username",myUsername);
