@@ -150,8 +150,10 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                     public void onClick(View v) {
                         myPathName = inputName.getText().toString();
                         String extension = "";
-
+                        String old_extension = "";
+                        int pos = myPath.lastIndexOf('.');
                         int i = myPathName.lastIndexOf('.');
+                        old_extension = myPath.substring(pos);
                         int p = Math.max(myPathName.lastIndexOf('/'), myPathName.lastIndexOf('\\'));
 
                         if (i > p) {
@@ -160,7 +162,7 @@ public class UploadActivity extends AppCompatActivity implements AdapterView.OnI
                             myPathName = myPathName + ".pdf";
                             extension = "pdf";
                         }
-                        if(extension.equals("pdf")) {
+                        if(old_extension.equals("pdf")) {
                             name = inputName.getText().toString();
                             myDescription = getDescription.getText().toString();
                             upload(myUsername, myPath, selected, myPathName);
