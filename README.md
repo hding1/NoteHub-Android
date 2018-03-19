@@ -2,16 +2,16 @@
 ------
 ### An Android Application for Notehub users to upload, download, and view notes.
 ![alt text](/Pictures/AndroidLogin.jpeg)
-* Users can upload local PDF files to NoteHub's database. After choosing the PDF file they want to upload, users can customize the name of the pdf file and add on decription with it. 
+##* Users can upload local PDF files to NoteHub's database. After choosing the PDF file they want to upload, users can customize the name of the pdf file and add on decription with it. 
 ![alt text](/Pictures/Upload.png)
-* In addition, users can choose a tag for the file from overall nine tags we provide.
+##* In addition, users can choose a tag for the file from overall nine tags we provide.
 ![alt text](/Pictures/ChooseTag.png)
-* Users also have option to scan their written notes. Our camera offers option of autosnapping and edge detection. When the codition is perfect, NoteHub would automatically take a picture and provide a preview on the right of the bottom. 
+##* Users also have option to scan their written notes. Our camera offers option of autosnapping and edge detection. When the codition is perfect, NoteHub would automatically take a picture and provide a preview on the right of the bottom. 
 ![alt text](/Pictures/Detection.png)
-* By clicking the preview, users will be able to edit edges of the picture and after clicking Crop button, users can save the image and see the option to convert it to PDF and upload it. 
+##* By clicking the preview, users will be able to edit edges of the picture and after clicking Crop button, users can save the image and see the option to convert it to PDF and upload it. 
 ![alt text](/Pictures/CropAndSave.png)
-* Users can view all the files they uploaded in NoteHub database. When viewing the list of files, users can slip one of the file to left and choose either download or delete this file.
+##* Users can view all the files they uploaded in NoteHub database. When viewing the list of files, users can slip one of the file to left and choose either download or delete this file.
 ![alt text](/Pictures/View.jpg)
-* Users are also able to see all users they are following and view other users' shared files.
+##* Users are also able to see all users they are following and view other users' shared files.
 ![alt text](/Pictures/Following.jpg)
 ![alt text](/Pictures/FollowingPDF.jpg)
