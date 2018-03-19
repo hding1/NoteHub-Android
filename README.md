@@ -42,8 +42,5 @@ Users can view all the files they uploaded in NoteHub database. When viewing the
 Users are also able to see all users they are following and view other users' shared files.
 <div  align="center">
 <img src="https://github.com/hding1/NoteHub-Android/blob/master/Pictures/Following.jpg" width="50%" height="50%" align=center />
-</div>
-
-<div  align="center">
 <img src="https://github.com/hding1/NoteHub-Android/blob/master/Pictures/FollowingPDF.jpg" width="50%" height="50%" align=center />
 </div> 
